@@ -1,0 +1,17 @@
+import Hero from "@/app/_components/Hero";
+import Sheet from "@/app/_components/Sheet";
+import SearchField from "@/app/_components/SearchField";
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function NewsLayout({ children }: Props) {
+  return (
+    <>
+      <div className="g-bg-white">
+        <Hero title="lifelog" className="text-white" />
+        <Sheet>{children}</Sheet>
+      </div>
+    </>
+  );
+}

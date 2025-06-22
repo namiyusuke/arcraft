@@ -1,0 +1,21 @@
+.footer {
+  padding: 16px 24px;
+  color: var(--color-text-sub);
+  font-size: 0.8rem;
+  padding-top: 80px;
+  background-color: #333;
+}
+.inner {
+  display: flex;
+  column-gap: calc(120 * var(--pxToRem));
+}
+.nav {
+  margin-bottom: 16px;
+}
+
+.container {
+  max-inline-size: 1320px;
+  padding-inline: 5vi;
+  margin-inline: auto;
+  box-sizing: content-box;
+}

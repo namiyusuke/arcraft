@@ -1,0 +1,14 @@
+.tag {
+  color: #262626;
+  padding: 4px 20px;
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+@media (width >= 768px) {
+  .tag {
+    color: #262626;
+    padding: 4px 20px;
+    white-space: nowrap;
+    font-size: 1rem;
+  }
+}

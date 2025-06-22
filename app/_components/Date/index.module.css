@@ -1,0 +1,8 @@
+.date {
+  display: flex;
+  align-items: center;
+  font-weight: var(--font-weight-medium);
+  font-size: calc(14 * var(--pxToRem));
+  margin-bottom: calc(16 * var(--pxToRem));
+  padding-inline: calc(20 * var(--pxToRem));
+}

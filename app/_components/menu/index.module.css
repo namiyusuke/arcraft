@@ -1,0 +1,253 @@
+.items {
+  display: flex;
+  color: #fff;
+  gap: 40px;
+}
+.button {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  font-size: calc(20 * var(--pxToRem));
+  position: fixed;
+  top: calc(50 * var(--pxToRem));
+  right: calc(50 * var(--pxToRem));
+  font-weight: var(--font-weight-bold);
+}
+.nav {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  font-size: calc(20 * var(--pxToRem));
+  position: fixed;
+  top: calc(50 * var(--pxToRem));
+  right: calc(50 * var(--pxToRem));
+  font-weight: var(--font-weight-bold);
+  z-index: 100;
+}
+/* フィルター関連の新しいスタイル */
+.filterContainer {
+  position: relative;
+}
+
+.filter {
+  margin: 0;
+  cursor: pointer;
+}
+
+.filter a {
+  text-decoration: none;
+  color: inherit;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.filter a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.filterDropdown {
+  position: absolute;
+  top: calc(100% + 20 * var(--pxToRem));
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 300px;
+  z-index: 1000;
+  padding: 16px;
+  z-index: 100;
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.filterHeader h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.resetButton {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.resetButton:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.categoryList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.categoryItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.categoryItem:hover {
+  background-color: #f8f9fa;
+}
+
+.categoryCheckbox {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.categoryName {
+  font-size: 14px;
+  color: #333;
+  user-select: none;
+}
+/* 既存のスタイル */
+.nav {
+  /* 既存のnavスタイル */
+}
+
+.nav.open {
+  /* 既存のopenスタイル */
+}
+
+.items {
+  /* 既存のitemsスタイル */
+}
+
+/* フィルター関連の新しいスタイル */
+.filterContainer {
+  position: relative;
+}
+
+.filter {
+  margin: 0;
+  cursor: pointer;
+}
+
+.filter a {
+  text-decoration: none;
+  color: inherit;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.filter a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* .filterDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  z-index: 1000;
+  padding: 16px;
+} */
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.filterHeader h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.resetButton {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.resetButton:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.categoryList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.categoryItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.categoryItem:hover {
+  background-color: #f8f9fa;
+}
+
+.categoryCheckbox {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.categoryName {
+  font-size: 14px;
+  color: #333;
+  user-select: none;
+}
+.filterMenu .filterDropdown {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  clip-path: inset(0% 0% 100%);
+}
+.filterDropdownOpen .filterDropdown {
+  clip-path: inset(0%);
+  /* min-height: 100vh; */
+}
+.filter .filterButton {
+  padding: calc(14 * var(--pxToRem)) calc(16 * var(--pxToRem));
+  font-weight: var(--font-weight-regular);
+  border-radius: calc(12 * var(--pxToRem));
+  border: 1px solid #fff;
+}

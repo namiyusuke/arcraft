@@ -1,0 +1,10 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.list a {
+  padding: 3px 17px;
+  background-color: #fff;
+  color: #000;
+}

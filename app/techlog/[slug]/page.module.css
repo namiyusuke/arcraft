@@ -1,0 +1,14 @@
+.footer {
+  margin-top: 6rem;
+  text-align: center;
+  padding-bottom: 4rem;
+}
+.footer a {
+  margin-inline: auto;
+  width: calc(300 / 16 * 1rem);
+  height: calc(50 / 16 * 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+}

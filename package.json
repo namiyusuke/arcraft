@@ -1,0 +1,37 @@
+{
+  "name": "my-next-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.0.7",
+    "@react-three/fiber": "^9.1.2",
+    "@types/three": "^0.176.0",
+    "gsap": "^3.13.0",
+    "leva": "^0.10.0",
+    "microcms-rich-editor-handler": "^1.0.1",
+    "next": "15.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "shiki": "^1.29.2",
+    "three": "^0.176.0",
+    "zustand": "^5.0.5"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "classnames": "^2.5.1",
+    "dayjs": "^1.11.13",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.1",
+    "microcms-js-sdk": "^3.2.0",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,7 @@
+.container {
+  position: relative;
+  max-inline-size: 1440px;
+  padding-inline: 5vi;
+  margin-inline: auto;
+  box-sizing: content-box;
+}

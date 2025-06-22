@@ -1,0 +1,329 @@
+:root {
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+    "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --color-text-main: #333;
+  --color-text-sub: #999;
+  --color-text-unpainted: #fff;
+  --color-text-error: #f33;
+  --color-bg-main: #fff;
+  --color-bg-sub: #f3f3f3;
+  --color-bg-code: #1e1e1e;
+  --color-bg-painted: #333;
+  --color-border-dark: #333;
+  --color-border: #ddd;
+  --color-border-light: #f3f3f3;
+  --color-current: #eee;
+  --color-button-primary: #333;
+  --border-radius: 4px;
+  --color--dark: #202020;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3",
+    Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  color: var(--color-text-main);
+  line-height: 1.8;
+}
+
+code {
+  font-family: menlo, inconsolata, monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+:root {
+  --ease-inout-sine: cubic-bezier(0.37, 0, 0.63, 1);
+  --ease-none: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  --ease-power1-in: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-power1-inout: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-power1-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-power2-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-power2-inout: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-power2-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-power3-in: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-power3-inout: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-power3-out: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-power4-in: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --ease-power4-inout: cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-power4-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-expo-in: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-expo-inout: cubic-bezier(1, 0, 0, 1);
+  --ease-expo-out: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-circ-in: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --ease-circ-inout: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  --ease-circ-out: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --ease-back-in: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --ease-back-inout: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-back-out: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --blue: #0070d2;
+  --yellow: #fdd504;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #c00;
+  --orange: #fd7e14;
+  --green: #008827;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #00a1e0;
+  --secondary: #6c757d;
+  --success: #008827;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #c00;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 544px;
+  --breakpoint-md: 769px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-kaisei: "Kaisei Opti", serif;
+  --font-family-vdl: "vdl-penletter", sans-serif;
+  --pxToRem: calc(1 / 16 * 1rem);
+  --font-size-base: 16px;
+  --font-weight-regular: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+}
+
+/*! Oreset.css v2.0.0 | MIT License | https://github.com/hirosiva/Oreset.css */
+/*
+  # Global
+---------------------------------------------- */
+*,
+::before,
+::after {
+  min-inline-size: 0;
+}
+img {
+  user-select: none;
+}
+/*
+  # Document & Sections
+---------------------------------------------- */
+:where(html) {
+  block-size: 100%;
+}
+
+:where(body) {
+  min-block-size: 100%;
+  overflow-x: clip;
+  font-feature-settings: "pkna";
+  color: theme("colors.dark");
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  # Text-level semantics
+---------------------------------------------- */
+:where(a:not([class])) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+/*
+  # Embedded content
+---------------------------------------------- */
+:where(img, picture, svg) {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+:where(svg:not([fill])) {
+  fill: currentColor;
+}
+
+/*
+  # Forms
+---------------------------------------------- */
+
+:where(button, label, select, summary, [role="button"], [role="option"]) {
+  cursor: pointer;
+}
+
+:where(input[type="file"])::-webkit-file-upload-button,
+:where(input[type="file"])::file-selector-button {
+  cursor: pointer;
+}
+
+:where(:disabled) {
+  cursor: not-allowed;
+}
+
+:where(label:has(> input:disabled), label:has(+ input:disabled)) {
+  cursor: not-allowed;
+}
+
+:where(button) {
+  border-style: solid;
+}
+
+/*
+  # Interactive & Misc
+---------------------------------------------- */
+:where(template, [hidden]:not([hidden="until-found"])) {
+  display: none;
+}
+
+:where(summary) {
+  display: block;
+}
+:where(summary)::-webkit-details-marker {
+  display: none;
+}
+
+/*
+  # Accessibility
+---------------------------------------------- */
+:where([disabled], [aria-disabled="true"]) {
+  cursor: not-allowed;
+}
+
+:where([aria-busy="true"]) {
+  cursor: progress;
+}
+
+:where([aria-controls]) {
+  cursor: pointer;
+}
+
+:where([aria-hidden="false"][hidden]) {
+  display: initial;
+}
+
+:where([aria-hidden="false"][hidden]):not(:focus) {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+:where(:focus:not(:focus-visible), ::before:focus:not(:focus-visible), ::after:focus:not(:focus-visible)) {
+  outline: none;
+}
+
+/**
+ * Prettier ignore
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+.g-bg-base {
+  /* background-color: var(--color-bg-main); */
+}
+.g-bg-dark {
+  background-color: #262626;
+  color: #fff;
+}
+.g-bg-white {
+  background-color: #fff;
+  color: #262626;
+}
+.g-bg-code {
+  background-color: var(--color-bg-code);
+}
+.g-container-category {
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 5vi;
+}
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+.loading-bg {
+  transition: all 0.5s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #262626;
+  z-index: 1000;
+  transition-delay: 3s;
+}
+.is-loagding .loading-bg {
+  opacity: 0;
+  visibility: hidden;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-auto-rows: 1fr;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.block {
+  background: black;
+  aspect-ratio: 1 / 1;
+}
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #262626;
+  font-size: 3.5rem;
+}
+.text-white h1 {
+  color: #262626;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+::view-transition-new(cross-fade) {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out 0.2s forwards;
+}
+
+/* グローバルなis-loadedスタイル */
+.is-loaded .title .spantext {
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+}
