@@ -5,162 +5,26 @@ Command: npx gltfjsx@6.5.3 public/models/nami_room_new.glb -o app/_components/na
 
 import * as THREE from "three";
 import React, { useEffect, useState } from "react";
-import { useFrame } from "@react-three/fiber";
 import { useGLTF, useProgress, useVideoTexture } from "@react-three/drei";
 import { useRef } from "react";
 import { GLTF } from "three-stdlib";
 import gsap from "gsap";
 
-type GLTFResult = GLTF & {
-  nodes: {
-    Plane: THREE.Mesh;
-    wall_shelf: THREE.Mesh;
-    wall_shelf001: THREE.Mesh;
-    Plane007: THREE.Mesh;
-    pc_screen: THREE.Mesh;
-    pc_frame: THREE.Mesh;
-    pc_base: THREE.Mesh;
-    Cube: THREE.Mesh;
-    Cube001: THREE.Mesh;
-    Cube002: THREE.Mesh;
-    Cube003: THREE.Mesh;
-    Cube004: THREE.Mesh;
-    Cube005: THREE.Mesh;
-    Cube006: THREE.Mesh;
-    Sphere: THREE.Mesh;
-    Cube007: THREE.Mesh;
-    Sphere001: THREE.Mesh;
-    Cube008: THREE.Mesh;
-    Sphere002: THREE.Mesh;
-    BézierCurve: THREE.Mesh;
-    Circle: THREE.Mesh;
-    Cube009: THREE.Mesh;
-    Cylinder: THREE.Mesh;
-    Cube012: THREE.Mesh;
-    Cube013: THREE.Mesh;
-    Cube018: THREE.Mesh;
-    Cube019: THREE.Mesh;
-    Cube020: THREE.Mesh;
-    Cube021: THREE.Mesh;
-    Cube022: THREE.Mesh;
-    Cube023: THREE.Mesh;
-    Cube029: THREE.Mesh;
-    Cube030: THREE.Mesh;
-    Cube031: THREE.Mesh;
-    Cube032: THREE.Mesh;
-    Cube033: THREE.Mesh;
-    Cube034: THREE.Mesh;
-    Cube035: THREE.Mesh;
-    Cube036: THREE.Mesh;
-    Cube037: THREE.Mesh;
-    Cube040: THREE.Mesh;
-    Cube041: THREE.Mesh;
-    Cube042: THREE.Mesh;
-    Cube043: THREE.Mesh;
-    Cube044: THREE.Mesh;
-    Cube046: THREE.Mesh;
-    Cube047: THREE.Mesh;
-    Cube014: THREE.Mesh;
-    keyboard: THREE.Mesh;
-    Cube038: THREE.Mesh;
-    Cube039: THREE.Mesh;
-    Cube028: THREE.Mesh;
-    Cube045: THREE.Mesh;
-    Cylinder001: THREE.Mesh;
-    Cylinder003: THREE.Mesh;
-    Cylinder002: THREE.Mesh;
-    Cylinder005: THREE.Mesh;
-    Cylinder006: THREE.Mesh;
-    switch002: THREE.Mesh;
-    switch001: THREE.Mesh;
-    Cube015_1: THREE.Mesh;
-    Cube015_2: THREE.Mesh;
-    Cube015_3: THREE.Mesh;
-    Circle002: THREE.Mesh;
-    Torus005: THREE.Mesh;
-    Cube015: THREE.Mesh;
-    Cube025: THREE.Mesh;
-    Torus012: THREE.Mesh;
-    Torus013: THREE.Mesh;
-    Cylinder009: THREE.Mesh;
-    Cylinder010: THREE.Mesh;
-    Cylinder011: THREE.Mesh;
-    Cylinder012: THREE.Mesh;
-    Plane006: THREE.Mesh;
-    Cylinder004: THREE.Mesh;
-    Plane008: THREE.Mesh;
-    Plane009: THREE.Mesh;
-    Cube056: THREE.Mesh;
-    Cube057: THREE.Mesh;
-    Cube058: THREE.Mesh;
-    Cube059: THREE.Mesh;
-    Cube060: THREE.Mesh;
-    Cube061: THREE.Mesh;
-    Cube062: THREE.Mesh;
-    Cube063: THREE.Mesh;
-    Cube064: THREE.Mesh;
-    Cylinder013: THREE.Mesh;
-    Cylinder014: THREE.Mesh;
-    Cylinder015: THREE.Mesh;
-    Cylinder016: THREE.Mesh;
-    Cylinder017: THREE.Mesh;
-    Cylinder018: THREE.Mesh;
-    Cube010: THREE.Mesh;
-    Cylinder007: THREE.Mesh;
-    Cube011: THREE.Mesh;
-    Cube016: THREE.Mesh;
-    Cube017: THREE.Mesh;
-    Cube024: THREE.Mesh;
-    Cube026: THREE.Mesh;
-    Cube027: THREE.Mesh;
-    Cylinder008: THREE.Mesh;
-    Circle001: THREE.Mesh;
-    Cylinder016_1: THREE.Mesh;
-    Cylinder016_2: THREE.Mesh;
-  };
-  materials: {
-    ["Material.003"]: THREE.MeshStandardMaterial;
-    black_gray: THREE.MeshStandardMaterial;
-    ["Material.016"]: THREE.MeshStandardMaterial;
-    ["Material.025"]: THREE.MeshStandardMaterial;
-    ["switch_black.002"]: THREE.MeshStandardMaterial;
-    ["deep navy"]: THREE.MeshStandardMaterial;
-    metallic_silver: THREE.MeshStandardMaterial;
-    wood: THREE.MeshStandardMaterial;
-    tiru_green: THREE.MeshStandardMaterial;
-    gold: THREE.MeshStandardMaterial;
-    green: THREE.MeshStandardMaterial;
-    blown: THREE.MeshStandardMaterial;
-    ["choco.001"]: THREE.MeshStandardMaterial;
-    bblue: THREE.MeshStandardMaterial;
-    white: THREE.MeshStandardMaterial;
-    ["Material.007"]: THREE.MeshStandardMaterial;
-    ["bblue.001"]: THREE.MeshStandardMaterial;
-    switch_black: THREE.MeshStandardMaterial;
-    ["switch_black.001"]: THREE.MeshStandardMaterial;
-    ["switch_white.001"]: THREE.MeshStandardMaterial;
-    ["switch.001"]: THREE.MeshStandardMaterial;
-    choco: THREE.MeshStandardMaterial;
-    brown: THREE.MeshStandardMaterial;
-    ["choco.002"]: THREE.MeshStandardMaterial;
-    woody: THREE.MeshStandardMaterial;
-  };
-  animations: any[];
-};
-
-export function NamiRoom({
-  isScreenClicked,
-  setIsScreenClicked,
-}: {
-  isScreenClicked: boolean;
-  setIsScreenClicked: (isScreenClicked: boolean) => void;
-}) {
+export function NamiRoom() {
+  //   {
+  //   isScreenClicked,
+  //   setIsScreenClicked,
+  // }: {
+  //   isScreenClicked: boolean;
+  //   setIsScreenClicked: (isScreenClicked: boolean) => void;
+  //   }
   const videoTexture = useVideoTexture("/video/test.mp4");
   const [videoMaterial, setVideoMaterial] = useState<THREE.MeshBasicMaterial | null>(null);
-  const { nodes, materials } = useGLTF("/models/nami_room_new.glb") as GLTFResult;
+  const gltf = useGLTF("/models/nami_room_new.glb");
+  const { nodes, materials } = gltf as any;
   const groupRef = useRef<THREE.Group>(null);
   const pcScreenRef = useRef<THREE.Mesh>(null);
-  const [hover, setHover] = useState(false);
+  // const [hover, setHover] = useState(false);
   const { progress } = useProgress();
 
   useEffect(() => {
@@ -198,24 +62,27 @@ export function NamiRoom({
     }
   }, [videoTexture]);
 
-  useEffect(() => {
-    if (pcScreenRef.current) {
-      const material = pcScreenRef.current.material as THREE.MeshStandardMaterial;
+  // useEffect(
+  //   () => {
+  //     if (pcScreenRef.current) {
+  //       const material = pcScreenRef.current.material as THREE.MeshStandardMaterial;
 
-      gsap.to(material, {
-        emissive: hover ? new THREE.Color("#4a90e2") : new THREE.Color("#000000"),
-        emissiveIntensity: hover ? 0.5 : 0,
-        duration: 0.3,
-        ease: "power2.out",
-      });
+  //       gsap.to(material, {
+  //         emissive: hover ? new THREE.Color("#4a90e2") : new THREE.Color("#000000"),
+  //         emissiveIntensity: hover ? 0.5 : 0,
+  //         duration: 0.3,
+  //         ease: "power2.out",
+  //       });
 
-      gsap.to(material, {
-        color: hover ? new THREE.Color("#ffffff") : new THREE.Color("#cccccc"),
-        duration: 0.3,
-        ease: "power2.out",
-      });
-    }
-  }, [hover]);
+  //       gsap.to(material, {
+  //         color: hover ? new THREE.Color("#ffffff") : new THREE.Color("#cccccc"),
+  //         duration: 0.3,
+  //         ease: "power2.out",
+  //       });
+  //     }
+  //   }
+  //   [hover]
+  // );
 
   return (
     <group ref={groupRef} dispose={null}>

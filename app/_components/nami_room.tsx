@@ -5,11 +5,9 @@ Command: npx gltfjsx@6.5.3 public/models/nami_room.glb -o app/_components/nami_r
 
 import * as THREE from "three";
 import React, { useEffect, useState } from "react";
-import { useFrame } from "@react-three/fiber";
 
 import { useGLTF, useProgress, useVideoTexture } from "@react-three/drei";
 import { useRef } from "react";
-import { GLTF } from "three-stdlib";
 import gsap from "gsap";
 
 export function NamiRoom({
@@ -21,7 +19,7 @@ export function NamiRoom({
 }) {
   const videoTexture = useVideoTexture("/video/test.mp4");
   const [videoMaterial, setVideoMaterial] = useState<THREE.MeshBasicMaterial | null>(null);
-  const { nodes, materials } = useGLTF("/models/nami_room_new.glb") as GLTFResult;
+  const { nodes, materials } = useGLTF("/models/nami_room_new.glb") as any;
   const groupRef = useRef<THREE.Group>(null);
   const pcScreenRef = useRef<THREE.Mesh>(null);
   const [hover, setHover] = useState(false);
@@ -77,7 +75,7 @@ export function NamiRoom({
         color: hover ? new THREE.Color("#ffffff") : new THREE.Color("#cccccc"),
         duration: 0.3,
         ease: "power2.out",
-      });
+      } as any);
     }
   }, [hover]);
   return (

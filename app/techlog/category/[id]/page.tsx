@@ -3,12 +3,13 @@ import Pagination from "@/app/_components/Pagination";
 import TechlogList from "@/app/_components/techlogList";
 import { notFound } from "next/navigation";
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 export default async function News({ params }: Props) {
-  const category = await getCategoryDetail(params.id).catch((err) => {
+  const resolvedParams = await params;
+  const category = await getCategoryDetail(resolvedParams.id).catch((err) => {
     notFound();
   });
   const { contents: techlog, totalCount } = await gettechlogList({

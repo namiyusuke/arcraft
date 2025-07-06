@@ -27,7 +27,7 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 body {
@@ -243,8 +243,17 @@ img {
   /* background-color: var(--color-bg-main); */
 }
 .g-bg-dark {
-  background-color: #262626;
+  positon: relative;
   color: #fff;
+}
+.g-bg-dark::after {
+  content: "";
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: -1;
+  position: fixed;
+  background: linear-gradient(180deg, #262626 0%, #040441 51.89%, rgba(4, 4, 65, 0.6) 100%);
 }
 .g-bg-white {
   background-color: #fff;
@@ -307,6 +316,10 @@ ul {
 .text-white h1 {
   color: #262626;
 }
+/* ::view-transition-new(cross-fade) {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out 0.2s forwards;
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -315,15 +328,57 @@ ul {
   to {
     opacity: 1;
   }
+} */
+
+/* View Transitionsのカスタマイズ */
+/* ::view-transition-old(root) {
+  animation: 0.3s ease-out fadeOut;
 }
 
-::view-transition-new(cross-fade) {
-  opacity: 0;
-  animation: fadeIn 0.3s ease-in-out 0.2s forwards;
+::view-transition-new(root) {
+  animation: 0.3s ease-in fadeIn;
+} */
+
+/* 個別の要素には具体的な名前を指定 */
+/* ::view-transition-old(thumbnail-1),
+::view-transition-old(thumbnail-2),
+::view-transition-old(thumbnail-3) {
+  animation: 0.4s ease-out scale-down;
+} */
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
 }
 
-/* グローバルなis-loadedスタイル */
-.is-loaded .title .spantext {
-  transform: translateY(0);
-  transition: transform 0.5s ease;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes scale-down {
+  to {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+.footerTitle {
+  /* overflow: hidden; */
+}
+.footerTitle {
+  display: inline-block;
+  /* opacity: 0; */
+  clip-path: inset(100% 0% 0% 0%);
+  transition: clip-path 0.7s var(--ease-power3-inout);
+  /* transform: translateY(100px); */
+  /* transition: opacity 0.3s ease-out, transform 0.3s ease-out; */
+  /* transition-delay: calc(var(--index) * 0.1s); */
+}
+
+.is-footer .footerTitle {
+  clip-path: inset(0% 0% 0% 0%);
+  /* opacity: 1; */
+  /* transform: translateY(0); */
 }

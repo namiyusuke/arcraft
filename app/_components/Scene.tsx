@@ -1,8 +1,8 @@
 "use client";
 
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { CameraControls, useGLTF, Stats, useHelper, SoftShadows, useProgress } from "@react-three/drei";
-import { Suspense, useState, useEffect, useRef, forwardRef } from "react";
+import { useFrame } from "@react-three/fiber";
+import { CameraControls, Stats, useHelper, useProgress } from "@react-three/drei";
+import { useState, useEffect, useRef } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
 import { useControls, button } from "leva";
@@ -11,12 +11,12 @@ import GridPlanes from "./GridPlanes";
 import { PointLightHelper, SpotLightHelper } from "three";
 
 export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; pointerRef: { x: number; y: number } }) {
-  const lightRef = useRef<THREE.PointLight>(null);
-  const spotLightRef = useRef<THREE.SpotLight>(null);
+  const lightRef = useRef<THREE.Object3D>(null);
+  const spotLightRef = useRef<THREE.Object3D>(null);
   const gridPlanesRef = useRef<THREE.Group>(null);
   const { progress } = useProgress();
-  useHelper(lightRef, PointLightHelper, 1);
-  useHelper(spotLightRef, SpotLightHelper, 1);
+  useHelper(lightRef as any, PointLightHelper, 1);
+  useHelper(spotLightRef as any, SpotLightHelper, 1);
   const modelRef = useRef<THREE.Group>(null);
   const groupRef = useRef<THREE.Group>(null);
   const groupRotation = useRef<number>(0);
@@ -129,12 +129,7 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
           shadow-bias={-0.0005}
           castShadow
         />
-        <NamiRoom
-          isScreenClicked={isScreenClicked}
-          setIsScreenClicked={setIsScreenClicked}
-          ref={modelRef}
-          onLoad={onLoad}
-        />
+        <NamiRoom isScreenClicked={isScreenClicked} setIsScreenClicked={setIsScreenClicked} />
         <CameraControls
           ref={controls}
           minDistance={0.1}

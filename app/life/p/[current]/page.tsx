@@ -1,19 +1,20 @@
 import { gettechlogList, getCategoryDetail } from "@/app/_libs/microcms";
-import techlogList from "@/app/_components/techlogList";
+import TechlogList from "@/app/_components/techlogList";
 import { notFound } from "next/navigation";
 import { NEWS_LIST_LIMIT } from "@/app/constants";
 import Pagination from "@/app/_components/Pagination";
 type Props = {
-  params: {
+  params: Promise<{
     current: string;
     id: string;
-  };
+  }>;
 };
 export default async function News({ params }: Props) {
-  const category = await getCategoryDetail(params.id).catch((err) => {
+  const resolvedParams = await params;
+  const category = await getCategoryDetail(resolvedParams.id).catch((err) => {
     notFound();
   });
-  const current = parseInt(params.current, 10);
+  const current = parseInt(resolvedParams.current, 10);
   if (isNaN(current) || current < 1) {
     notFound();
   }
@@ -24,7 +25,7 @@ export default async function News({ params }: Props) {
   });
   return (
     <>
-      <techlogList news={news} />
+      <TechlogList news={news} />
       <Pagination totalCount={totalCount} current={current} basePath={`/news/category/${category.id}`} />
     </>
   );

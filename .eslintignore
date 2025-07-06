@@ -1,0 +1,13 @@
+# ビルドファイル
+.next/
+out/
+dist/
+
+# 依存関係
+node_modules/
+
+# 環境変数ファイル
+.env*
+
+# 特定のファイル（必要に応じて追加）
+# app/_components/SomeComponent.tsx

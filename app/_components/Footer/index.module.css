@@ -1,9 +1,35 @@
 .footer {
-  padding: 16px 24px;
   color: var(--color-text-sub);
   font-size: 0.8rem;
-  padding-top: 80px;
-  background-color: #333;
+  height: calc(600 * var(--pxToRem));
+  position: relative;
+  clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+}
+@media (width >= 768px) {
+  .footer {
+    height: calc(800 * var(--pxToRem));
+  }
+}
+.footerInner {
+  position: relative;
+  height: calc(100vh + 600px);
+  top: -100vh;
+}
+@media (width >= 768px) {
+  .footerInner {
+    height: calc(100vh + 800px);
+  }
+}
+.footerSticky {
+  position: sticky;
+  height: 600px;
+  top: calc(100vh - 600px);
+}
+@media (width >= 768px) {
+  .footerSticky {
+    height: 800px;
+    top: calc(100vh - 800px);
+  }
 }
 .inner {
   display: flex;
@@ -14,8 +40,82 @@
 }
 
 .container {
-  max-inline-size: 1320px;
   padding-inline: 5vi;
-  margin-inline: auto;
+
   box-sizing: content-box;
+}
+@media (width >= 768px) {
+  .container {
+    margin-inline: auto;
+    max-inline-size: 1320px;
+    width: calc(1320 / 1440 * 100%);
+  }
+}
+
+.content {
+  background-color: #4b4a4a;
+  /* background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%); */
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+}
+.copy {
+  display: flex;
+  justify-content: center;
+}
+.footerTitle {
+  font-size: clamp(100px, calc(120 / 375 * 100vw), 330px);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  display: flex;
+  color: transparent;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative;
+  background: linear-gradient(
+    92.64deg,
+    #ffffff 0.34%,
+    rgba(255, 255, 255, 0.6) 16.26%,
+    rgba(255, 255, 255, 0.3) 45.17%,
+    rgba(255, 255, 255, 0.6) 70.43%,
+    #ffffff 98.23%
+  );
+  -webkit-background-clip: text;
+}
+@media (width >= 768px) {
+  .footerTitle {
+    font-size: clamp(200px, calc(430 / 1440 * 100vw), 430px);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    display: flex;
+    color: transparent;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: relative;
+    background: linear-gradient(
+      92.64deg,
+      #ffffff 0.34%,
+      rgba(255, 255, 255, 0.6) 16.26%,
+      rgba(255, 255, 255, 0.3) 45.17%,
+      rgba(255, 255, 255, 0.6) 70.43%,
+      #ffffff 98.23%
+    );
+    -webkit-background-clip: text;
+  }
+}
+.footerTitle::after {
+  content: "";
+  inset: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.nav {
+  font-size: calc(18 * var(--pxToRem));
 }

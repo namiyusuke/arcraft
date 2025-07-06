@@ -6,7 +6,8 @@ import { Suspense, useState, useEffect, useRef } from "react";
 import { LoadingScreen } from "./loading";
 import Scene from "./Scene";
 
-export default function Model3D(isScreenClicked: boolean, setIsScreenClicked: (isScreenClicked: boolean) => void) {
+// export default function Model3D(isScreenClicked: boolean, setIsScreenClicked: (isScreenClicked: boolean) => void) {
+export default function Model3D() {
   const [isLoading, setIsLoading] = useState(true);
   const [showCanvas, setShowCanvas] = useState(false);
   const pointerRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });

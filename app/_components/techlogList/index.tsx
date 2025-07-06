@@ -5,7 +5,7 @@ import Tag from "@/app/_components/Category";
 import Date from "@/app/_components/Date";
 import Link from "next/link";
 import { useMemo } from "react";
-
+import { unstable_ViewTransition as ViewTransition } from "react";
 interface TechlogListProps {
   news: News[];
   selectedCategories?: string[];
@@ -42,20 +42,22 @@ export default function TechlogList({ news, selectedCategories = [] }: TechlogLi
             className={`${styles.list} ${styles.animateItem}`}
             style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <Link aria-label={content.title} href={`/techlog/${content.id}`} className={styles.link}></Link>
-            {content.thumbnail ? (
-              <div className={styles.image_wrapper}>
-                <Image
-                  className={styles.image}
-                  src={content.thumbnail.url}
-                  alt={content.title}
-                  width={content.thumbnail.width}
-                  height={content.thumbnail.height}
-                />
-              </div>
-            ) : (
-              <Image className={styles.image} src="/no-image.png" alt={content.title} width={1200} height={630} />
-            )}
+            <ViewTransition name={`thumbnail-${content.id}`}>
+              <Link aria-label={content.title} href={`/techlog/${content.id}`} className={styles.link}></Link>
+              {content.thumbnail ? (
+                <div className={styles.image_wrapper}>
+                  <Image
+                    className={styles.image}
+                    src={content.thumbnail.url}
+                    alt={content.title}
+                    width={content.thumbnail.width}
+                    height={content.thumbnail.height}
+                  />
+                </div>
+              ) : (
+                <Image className={styles.image} src="/no-image.png" alt={content.title} width={1200} height={630} />
+              )}
+            </ViewTransition>
             <div className={styles.content__left}>
               <div className={styles.content__inner}>
                 <Date date={content.publishedAt ?? content.createdAt} />

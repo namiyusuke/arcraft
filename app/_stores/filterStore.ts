@@ -1,16 +1,14 @@
 // @/app/_stores/filterStore.ts
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { Category, News } from "@/app/_libs/microcms";
-import { getCategoryList } from "@/app/_libs/microcms";
+import { Category } from "@/app/_libs/microcms";
+// import { getCategoryList } from "@/app/_libs/microcms";
 
 interface FilterState {
-  // データ
   categories: Category[];
   selectedCategories: string[];
   currentPage: number;
 
-  // アクション
   setCategories: (categories: Category[]) => void;
   setSelectedCategories: (categoryIds: string[]) => void;
   addCategory: (categoryId: string) => void;

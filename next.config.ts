@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;

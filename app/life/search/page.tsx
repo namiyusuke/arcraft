@@ -1,21 +1,22 @@
 import { gettechlogList } from "@/app/_libs/microcms";
 import SearchField from "@/app/_components/SearchField";
-import techlogList from "@/app/_components/techlogList";
+import TechlogList from "@/app/_components/techlogList";
 
 type Props = {
-  searchParams: {
+  searchParams: Promise<{
     q: string;
-  };
+  }>;
 };
 export default async function NewsSearch({ searchParams }: Props) {
-  const { contents: news } = await get({
+  const resolvedSearchParams = await searchParams;
+  const { contents: news } = await gettechlogList({
     limit: 10,
-    q: searchParams.q,
+    q: resolvedSearchParams.q,
   });
   return (
     <>
       <SearchField />
-      <techlogList news={news} />
+      <TechlogList news={news} />
     </>
   );
 }
