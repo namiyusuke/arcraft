@@ -103,6 +103,7 @@ ul {
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-kaisei: "Kaisei Opti", serif;
   --font-family-vdl: "vdl-penletter", sans-serif;
+  --font-family-zen: "zen-kurenaido", sans-serif;
   --pxToRem: calc(1 / 16 * 1rem);
   --font-size-base: 16px;
   --font-weight-regular: 300;
@@ -381,4 +382,24 @@ ul {
   clip-path: inset(0% 0% 0% 0%);
   /* opacity: 1; */
   /* transform: translateY(0); */
+}
+.is-screen--back {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.g-back__button {
+  z-index: 10;
+  color: #fff;
+  position: fixed;
+  bottom: 100px;
+  left: 100px;
+  opacity: 0;
+  visiblity: hidden;
+  transition: all 0.9s;
+}
+.is-back .g-back__button {
+  opacity: 1;
+  visiblity: visible;
 }

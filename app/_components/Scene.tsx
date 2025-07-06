@@ -1,7 +1,7 @@
 "use client";
 
 import { useFrame } from "@react-three/fiber";
-import { CameraControls, Stats, useHelper, useProgress } from "@react-three/drei";
+import { CameraControls, Stats, useHelper, useProgress, Html } from "@react-three/drei";
 import { useState, useEffect, useRef } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
@@ -10,7 +10,17 @@ import { NamiRoom } from "./nami_room";
 import GridPlanes from "./GridPlanes";
 import { PointLightHelper, SpotLightHelper } from "three";
 
-export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; pointerRef: { x: number; y: number } }) {
+export default function Scene({
+  onLoad,
+  pointerRef,
+  isScreenClicked,
+  setIsScreenClicked,
+}: {
+  onLoad: () => void;
+  pointerRef: { x: number; y: number };
+  isScreenClicked: boolean;
+  setIsScreenClicked: (isScreenClicked: boolean) => void;
+}) {
   const lightRef = useRef<THREE.Object3D>(null);
   const spotLightRef = useRef<THREE.Object3D>(null);
   const gridPlanesRef = useRef<THREE.Group>(null);
@@ -20,7 +30,7 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
   const modelRef = useRef<THREE.Group>(null);
   const groupRef = useRef<THREE.Group>(null);
   const groupRotation = useRef<number>(0);
-  const [isScreenClicked, setIsScreenClicked] = useState<boolean>(false);
+  // const [isScreenClicked, setIsScreenClicked] = useState<boolean>(false);
   useEffect(() => {
     if (progress == 100 && modelRef.current) {
       gsap.to(modelRef.current, {
@@ -87,9 +97,14 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
     }
   }, [cameraPosition, targetPosition]);
   useEffect(() => {
-    console.log(controls.current);
+    console.log(isScreenClicked);
     if (isScreenClicked && controls.current) {
+      document.documentElement.classList.add("is-back");
       controls.current.setLookAt(0.399999999999996, 1.3999999999999988, 0.399999999999998, 0, 1.3, 0.4, true);
+    } else {
+      document.documentElement.classList.remove("is-back");
+      controls.current?.setLookAt(3, 3, 3, 0, 1, 0, true);
+      // setIsScreenClicked(false);
     }
   }, [isScreenClicked]);
   useControls("Helper", {

@@ -61,6 +61,7 @@
   line-height: 160%;
   background-color: rgba(4 4, 65, 0.8);
   color: #fff;
+  font-family: var(--font-family-zen);
   padding-inline: calc(20 * var(--pxToRem));
   padding-block: calc(20 * var(--pxToRem));
   flex-shrink: 0; /* タイトル部分は内容に応じてサイズ調整 */
