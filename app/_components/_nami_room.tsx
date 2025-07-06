@@ -7,7 +7,6 @@ import * as THREE from "three";
 import React, { useEffect, useState } from "react";
 import { useGLTF, useProgress, useVideoTexture } from "@react-three/drei";
 import { useRef } from "react";
-import { GLTF } from "three-stdlib";
 import gsap from "gsap";
 
 export function NamiRoom() {

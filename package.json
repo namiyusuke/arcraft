@@ -11,7 +11,6 @@
   "dependencies": {
     "@react-three/drei": "^10.0.7",
     "@react-three/fiber": "^9.1.2",
-    "@types/three": "^0.176.0",
     "gsap": "^3.13.0",
     "leva": "^0.10.0",
     "microcms-rich-editor-handler": "^1.0.1",
@@ -20,6 +19,7 @@
     "react-dom": "^19.0.0",
     "shiki": "^1.29.2",
     "three": "^0.176.0",
+    "three-stdlib": "^2.36.0",
     "zustand": "^5.0.5"
   },
   "devDependencies": {
@@ -27,6 +27,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.176.0",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
     "eslint": "^9",
