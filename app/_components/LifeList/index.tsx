@@ -3,6 +3,7 @@ import styles from "./index.module.css";
 import { Life } from "@/app/_libs/microcms";
 import Date from "@/app/_components/Date";
 import Link from "next/link";
+import { unstable_ViewTransition as ViewTransition } from "react";
 interface lifelogListProps {
   life: Life[];
 }
@@ -11,35 +12,40 @@ export default function LifeList({ life }: lifelogListProps) {
     return <p>ニュースがありません</p>;
   }
   return (
-    <ul className={styles.listWrapper}>
-      {life.map((content) => (
-        <li key={content.id} className={styles.list}>
-          <Link aria-label={content.title} href={`/life/${content.id}`} className={styles.link}></Link>
-          {content.thumbnail ? (
-            <div className={styles.image_wrapper}>
-              <Image
-                className={styles.image}
-                src={content.thumbnail.url}
-                alt={content.title}
-                width={content.thumbnail.width}
-                height={content.thumbnail.height}
-              />
+    <div className="">
+      <p className={styles.titleTxt}>Visualize the process of growth by testing ideas and experimenting</p>
+      <ul className={styles.listWrapper}>
+        {life.map((content) => (
+          <li key={content.id} className={styles.list}>
+            <ViewTransition name={`thumbnail-${content.id}`}>
+              <Link aria-label={content.title} href={`/life/${content.id}`} className={styles.link}></Link>
+              {content.thumbnail ? (
+                <div className={styles.image_wrapper}>
+                  <Image
+                    className={styles.image}
+                    src={content.thumbnail.url}
+                    alt={content.title}
+                    width={content.thumbnail.width}
+                    height={content.thumbnail.height}
+                  />
+                </div>
+              ) : (
+                <Image className={styles.image} src="/no-image.png" alt={content.title} width={1200} height={630} />
+              )}
+            </ViewTransition>
+            <div className={styles.content__left}>
+              <div className={styles.content__inner}>
+                <Date date={content.publishedAt ?? content.createdAt} />
+                <dl className={styles.content}>
+                  <dt className={styles.title}>
+                    <span className={styles.title__line}>{content.title}</span>
+                  </dt>
+                </dl>
+              </div>
             </div>
-          ) : (
-            <Image className={styles.image} src="/no-image.png" alt={content.title} width={1200} height={630} />
-          )}
-          <div className={styles.content__left}>
-            <div className={styles.content__inner}>
-              <Date date={content.publishedAt ?? content.createdAt} />
-              <dl className={styles.content}>
-                <dt className={styles.title}>
-                  <span className={styles.title__line}>{content.title}</span>
-                </dt>
-              </dl>
-            </div>
-          </div>
-        </li>
-      ))}
-    </ul>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

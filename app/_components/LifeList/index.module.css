@@ -178,3 +178,11 @@
   transition-property: background-size;
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
+.titleTxt {
+  max-width: 332px;
+  margin-inline: auto;
+  font-family: "Satoshi-Regular";
+}
+.listWrapper {
+  margin-top: calc(144 * var(--pxToRem));
+}

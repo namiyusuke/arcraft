@@ -81,7 +81,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+.listWrapper {
+  max-inline-size: 1100px;
+  margin-top: calc(80 * var(--pxToRem));
+}
 @media (width >= 768px) {
   .title {
     font-size: calc(20 * var(--pxToRem));
@@ -95,6 +98,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 62px;
     align-items: start; /* カードを上揃えに */
+    margin-top: calc(144 * var(--pxToRem));
   }
 
   /* カード内のコンテンツを均等に配置 */
@@ -228,4 +232,9 @@
 .totalCount {
   font-size: 0.8rem;
   color: #999;
+}
+.titleTxt {
+  max-width: 332px;
+  margin-inline: auto;
+  font-family: "Satoshi-Regular";
 }

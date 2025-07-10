@@ -9,7 +9,7 @@ import {
   tocExtractor,
 } from "microcms-rich-editor-handler";
 import TocLink from "./TocLink";
-
+import { unstable_ViewTransition as ViewTransition } from "react";
 type Props = {
   data: Life;
 };
@@ -59,13 +59,15 @@ export default async function ArticleLife({ data }: Props) {
   return (
     <main>
       {data.thumbnail && (
-        <Image
-          src={data.thumbnail.url}
-          alt=""
-          className={styles.thumbnail}
-          width={data.thumbnail.width}
-          height={data.thumbnail.height}
-        />
+        <ViewTransition name={`thumbnail-${data.id}`}>
+          <Image
+            src={data.thumbnail.url}
+            alt=""
+            className={styles.thumbnail}
+            width={data.thumbnail.width}
+            height={data.thumbnail.height}
+          />
+        </ViewTransition>
       )}
       <div className={styles.meta}>
         <Date date={data.publishedAt ?? data.createdAt} />

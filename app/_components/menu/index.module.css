@@ -1,7 +1,22 @@
 .items {
   display: flex;
   color: #fff;
-  gap: 40px;
+  gap: 1rem;
+  font-family: "Satoshi-Medium";
+}
+.items a {
+  font-size: calc(18 * var(--pxToRem));
+}
+@media (width >= 768px) {
+  .items {
+    display: flex;
+    color: #fff;
+    gap: 40px;
+    font-family: "Satoshi-Medium";
+  }
+  .items a {
+    font-size: calc(20 * var(--pxToRem));
+  }
 }
 .button {
   display: flex;
@@ -26,9 +41,15 @@
   font-size: calc(20 * var(--pxToRem));
   position: fixed;
   top: calc(50 * var(--pxToRem));
-  right: calc(50 * var(--pxToRem));
+  right: calc(10 * var(--pxToRem));
   font-weight: var(--font-weight-bold);
   z-index: 100;
+}
+@media (width >= 768px) {
+  .nav {
+    top: calc(50 * var(--pxToRem));
+    right: calc(50 * var(--pxToRem));
+  }
 }
 /* フィルター関連の新しいスタイル */
 .filterContainer {
@@ -243,10 +264,9 @@
 }
 .filterDropdownOpen .filterDropdown {
   clip-path: inset(0%);
-  /* min-height: 100vh; */
 }
 .filter .filterButton {
-  padding: calc(14 * var(--pxToRem)) calc(16 * var(--pxToRem));
+  padding: calc(5 * var(--pxToRem)) calc(16 * var(--pxToRem));
   font-weight: var(--font-weight-regular);
   border-radius: calc(12 * var(--pxToRem));
   border: 1px solid #fff;

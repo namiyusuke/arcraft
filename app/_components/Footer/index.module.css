@@ -118,3 +118,15 @@
   font-size: calc(18 * var(--pxToRem));
   color: #040441;
 }
+.snsList {
+  display: flex;
+  column-gap: calc(24 * var(--pxToRem));
+}
+.snsList a {
+  background-color: #040441;
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+}

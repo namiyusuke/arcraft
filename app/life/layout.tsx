@@ -8,8 +8,8 @@ type Props = {
 export default function NewsLayout({ children }: Props) {
   return (
     <>
-      <div className="g-bg-white">
-        <Hero title="lifelog" className="text-white" />
+      <div className="g-bg-purple">
+        <Hero title="lifelog" className="text__life" />
         <Sheet>{children}</Sheet>
       </div>
     </>
