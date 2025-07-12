@@ -21,12 +21,11 @@
 .title .spantext {
   display: inline-block;
   transform: translateY(100%);
-  transition: all 0.5s var(--ease-power1-inout);
-  transition-delay: calc(0.03s * var(--index));
-  /* animation: slideIn 0.5s var(--ease-out-cubic) forwards; */
 }
 :global(.is-loaded) .title .spantext {
   transform: translateY(0);
+  transition: all 0.9s var(--ease-power3-out);
+  transition-delay: calc(0.04s * var(--index));
 }
 @media (width >= 768px) {
   .title {

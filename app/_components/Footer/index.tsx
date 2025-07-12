@@ -24,7 +24,7 @@ export default function Footer() {
   const { ref } = useScrollObserver("is-footer");
 
   return (
-    <footer ref={ref} className={styles.footer}>
+    <footer ref={ref} className={`${styles.footer} is-${firstPath}`}>
       <div className={styles.footerInner}>
         <div className={styles.footerSticky}>
           <div className={styles.content}>

@@ -1,0 +1,77 @@
+.mouseStalker__cursor,
+.mouseStalker__follower {
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: none;
+  pointer-events: none;
+  transition: opacity 900ms ease;
+}
+
+.mouseStalker__cursor {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  opacity: 0;
+  backdrop-filter: blur(5px);
+  transition-duration: 900ms;
+  /* easeOutCubic */
+  /* transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); */
+}
+
+.mouseStalker__follower {
+  width: 100px;
+  height: 100px;
+  /* left: 50px;
+  top: 50px; */
+  /* transform: translate(-50%, -50%); */
+  background-color: transparent;
+  opacity: 0;
+  z-index: 2;
+  transition: all 1600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDc1IDE1Ij4KICA8dGV4dCBpZD0iVmlld19Nb3JlIiBkYXRhLW5hbWU9IlZpZXcgTW9yZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxMikiIGZpbGw9IiMxMjMwNDMiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGxldHRlci1zcGFjaW5nPSIwLjAzZW0iPjx0c3BhbiB4PSIwIiB5PSIwIj5WaWV3IE1vcmU8L3RzcGFuPjwvdGV4dD4KPC9zdmc+Cg==");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.visible .mouseStalker__cursor,
+.visible .mouseStalker__follower {
+  opacity: 1;
+}
+
+.isHover .mouseStalker__cursor {
+  width: 120px;
+  height: 120px;
+  left: -46px;
+  top: -46px;
+  opacity: 0.4;
+}
+
+.isHover .mouseStalker__follower {
+  width: 0px;
+  height: 0px;
+  left: -36px;
+  top: -36px;
+  z-index: 3;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+.isHover .mouseStalker__follower {
+  z-index: 5;
+  width: 120px;
+  height: 120px;
+  left: -46px;
+  top: -46px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDc1IDE1Ij4KICA8dGV4dCBpZD0iVmlld19Nb3JlIiBkYXRhLW5hbWU9IlZpZXcgTW9yZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxMikiIGZpbGw9IiMxMjMwNDMiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGxldHRlci1zcGFjaW5nPSIwLjAzZW0iPjx0c3BhbiB4PSIwIiB5PSIwIj5WaWV3IE1vcmU8L3RzcGFuPjwvdGV4dD4KPC9zdmc+Cg==");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+.is-back .mouseStalker {
+  display: none;
+}

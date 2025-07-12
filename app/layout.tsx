@@ -1,6 +1,7 @@
 import Header from "@/app/_components/Header";
-import Footer from "@/app/_components/Footer";
+import MouseStalker from "@/app/_components/MouseStalker";
 import "./globals.css";
+
 // import TransitionComponent from "@/app/TransitionComponent";
 import { unstable_ViewTransition as ViewTransition } from "react";
 import { LenisProvider } from "./lenis-provider";
@@ -12,6 +13,12 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
+          rel="stylesheet"
+        />
         <script
           async
           dangerouslySetInnerHTML={{
@@ -28,15 +35,16 @@ export default function RootLayout({
           }}
         />
       </head>
+
       <body>
+        <MouseStalker />
         <LenisProvider>
           <Header />
-          {/* <ViewTransition> */}
-          {/* <TransitionComponent> */}
-          <div className="g-bg-base">{children}</div>
-          {/* </TransitionComponent> */}
-          <Footer />
-          {/* </ViewTransition> */}
+          <ViewTransition>
+            {/* <TransitionComponent> */}
+            <div className="g-bg-base">{children}</div>
+            {/* </TransitionComponent> */}
+          </ViewTransition>
         </LenisProvider>
       </body>
     </html>

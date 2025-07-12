@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./index.module.css";
 import { Life } from "@/app/_libs/microcms";
 import Date from "@/app/_components/Date";
+import Footer from "@/app/_components/Footer";
 import Link from "next/link";
 import { unstable_ViewTransition as ViewTransition } from "react";
 interface lifelogListProps {

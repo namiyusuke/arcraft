@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 import Link from "next/link";
 import { useState } from "react";
 import cx from "classnames";
-
+import { unstable_ViewTransition as ViewTransition } from "react";
 interface MenuProps {
   categories?: Array<{ id: string; name: string }>;
   selectedCategories?: string[];
@@ -48,7 +48,7 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
   };
 
   return (
-    <div>
+    <ViewTransition>
       <nav className={cx(styles.nav, isOpen && styles.open)}>
         <ul className={cx(styles.items, "menu-item")}>
           {menuItems.map((item) => (
@@ -97,6 +97,6 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
           )}
         </ul>
       </nav>
-    </div>
+    </ViewTransition>
   );
 }

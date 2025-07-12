@@ -145,11 +145,11 @@ export function NamiRoom({
 }) {
   const videoTexture = useVideoTexture("/video/test.mp4");
   const [videoMaterial, setVideoMaterial] = useState<THREE.MeshBasicMaterial | null>(null);
+  const [isHovered, setIsHovered] = useState(false);
   const gltf = useGLTF("/models/nami_room_new.glb");
   const { nodes, materials } = gltf as any;
   const groupRef = useRef<THREE.Group>(null);
   const pcScreenRef = useRef<THREE.Mesh>(null);
-  // const [hover, setHover] = useState(false);
   const { progress } = useProgress();
 
   useEffect(() => {
@@ -218,6 +218,26 @@ export function NamiRoom({
         material={videoMaterial || materials["Material.025"]}
         onClick={() => {
           setIsScreenClicked(!isScreenClicked);
+        }}
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          setIsHovered(true);
+          document.body.classList.add("custom-cursor");
+          // マウスストーカーにホバー状態を通知
+          const mouseStalker = document.querySelector("[data-mouse-stalker]");
+          if (mouseStalker) {
+            mouseStalker.classList.add("is-hover");
+          }
+        }}
+        onPointerOut={(e) => {
+          e.stopPropagation();
+          setIsHovered(false);
+          document.body.classList.remove("custom-cursor");
+          // マウスストーカーからホバー状態を削除
+          const mouseStalker = document.querySelector("[data-mouse-stalker]");
+          if (mouseStalker) {
+            mouseStalker.classList.remove("is-hover");
+          }
         }}
       />
       <mesh

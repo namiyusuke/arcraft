@@ -5,7 +5,9 @@
   "css.completion.completePropertyWithSemicolon": true,
   "css.completion.triggerPropertyValueCompletion": true,
   "files.associations": {
-    "*.module.css": "css"
+    "*.module.css": "css",
+    "globals.css": "css",
+    "*.css": "css"
   },
   "emmet.includeLanguages": {
     "typescript": "html",

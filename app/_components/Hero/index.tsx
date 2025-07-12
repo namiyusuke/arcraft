@@ -1,5 +1,6 @@
 "use client";
 import styles from "./index.module.css";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 type Props = {
   title: string;
@@ -7,6 +8,7 @@ type Props = {
 };
 
 export default function Hero({ title, className }: Props) {
+  const pathname = usePathname();
   function spanText(title: string) {
     return title.split("").map((char, index) => (
       <span style={{ "--index": index } as React.CSSProperties} key={index} className={styles.spantext}>
@@ -15,8 +17,13 @@ export default function Hero({ title, className }: Props) {
     ));
   }
   useEffect(() => {
-    document.documentElement.classList.add("is-loaded");
-  }, []);
+    document.documentElement.classList.remove("is-loaded");
+    setTimeout(() => {
+      document.documentElement.classList.add("is-loaded");
+    }, 40);
+
+    console.log("ページ遷移された");
+  }, [pathname]);
 
   return (
     <section className={`${styles.container} ${className}`}>

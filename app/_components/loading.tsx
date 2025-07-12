@@ -43,6 +43,7 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
             div.style.color = "#fff";
             div.style.fontFamily = "monospace";
             div.style.fontWeight = "bold";
+            div.style.pointerEvents = "none";
             counterElement.appendChild(div);
           }
           // 初期位置を0に設定

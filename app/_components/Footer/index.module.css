@@ -41,7 +41,6 @@
 
 .container {
   padding-inline: 5vi;
-
   box-sizing: content-box;
 }
 @media (width >= 768px) {

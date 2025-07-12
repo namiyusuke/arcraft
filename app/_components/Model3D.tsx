@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { Canvas } from "@react-three/fiber";
 import { SoftShadows } from "@react-three/drei";
 import { Suspense, useState, useEffect, useRef } from "react";
@@ -30,19 +30,25 @@ export default function Model3D() {
   };
   return (
     <div style={{ width: "100vw", height: "100vh", position: "relative" }}>
-      <div className="g-back__button">
-        {
-          <button
-            onClick={() => {
-              if (isScreenClicked) {
-                setIsScreenClicked(false);
-              }
-            }}
-          >
-            カメラを戻す
-          </button>
-        }
+      <div className="g-btn__wrapper">
+        <div className="">
+          <Link className="g-techlog" href={`/techlog`}>
+            技術のお話を見に行く？
+          </Link>
+          {
+            <button
+              onClick={() => {
+                if (isScreenClicked) {
+                  setIsScreenClicked(false);
+                }
+              }}
+            >
+              カメラを戻す
+            </button>
+          }
+        </div>
       </div>
+
       {showCanvas && (
         <Canvas
           shadows
