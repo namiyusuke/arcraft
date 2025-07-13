@@ -2,10 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px;
-  margin-top: 24px;
+  padding-block: 80px;
 }
-
+@media (width >= 768px) {
+  .container {
+    padding-block: 180px;
+  }
+}
 .list {
   margin: 0 4px;
 }
@@ -14,12 +17,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--border-radius);
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #fff;
 }
 
 .current {
-  color: var(--color-text-unpainted);
-  background-color: var(--color-button-primary);
+  color: #040441;
+  background-color: #fff;
+  font-family: var(--font-family-noto);
+  font-weight: 500;
 }

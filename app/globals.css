@@ -459,9 +459,6 @@ ul {
   }
 }
 .footerTitle {
-  /* overflow: hidden; */
-}
-.footerTitle {
   display: inline-block;
   /* opacity: 0; */
 

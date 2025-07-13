@@ -17,6 +17,7 @@
   letter-spacing: 0.16em;
   line-height: 160%;
   overflow: hidden;
+  margin-left: 0.3em;
 }
 .title .spantext {
   display: inline-block;
@@ -26,6 +27,8 @@
   transform: translateY(0);
   transition: all 0.9s var(--ease-power3-out);
   transition-delay: calc(0.04s * var(--index));
+  display: inline-flex;
+  justify-content: center;
 }
 @media (width >= 768px) {
   .title {
