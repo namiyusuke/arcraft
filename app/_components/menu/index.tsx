@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 import styles from "./index.module.css";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 import cx from "classnames";
 import { unstable_ViewTransition as ViewTransition } from "react";
 interface MenuProps {
@@ -11,6 +12,7 @@ interface MenuProps {
   onCategoryChange?: (categoryIds: string[]) => void;
 }
 const menuItems = [
+  { label: "top", path: "/" },
   { label: "techlog", path: "/techlog" },
   { label: "lifelog", path: "/life" },
   { label: "about", path: "/about" },
@@ -60,7 +62,11 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
             <li className={styles.filterContainer}>
               <p className={styles.filter}>
                 <a className={styles.filterButton} onClick={handleFilterClick}>
-                  filter {selectedCategories.length > 0 && `(${selectedCategories.length})`}
+                  <span className="u-wbr">filter</span>
+                  {/* <span className="u-wbr sp">
+                    <Image alt="フィルター" className={styles.image} src="/filter-btn.svg" width={42} height={30} />
+                  </span> */}
+                  {/* {selectedCategories.length > 0 && `(${selectedCategories.length})`} */}
                 </a>
               </p>
               <div className={isFilterOpen ? styles.filterDropdownOpen + " " + styles.filterMenu : styles.filterMenu}>

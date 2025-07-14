@@ -36,9 +36,12 @@
   column-gap: calc(120 * var(--pxToRem));
 }
 .nav {
-  margin-bottom: 16px;
+  margin-bottom: calc(80 * var(--pxToRem));
 }
-
+.nav li a {
+  font-weight: 400;
+  font-family: var(--font-family-noto);
+}
 .container {
   padding-inline: 5vi;
   box-sizing: content-box;
@@ -68,7 +71,7 @@
 .footerTitle {
   font-size: clamp(100px, calc(120 / 375 * 100vw), 330px);
   font-weight: 900;
-  letter-spacing: 0.05em;
+  letter-spacing: 0em;
   line-height: 1.2;
   text-align: center;
   display: flex;
@@ -87,15 +90,18 @@
 }
 @media (width >= 768px) {
   .footerTitle {
-    font-size: clamp(200px, calc(430 / 1440 * 100vw), 430px);
-    font-weight: 900;
+    font-family: "Satoshi-Bold";
+    font-weight: 700;
+    font-size: clamp(200px, calc(400 / 1440 * 100vw), 430px);
+
     letter-spacing: 0.05em;
-    line-height: 1.2;
+    line-height: 1.5;
     display: flex;
     color: transparent;
     justify-content: center;
     margin-bottom: 30px;
     position: relative;
+
     background: linear-gradient(
       92.64deg,
       rgba(4, 4, 65, 0.3) 0.82%,

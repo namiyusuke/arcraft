@@ -34,7 +34,7 @@ export default function TechlogList({ news, selectedCategories = [] }: TechlogLi
   }
 
   return (
-    <div>
+    <div className="u-wrapper ">
       <p className={styles.titleTxt}>Visualize the process of growth by testing ideas and experimenting</p>
       <ul className={styles.listWrapper}>
         {filteredNews.map((content, index) => (
