@@ -5,10 +5,13 @@
   justify-content: center;
   color: #fff;
   overflow: hidden;
-  padding-top: calc(240 * var(--pxToRem));
-  /* padding-bottom: calc(160 * var(--pxToRem)); */
+  padding-top: calc(200 * var(--pxToRem));
 }
-
+@media (width >= 768px) {
+  .container {
+    padding-top: calc(240 * var(--pxToRem));
+  }
+}
 .title {
   font-size: 3rem;
   font-weight: bold;

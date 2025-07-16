@@ -22,8 +22,14 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
   const pathname = usePathname();
   const firstPath = pathname.split("/")[1];
+
   const handleClick = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+    console.log(isOpen);
   };
 
   const handleFilterClick = (e: React.MouseEvent) => {
@@ -51,57 +57,61 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
 
   return (
     <ViewTransition>
-      <nav className={cx(styles.nav, isOpen && styles.open)}>
-        <ul className={cx(styles.items, "menu-item")}>
-          {menuItems.map((item) => (
-            <li key={item.path} className={firstPath == item.label ? "is-current" : ""}>
-              <Link href={item.path}>{item.label}</Link>
-            </li>
-          ))}
-          {firstPath === "techlog" ? (
-            <li className={styles.filterContainer}>
-              <p className={styles.filter}>
-                <a className={styles.filterButton} onClick={handleFilterClick}>
-                  <span className="u-wbr">filter</span>
-                  {/* <span className="u-wbr sp">
-                    <Image alt="フィルター" className={styles.image} src="/filter-btn.svg" width={42} height={30} />
-                  </span> */}
-                  {/* {selectedCategories.length > 0 && `(${selectedCategories.length})`} */}
-                </a>
-              </p>
-              <div className={isFilterOpen ? styles.filterDropdownOpen + " " + styles.filterMenu : styles.filterMenu}>
-                <div className={styles.filterDropdown}>
-                  <div className={styles.filterHeader}>
-                    <h3>カテゴリーで絞り込み</h3>
-                    <button className={styles.resetButton} onClick={handleResetFilter} type="button">
-                      リセット
-                    </button>
-                  </div>
-                  <div className={styles.categoryList}>
-                    {categories.map((category) => {
-                      const isChecked = selectedCategories.includes(category.id);
-                      console.log(`カテゴリ ${category.name}: ${isChecked ? "チェック済み" : "未チェック"}`);
-                      return (
-                        <label key={category.id} className={styles.categoryItem}>
-                          <input
-                            type="checkbox"
-                            name="category"
-                            checked={isChecked}
-                            onChange={() => handleCategoryChange(category.id)}
-                            className={styles.categoryCheckbox}
-                          />
-                          <span className={styles.categoryName}>{category.name}</span>
-                        </label>
-                      );
-                    })}
-                  </div>
+      <button className={styles.navbutton} onClick={handleClick}>
+        menu
+      </button>
+      <nav className={cx(styles.nav, isOpen && "is-active")}>
+        <div className={cx(styles.navwrap, "menu-item-wrap")}>
+          <span onClick={handleClose} className={styles.closebtn}></span>
+          <div className={styles.navinner}>
+            <ul className={cx(styles.items, "menu-item")}>
+              {menuItems.map((item) => (
+                <li key={item.path} className={firstPath == item.label ? "is-current" : ""}>
+                  <Link href={item.path}>{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        {firstPath === "techlog" ? (
+          <div className={styles.filterContainer}>
+            <p className={styles.filter}>
+              <a className={styles.filterButton} onClick={handleFilterClick}>
+                <span className="u-wbr">filter</span>
+              </a>
+            </p>
+            <div className={isFilterOpen ? styles.filterDropdownOpen + " " + styles.filterMenu : styles.filterMenu}>
+              <div className={styles.filterDropdown}>
+                <div className={styles.filterHeader}>
+                  <h3>カテゴリーで絞り込み</h3>
+                  <button className={styles.resetButton} onClick={handleResetFilter} type="button">
+                    リセット
+                  </button>
+                </div>
+                <div className={styles.categoryList}>
+                  {categories.map((category) => {
+                    const isChecked = selectedCategories.includes(category.id);
+                    console.log(`カテゴリ ${category.name}: ${isChecked ? "チェック済み" : "未チェック"}`);
+                    return (
+                      <label key={category.id} className={styles.categoryItem}>
+                        <input
+                          type="checkbox"
+                          name="category"
+                          checked={isChecked}
+                          onChange={() => handleCategoryChange(category.id)}
+                          className={styles.categoryCheckbox}
+                        />
+                        <span className={styles.categoryName}>{category.name}</span>
+                      </label>
+                    );
+                  })}
                 </div>
               </div>
-            </li>
-          ) : (
-            ""
-          )}
-        </ul>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </nav>
     </ViewTransition>
   );

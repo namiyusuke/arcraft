@@ -551,3 +551,17 @@ ul {
     display: none;
   }
 }
+/* .menu-item li:not(:last-child) {
+  position: fixed;
+} */
+
+.menu-item-wrap {
+  /* opacity: 0; */
+  visibility: hidden;
+  transition: all 0.3s;
+  clip-path: polygon(0px 0%, 100% 0%, 100% 0%, 0px 0%);
+}
+.is-active .menu-item-wrap {
+  /* opacity: 1; */
+  visibility: visible;
+}

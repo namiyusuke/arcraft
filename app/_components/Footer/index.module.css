@@ -1,16 +1,16 @@
 .footer {
   color: var(--color-text-sub);
   font-size: 0.8rem;
-  height: calc(600 * var(--pxToRem));
+  /* height: calc(600 * var(--pxToRem)); */
   position: relative;
-  clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+  /* clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%); */
 }
-@media (width >= 768px) {
+/* @media (width >= 768px) {
   .footer {
     height: calc(800 * var(--pxToRem));
   }
-}
-.footerInner {
+} */
+/* .footerInner {
   position: relative;
   height: calc(100vh + 600px);
   top: -100vh;
@@ -19,32 +19,37 @@
   .footerInner {
     height: calc(100vh + 800px);
   }
-}
-.footerSticky {
+} */
+/* .footerSticky {
   position: sticky;
   height: 600px;
   top: calc(100vh - 600px);
-}
-@media (width >= 768px) {
+} */
+/* @media (width >= 768px) {
   .footerSticky {
     height: 800px;
     top: calc(100vh - 800px);
   }
-}
+} */
+
 .inner {
   display: flex;
   column-gap: calc(120 * var(--pxToRem));
 }
+
 .nav {
   margin-bottom: calc(80 * var(--pxToRem));
 }
+
 .nav li a {
   font-weight: 400;
   font-family: var(--font-family-noto);
 }
+
 .container {
   padding-inline: 5vi;
   box-sizing: content-box;
+  padding-top: calc(80 * var(--pxToRem));
 }
 @media (width >= 768px) {
   .container {
@@ -134,4 +139,10 @@
   width: 40px;
   height: 40px;
   border-radius: 4px;
+}
+.nav li {
+  line-height: 1;
+}
+.nav li + li {
+  margin-top: 1rem;
 }

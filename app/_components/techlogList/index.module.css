@@ -187,7 +187,7 @@
   background-size: 0% 1px;
   display: inline;
   backface-visibility: hidden;
-  background-image: linear-gradient(90deg, #a3a39f, #a3a39f);
+  background-image: linear-gradient(90deg, #fff, #fff);
   /* background-position: right bottom; */
   background-size: 0% 1px;
   background-repeat: no-repeat;

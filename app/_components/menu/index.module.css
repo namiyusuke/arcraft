@@ -1,8 +1,61 @@
 .items {
-  display: flex;
   color: #fff;
   gap: 1rem;
   font-family: "Satoshi-Medium";
+  color: #040441;
+}
+
+.navwrap {
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  padding: 2rem;
+  background-color: #fff;
+  z-index: 10;
+  border-radius: 18px;
+  width: 260px;
+}
+
+.navinner {
+  position: relative;
+}
+
+.closebtn {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: calc(18 * var(--pxToRem));
+  top: calc(18 * var(--pxToRem));
+  background-color: #040441;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.navwrap ul {
+  text-align: center;
+}
+.navwrap ul li {
+  line-height: 1;
+  font-size: calc(18 * var(--pxToRem));
+}
+.navwrap ul li + li {
+  margin-top: 32px;
+}
+@media (width >= 768px) {
+  .navwrap {
+    padding: 0rem;
+    position: static;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+  }
+  .items {
+    background-color: transparent;
+    position: static;
+    display: flex;
+    color: #fff;
+  }
 }
 .items a {
   font-size: calc(18 * var(--pxToRem));
@@ -40,9 +93,6 @@
   background-color: transparent;
   color: #fff;
   font-size: calc(20 * var(--pxToRem));
-  position: fixed;
-  top: calc(50 * var(--pxToRem));
-  right: calc(10 * var(--pxToRem));
   font-weight: var(--font-weight-bold);
   z-index: 100;
 }
@@ -50,11 +100,15 @@
   .nav {
     top: calc(50 * var(--pxToRem));
     right: calc(50 * var(--pxToRem));
+    position: fixed;
+    top: calc(50 * var(--pxToRem));
+    right: calc(10 * var(--pxToRem));
   }
 }
 /* フィルター関連の新しいスタイル */
 .filterContainer {
   position: relative;
+  padding-left: 40px;
 }
 
 .filter {
@@ -161,6 +215,7 @@
 /* フィルター関連の新しいスタイル */
 .filterContainer {
   position: relative;
+  display: none;
 }
 
 .filter {
@@ -295,4 +350,26 @@ input[type="checkbox"].categoryCheckbox:checked::after {
   position: absolute;
   left: 2px;
   top: 0px;
+}
+
+.navbutton {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  position: fixed;
+  top: calc(66 * var(--pxToRem));
+  right: calc(40 * var(--pxToRem));
+  font-size: calc(18 * var(--pxToRem));
+  color: #fff;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+@media (width >= 768px) {
+  .navbutton {
+    display: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+  }
 }
