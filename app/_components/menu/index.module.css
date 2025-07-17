@@ -15,7 +15,13 @@
   border-radius: 18px;
   width: 260px;
 }
-
+@media (width >= 768px) {
+  .navwrap {
+    position: static;
+    padding: 0rem;
+    width: max-content;
+  }
+}
 .navinner {
   position: relative;
 }
@@ -31,7 +37,28 @@
   border-radius: 50%;
   z-index: 10;
 }
-
+.closebtn:before,
+.closebtn:after {
+  content: "";
+  width: 50%;
+  height: 1px;
+  background-color: #fff;
+  border-radius: 2px;
+  margin: auto;
+  position: absolute;
+  inset: 0;
+}
+.closebtn:before {
+  transform: rotate(30deg);
+}
+.closebtn::after {
+  transform: rotate(-30deg);
+}
+@media (width >= 768px) {
+  .closebtn {
+    display: none;
+  }
+}
 .navwrap ul {
   text-align: center;
 }
@@ -43,6 +70,9 @@
   margin-top: 32px;
 }
 @media (width >= 768px) {
+  .navwrap ul li + li {
+    margin-top: 0px;
+  }
   .navwrap {
     padding: 0rem;
     position: static;
@@ -95,6 +125,7 @@
   font-size: calc(20 * var(--pxToRem));
   font-weight: var(--font-weight-bold);
   z-index: 100;
+  align-items: center;
 }
 @media (width >= 768px) {
   .nav {
@@ -102,13 +133,12 @@
     right: calc(50 * var(--pxToRem));
     position: fixed;
     top: calc(50 * var(--pxToRem));
-    right: calc(10 * var(--pxToRem));
+    right: calc(80 * var(--pxToRem));
   }
 }
 /* フィルター関連の新しいスタイル */
 .filterContainer {
   position: relative;
-  padding-left: 40px;
 }
 
 .filter {
@@ -139,7 +169,7 @@
 .filterDropdown {
   position: absolute;
   top: calc(100% + 20 * var(--pxToRem));
-  right: 0;
+  right: calc(-60 * var(--pxToRem));
   background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -214,10 +244,29 @@
 
 /* フィルター関連の新しいスタイル */
 .filterContainer {
-  position: relative;
-  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: block;
+  font-size: calc(18 * var(--pxToRem));
+  top: calc(64 * var(--pxToRem));
+  right: calc(106 * var(--pxToRem));
+  border: #fff 1px solid;
+  padding: calc(5 * var(--pxToRem)) calc(15 * var(--pxToRem));
+  border-radius: 12px;
+  line-height: 1;
 }
-
+@media (width >= 768px) {
+  .filterContainer {
+    border: none;
+    padding: calc(0 * var(--pxToRem));
+    padding-left: 40px;
+    top: calc(0 * var(--pxToRem));
+    right: calc(0 * var(--pxToRem));
+    position: relative;
+    display: block;
+  }
+}
 .filter {
   margin: 0;
   cursor: pointer;

@@ -555,13 +555,25 @@ ul {
   position: fixed;
 } */
 
-.menu-item-wrap {
-  /* opacity: 0; */
+/* .menu-item-wrap {
   visibility: hidden;
-  transition: all 0.3s;
+  transition: clip-path 0.3s, visibility 0.3s;
   clip-path: polygon(0px 0%, 100% 0%, 100% 0%, 0px 0%);
 }
 .is-active .menu-item-wrap {
-  /* opacity: 1; */
+  clip-path: polygon(0px 0%, 100% 0%, 100% 100%, 0px 100%);
   visibility: visible;
+}
+.is-close.is-active .menu-item-wrap {
+  clip-path: polygon(0px 100%, 100% 100%, 100% 100%, 0px 100%);
+  visibility: visible;
+} */
+.menu-item-wrap {
+  visibility: hidden;
+  /* transition: clip-path 0.3s, visibility 0.3s; */
+  clip-path: polygon(0px 0%, 100% 0%, 100% 0%, 0px 0%);
+  @media (width >= 768px) {
+    visibility: visible;
+    clip-path: none;
+  }
 }

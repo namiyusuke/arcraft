@@ -2,10 +2,11 @@
 import { usePathname } from "next/navigation";
 import styles from "./index.module.css";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import cx from "classnames";
 import { unstable_ViewTransition as ViewTransition } from "react";
+import gsap from "gsap";
 interface MenuProps {
   categories?: Array<{ id: string; name: string }>;
   selectedCategories?: string[];
@@ -18,20 +19,38 @@ const menuItems = [
   { label: "about", path: "/about" },
 ];
 export default function Menu({ categories = [], selectedCategories = [], onCategoryChange }: MenuProps) {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const menuWrapRef = useRef<HTMLDivElement>(null);
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
   const pathname = usePathname();
   const firstPath = pathname.split("/")[1];
 
   const handleClick = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(true);
+    if (menuWrapRef.current) {
+      menuWrapRef.current.style.visibility = "visible";
+      gsap.to(menuWrapRef.current, {
+        clipPath: "polygon(0px 0%, 100% 0%, 100% 100%, 0px 100%)",
+        duration: 0.8,
+        ease: "power4.out",
+      });
+    }
   };
 
   const handleClose = () => {
-    setIsOpen(false);
-    console.log(isOpen);
+    if (menuWrapRef.current) {
+      gsap.to(menuWrapRef.current, {
+        clipPath: "polygon(0px 100%, 100% 100%, 100% 100%, 0px 100%)",
+        duration: 0.6,
+        ease: "power1.out",
+        onComplete: () => {
+          setIsOpen(false);
+          if (menuWrapRef.current) menuWrapRef.current.style.visibility = "hidden";
+          if (menuWrapRef.current) menuWrapRef.current.style.clipPath = "polygon(0px 0%, 100% 0%, 100% 0%, 0px 0%)";
+        },
+      });
+    }
   };
-
   const handleFilterClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -61,7 +80,7 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
         menu
       </button>
       <nav className={cx(styles.nav, isOpen && "is-active")}>
-        <div className={cx(styles.navwrap, "menu-item-wrap")}>
+        <div ref={menuWrapRef} className={cx(styles.navwrap, "menu-item-wrap")}>
           <span onClick={handleClose} className={styles.closebtn}></span>
           <div className={styles.navinner}>
             <ul className={cx(styles.items, "menu-item")}>
