@@ -280,3 +280,36 @@
 }
 /* table {
 } */
+.toc {
+  border-radius: 10px;
+  border: 1px solid #fff;
+  margin-bottom: 3rem;
+  padding-inline: 5rem;
+  padding-block: 2rem;
+  width: 70%;
+  margin-inline: auto;
+}
+.toc h2 {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #fff;
+}
+.toc li + li {
+  margin-top: 0.5rem;
+}
+.toc li {
+  position: relative;
+  padding-left: 1rem;
+}
+.toc li::after {
+  content: "";
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  height: 5px;
+  margin-block: auto;
+  background: #fff;
+  border-radius: 50%;
+  left: 0;
+  position: absolute;
+}
