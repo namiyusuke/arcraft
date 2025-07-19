@@ -77,10 +77,12 @@ export default async function Article({ data }: Props) {
           <Link href={`/techlog/category/${data.category.id}`} className={styles.categoryLink}>
             <Category category={data.category} />
           </Link>
-          <Date date={data.publishedAt ?? data.createdAt} />
+          <span className={styles.date}>
+            <Date date={data.publishedAt ?? data.createdAt} />
+          </span>
         </div>
         <h1 className={styles.title}>{data.title}</h1>
-        <p className={styles.description}>{data.description}</p>
+        {/* <p className={styles.description}>{data.description}</p> */}
         <div className={styles.toc}>
           <h2 className={styles.tocTitle}>目次</h2>
           <ol className={styles.tocList}>

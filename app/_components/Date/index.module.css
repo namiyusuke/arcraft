@@ -3,11 +3,4 @@
   align-items: center;
   font-weight: var(--font-weight-medium);
   font-size: calc(14 * var(--pxToRem));
-  padding-bottom: calc(16 * var(--pxToRem));
-  padding-inline: calc(20 * var(--pxToRem));
-  padding-top: calc(45 * var(--pxToRem));
-  border-top: 1px solid #040441;
-  border-left: 1px solid #040441;
-  border-right: 1px solid #040441;
-  border-radius: 18px 18px 0 0;
 }
