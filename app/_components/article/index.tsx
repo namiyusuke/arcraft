@@ -73,15 +73,17 @@ export default async function Article({ data }: Props) {
             />
           </ViewTransition>
         )}
-        <div className={styles.meta}>
-          <Link href={`/techlog/category/${data.category.id}`} className={styles.categoryLink}>
-            <Category category={data.category} />
-          </Link>
-          <span className={styles.date}>
-            <Date date={data.publishedAt ?? data.createdAt} />
-          </span>
+        <div className={styles.top}>
+          <div className={styles.meta}>
+            <Link href={`/techlog/category/${data.category.id}`} className={styles.categoryLink}>
+              <Category category={data.category} />
+            </Link>
+            <span className={styles.date}>
+              <Date date={data.publishedAt ?? data.createdAt} />
+            </span>
+          </div>
+          <h1 className={styles.title}>{data.title}</h1>
         </div>
-        <h1 className={styles.title}>{data.title}</h1>
         {/* <p className={styles.description}>{data.description}</p> */}
         <div className={styles.toc}>
           <h2 className={styles.tocTitle}>目次</h2>

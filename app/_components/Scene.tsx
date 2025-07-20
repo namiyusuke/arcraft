@@ -82,11 +82,12 @@ export default function Scene({
       step: 0.1,
     },
     spotLightAngle: {
-      value: -0.6,
+      value: -4.5,
       step: 0.1,
     },
     spotLightPosition: {
-      value: { x: 2.5, y: 3.5, z: -0.5 },
+      // value: { x: 2.5, y: 3.5, z: -0.5 },
+      value: { x: 2.5, y: 4.5, z: 2.5 },
       step: 0.1,
     },
   });
@@ -125,7 +126,7 @@ export default function Scene({
   return (
     <>
       <group ref={groupRef}>
-        <ambientLight intensity={0.1} />
+        <ambientLight intensity={1} />
         <pointLight
           ref={lightRef}
           position={[lightPosition.x, lightPosition.y, lightPosition.z]}
@@ -139,9 +140,9 @@ export default function Scene({
           angle={spotLightAngle}
           intensity={spotLightIntensity}
           distance={spotLightDistance}
-          color="#fffbc6"
-          shadow-mapSize={[924, 924]}
-          shadow-bias={-0.0005}
+          color="#ffffff"
+          // shadow-mapSize={[924, 924]}
+          // shadow-bias={-0.0005}
           castShadow
         />
         <NamiRoom isScreenClicked={isScreenClicked} setIsScreenClicked={setIsScreenClicked} />
@@ -157,8 +158,8 @@ export default function Scene({
       <GridPlanes
         position={[0, 0, 0]}
         ref={gridPlanesRef}
-        rows={10}
-        columns={10}
+        rows={40}
+        columns={40}
         planeWidth={3}
         planeDepth={3}
         spacing={0}

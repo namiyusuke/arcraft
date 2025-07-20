@@ -69,10 +69,12 @@ export default async function ArticleLife({ data }: Props) {
           />
         </ViewTransition>
       )}
-      <div className={styles.meta}>
-        <Date date={data.publishedAt ?? data.createdAt} />
+      <div className={styles.top}>
+        <div className={styles.meta}>
+          <Date date={data.publishedAt ?? data.createdAt} />
+        </div>
+        <h1 className={styles.title}>{data.title}</h1>
       </div>
-      <h1 className={styles.title}>{data.title}</h1>
       <div className={styles.toc}>
         <h2 className={styles.tocTitle}>目次</h2>
         <ol className={styles.tocList}>
