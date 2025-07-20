@@ -381,6 +381,11 @@ ul {
   visibility: hidden;
   pointer-events: none;
 }
+.is-loagding .loading-bg {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 .overlay {
   position: fixed;
   inset: 0;

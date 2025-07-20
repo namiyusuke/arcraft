@@ -2,6 +2,25 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useProgress } from "@react-three/drei";
 
+const CELL_SIZE = 100; // セルの大きさ(px)
+
+function useGridSize() {
+  const [grid, setGrid] = useState({ rows: 1, cols: 1 });
+
+  useEffect(() => {
+    function updateGrid() {
+      const cols = Math.ceil(window.innerWidth / CELL_SIZE);
+      const rows = Math.ceil(window.innerHeight / CELL_SIZE);
+      setGrid({ rows, cols });
+    }
+    updateGrid();
+    window.addEventListener("resize", updateGrid);
+    return () => window.removeEventListener("resize", updateGrid);
+  }, []);
+
+  return grid;
+}
+
 interface LoadingScreenProps {
   isLoading: boolean;
   onComplete?: () => void;
@@ -10,12 +29,15 @@ interface LoadingScreenProps {
 export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const counterRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
   const { progress } = useProgress();
   const [isCounterReady, setIsCounterReady] = useState(false);
   const [animationCompleted, setAnimationCompleted] = useState(false);
   const currentProgressRef = useRef(0);
-  const rows = 10;
-  const cols = 10;
+  const { rows, cols } = useGridSize();
+
+  // 追加: 線アニメーション用state
+  const [isLineAnimating, setIsLineAnimating] = useState(false);
 
   // カウンターの初期化
   useEffect(() => {
@@ -98,8 +120,19 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
         onComplete: () => {
           currentProgressRef.current = targetProgress;
           if (targetProgress >= 100) {
+            if (counterRef.current) {
+              gsap.to(counterRef.current, {
+                opacity: 0,
+                duration: 1.2,
+                ease: "power1.out",
+                delay: 0.5,
+              });
+            }
             setTimeout(() => {
-              setAnimationCompleted(true);
+              setIsLineAnimating(true);
+              setTimeout(() => {
+                setAnimationCompleted(true);
+              }, 900); // 線アニメーション終了後にセル消し
             }, 1500);
           }
         },
@@ -115,13 +148,6 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
       ) as HTMLElement[];
 
       // カウンターをフェードアウト
-      if (counterRef.current) {
-        gsap.to(counterRef.current, {
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-        });
-      }
 
       // ブロックを消すアニメーション
       blocks.forEach((block) => {
@@ -141,21 +167,86 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
       const maxDelay = rows * 0.1 + 1.3;
       const timer = setTimeout(() => {
         onComplete?.();
-        if (overlayRef.current) {
-          gsap.to(overlayRef.current, {
+
+        if (lineRef.current) {
+          gsap.to(lineRef.current, {
             autoAlpha: 0,
             duration: 0.5,
             ease: "power2.out",
           });
         }
+        setTimeout(() => {}, 500);
+        setTimeout(() => {
+          if (overlayRef.current) {
+            gsap.to(overlayRef.current, {
+              autoAlpha: 0,
+              duration: 0.5,
+              ease: "power2.out",
+            });
+          }
+        }, 500);
       }, maxDelay * 1000);
 
       return () => clearTimeout(timer);
     }
   }, [animationCompleted, onComplete, rows]);
 
+  // グリッド全体のサイズ
+  const gridWidth = cols * CELL_SIZE;
+  const gridHeight = rows * CELL_SIZE;
+
   return (
     <>
+      {/* 線アニメーション用レイヤー */}
+      <div
+        ref={lineRef}
+        className="line-anime"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: gridWidth,
+          height: gridHeight,
+          pointerEvents: "none",
+          zIndex: 11000,
+          opacity: isLoading ? 1 : 0,
+        }}
+      >
+        {/* 縦線 */}
+        {Array.from({ length: cols + 1 }).map((_, i) => (
+          <div
+            key={`vline-${i}`}
+            style={{
+              position: "absolute",
+              left: `${i * CELL_SIZE}px`,
+              top: 0,
+              width: "2px",
+              height: isLineAnimating ? `${gridHeight}px` : "0px",
+              background: "#262626",
+              transition: "height 0.7s cubic-bezier(.77,0,.18,1)",
+              transitionDelay: isLineAnimating ? "0.1s" : "0s",
+              zIndex: 1100,
+            }}
+          />
+        ))}
+        {/* 横線 */}
+        {Array.from({ length: rows + 1 }).map((_, i) => (
+          <div
+            key={`hline-${i}`}
+            style={{
+              position: "absolute",
+              left: 0,
+              top: `${i * CELL_SIZE}px`,
+              width: isLineAnimating ? `${gridWidth}px` : "0px",
+              height: "2px",
+              background: "#262626",
+              transition: "width 0.7s cubic-bezier(.77,0,.18,1)",
+              transitionDelay: isLineAnimating ? "0.1s" : "0s",
+              zIndex: 1100,
+            }}
+          />
+        ))}
+      </div>
       <div
         ref={overlayRef}
         style={{
@@ -165,8 +256,8 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
           width: "100vw",
           height: "100vh",
           display: "grid",
-          gridTemplateColumns: `repeat(${cols}, 1fr)`,
-          gridTemplateRows: `repeat(${rows}, 1fr)`,
+          gridTemplateColumns: `repeat(${cols}, ${CELL_SIZE}px)`,
+          gridTemplateRows: `repeat(${rows}, ${CELL_SIZE}px)`,
           backgroundColor: "#262626",
           zIndex: 1000,
           opacity: isLoading ? 1 : 0,
@@ -184,7 +275,9 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
               style={{
                 backgroundColor: "#fff",
                 opacity: 1,
-                transform: "scale(1)",
+                width: `${CELL_SIZE}px`,
+                height: `${CELL_SIZE}px`,
+                color: "#222",
               }}
             />
           );
@@ -201,7 +294,8 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
           display: "flex",
           gap: "5px",
           zIndex: 2000,
-          backgroundColor: "#000",
+          backgroundColor: "#262626",
+          color: "#222",
         }}
       >
         <div
@@ -211,6 +305,7 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
             height: "60px",
             width: "45px",
             position: "relative",
+            color: "#222",
           }}
         >
           {/* 数字は動的に生成される */}

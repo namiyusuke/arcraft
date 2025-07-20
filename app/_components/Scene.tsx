@@ -133,6 +133,7 @@ export default function Scene({
           intensity={lightIntensity}
           color="#fffbc64"
           shadow-mapSize={[104, 104]}
+          castShadow
         />
         <spotLight
           ref={spotLightRef}
@@ -140,7 +141,7 @@ export default function Scene({
           angle={spotLightAngle}
           intensity={spotLightIntensity}
           distance={spotLightDistance}
-          color="#ffffff"
+          color="#fffbc64"
           // shadow-mapSize={[924, 924]}
           // shadow-bias={-0.0005}
           castShadow
