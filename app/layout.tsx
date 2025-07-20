@@ -1,7 +1,6 @@
 import Header from "@/app/_components/Header";
 import MouseStalker from "@/app/_components/MouseStalker";
 import "./globals.css";
-
 // import TransitionComponent from "@/app/TransitionComponent";
 import { unstable_ViewTransition as ViewTransition } from "react";
 import { LenisProvider } from "./lenis-provider";
