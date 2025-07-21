@@ -82,8 +82,12 @@
   text-overflow: ellipsis;
 }
 .listWrapper {
-  max-inline-size: 1100px;
+  max-inline-size: 375px;
   margin-top: calc(80 * var(--pxToRem));
+  margin-inline: auto;
+}
+.title {
+  font-size: 1rem;
 }
 @media (width >= 768px) {
   .title {
