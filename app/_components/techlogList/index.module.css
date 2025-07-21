@@ -70,8 +70,8 @@
   .title {
     font-size: calc(34 * var(--pxToRem));
     line-height: 160%;
-    padding-inline: calc(20 * var(--pxToRem));
-    padding-block: calc(30 * var(--pxToRem));
+    padding-inline: clamp(0.625rem, -0.089rem + 1.49vw, 1.25rem);
+    padding-block: clamp(0.938rem, -0.134rem + 2.23vw, 1.875rem);
   }
 }
 .title__text {
@@ -87,10 +87,20 @@
 }
 @media (width >= 768px) {
   .title {
-    font-size: calc(20 * var(--pxToRem));
+    font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
     line-height: 160%;
   }
-
+  .listWrapper {
+    max-inline-size: 1100px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 62px;
+    align-items: start; /* カードを上揃えに */
+    margin-top: calc(144 * var(--pxToRem));
+  }
+}
+@media (width >= 1280px) {
   .listWrapper {
     max-inline-size: 1100px;
     margin-inline: auto;
@@ -176,7 +186,7 @@
 .meta {
   margin-top: auto;
   height: 100%;
-  padding-bottom: calc(40 * var(--pxToRem));
+  padding-bottom: clamp(1.25rem, -0.179rem + 2.98vw, 2.5rem);
 }
 .image_wrapper {
   overflow: hidden;
@@ -194,6 +204,10 @@
   transition-duration: 0.6s;
   transition-property: background-size;
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  display: -webkit-box; /* 必須 */
+  -webkit-box-orient: vertical; /* 必須 */
+  -webkit-line-clamp: 3; /* 行数を制限 */
+  overflow: hidden; /* はみ出た部分を非表示 */
 }
 
 /* アニメーション用スタイル */
@@ -253,8 +267,8 @@
   border-top: 1px solid #040441;
   border-left: 1px solid #040441;
   border-right: 1px solid #040441;
-  padding-bottom: calc(16 * var(--pxToRem));
+  padding-bottom: clamp(0.625rem, 0.493rem + 0.56vw, 1rem);
   padding-inline: calc(20 * var(--pxToRem));
-  padding-top: calc(45 * var(--pxToRem));
+  padding-top: clamp(1.25rem, -0.536rem + 3.72vw, 2.813rem);
   border-radius: 18px 18px 0 0;
 }
