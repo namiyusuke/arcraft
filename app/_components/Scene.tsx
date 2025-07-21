@@ -159,13 +159,13 @@ export default function Scene({
       <GridPlanes
         position={[0, 0, 0]}
         ref={gridPlanesRef}
-        rows={40}
-        columns={40}
+        rows={20}
+        columns={20}
         planeWidth={3}
         planeDepth={3}
         spacing={0}
       />
-      <Stats />
+      {/* <Stats /> */}
     </>
   );
 }

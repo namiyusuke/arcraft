@@ -189,7 +189,7 @@
 .content > table tr {
   position: relative;
 }
-.content > table tr + tr::after {
+/* .content > table tr + tr::after {
   content: "";
   background-color: #fff;
   width: 100%;
@@ -197,7 +197,7 @@
   position: absolute;
   left: 0;
   top: 1px;
-}
+} */
 .content > table td {
   position: relative;
 }
@@ -215,19 +215,7 @@
     height: 500px !important;
   }
 }
-/* .content > table td + td::after {
-  content: "";
-  background-color: #fff;
-  height: 100%;
-  width: 1px;
-  position: absolute;
-  left: 0;
-  top: 3px;
-  bottom: 0;
-} */
-.content > table tr + tr {
-  border-top: 1px solid #fff;
-}
+
 @media (max-width: 640px) {
   .title {
     font-size: 1.5rem;

@@ -72,6 +72,14 @@
 .copy {
   display: flex;
   justify-content: center;
+  margin-bottom: calc(24 * var(--pxToRem));
+}
+@media (width >= 768px) {
+  .copy {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
 }
 .footerTitle {
   font-size: clamp(100px, calc(120 / 375 * 100vw), 330px);
