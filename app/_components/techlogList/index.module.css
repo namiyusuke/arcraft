@@ -91,7 +91,7 @@
     line-height: 160%;
   }
   .listWrapper {
-    max-inline-size: 1100px;
+    max-inline-size: 700px;
     margin-inline: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
