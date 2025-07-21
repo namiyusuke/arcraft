@@ -25,18 +25,22 @@
 }
 
 .image {
-  width: 100%;
+  display: block;
   height: 100%;
   aspect-ratio: 341 / 212;
   object-fit: cover;
-
+  margin-inline: auto;
   flex-shrink: 0; /* 画像サイズを固定 */
+}
+.image {
+  width: clamp(17.5rem, 16.18rem + 5.63vw, 21.25rem);
+  border-radius: calc(20 * var(--pxToRem));
 }
 
 .image_wrapper {
   margin-left: 0.5rem;
   width: 100%;
-  border-radius: calc(20 * var(--pxToRem));
+  /* border-radius: calc(20 * var(--pxToRem)); */
   overflow: hidden;
 }
 @media (width >= 768px) {
@@ -59,7 +63,8 @@
   font-size: 0.75rem;
   font-weight: var(--font-weight-medium);
   line-height: 160%;
-  background-color: rgba(4 4, 65, 0.8);
+  /* background-color: #040441; */
+  background-color: rgba(4, 4, 65, 0.8);
   color: #fff;
   font-family: var(--font-family-zen);
   padding-inline: calc(20 * var(--pxToRem));
@@ -91,11 +96,11 @@
 }
 @media (width >= 768px) {
   .title {
-    font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
+    font-size: clamp(1rem, 0.912rem + 0.38vw, 1.25rem);
     line-height: 160%;
   }
   .listWrapper {
-    max-inline-size: 700px;
+    max-inline-size: 900px;
     margin-inline: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -106,7 +111,7 @@
 }
 @media (width >= 1280px) {
   .listWrapper {
-    max-inline-size: 1100px;
+    max-inline-size: 1200px;
     margin-inline: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -143,6 +148,9 @@
 .content__left {
   padding: calc(10 * var(--pxToRem));
   position: relative;
+  margin-inline: auto;
+  width: clamp(17.5rem, 15.739rem + 7.51vw, 22.5rem);
+  aspect-ratio: 1/1;
   background: linear-gradient(
     180deg,
     #ffffff 0%,
@@ -176,6 +184,8 @@
     padding-block: calc(40 * var(--pxToRem));
   } */
   .content__left {
+    width: clamp(17.5rem, 15.739rem + 7.51vw, 22.5rem);
+    aspect-ratio: 1/1;
     position: static;
   }
 }
