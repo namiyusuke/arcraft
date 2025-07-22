@@ -48,7 +48,9 @@ export default function Footer() {
                       <Link href="/contact">contact</Link>
                     </li>
                     <li className={styles.item}>
-                      <Link href="/privacy">Privacy policy</Link>
+                      <Link className={styles.footerPrivacy} href="/privacy">
+                        Privacy policy
+                      </Link>
                     </li>
                   </ul>
                 </nav>

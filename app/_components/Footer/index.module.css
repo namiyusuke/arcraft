@@ -47,15 +47,16 @@
 }
 
 .container {
-  padding-inline: 5vi;
+  padding-inline: calc(62 / 375 * 100vi);
   box-sizing: content-box;
-  padding-top: calc(80 * var(--pxToRem));
+  padding-top: calc(60 * var(--pxToRem));
 }
 @media (width >= 768px) {
   .container {
     margin-inline: auto;
     max-inline-size: 1320px;
     width: calc(1320 / 1440 * 100%);
+    padding-top: calc(80 * var(--pxToRem));
   }
 }
 

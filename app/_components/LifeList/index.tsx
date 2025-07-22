@@ -36,11 +36,14 @@ export default function LifeList({ life }: lifelogListProps) {
             </ViewTransition>
             <div className={styles.content__left}>
               <div className={styles.content__inner}>
-                <Date date={content.publishedAt ?? content.createdAt} />
+                <span className={styles.date}>
+                  <Date date={content.publishedAt ?? content.createdAt} />
+                </span>
                 <dl className={styles.content}>
                   <dt className={styles.title}>
                     <span className={styles.title__line}>{content.title}</span>
                   </dt>
+                  <dd className={styles.meta}>{/* <Tag category={content.category} /> */}</dd>
                 </dl>
               </div>
             </div>

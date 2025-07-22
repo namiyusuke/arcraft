@@ -15,7 +15,7 @@ interface MenuProps {
 const menuItems = [
   { label: "top", path: "/" },
   { label: "techlog", path: "/techlog" },
-  { label: "lifelog", path: "/life" },
+  { label: "life", path: "/life" },
   { label: "about", path: "/about" },
 ];
 export default function Menu({ categories = [], selectedCategories = [], onCategoryChange }: MenuProps) {
