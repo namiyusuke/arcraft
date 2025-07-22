@@ -63,7 +63,7 @@
   font-size: 0.75rem;
   font-weight: var(--font-weight-medium);
   line-height: 160%;
-  /* aspect-ratio: 32/16; */
+  aspect-ratio: 32/16;
 
   /* background-color: #040441; */
   background-color: rgba(4, 4, 65, 0.8);

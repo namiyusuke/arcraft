@@ -60,7 +60,7 @@
   }
 }
 .title {
-  /* aspect-ratio: 320/160; */
+  aspect-ratio: 320/160;
   /* height: min(calc(160 / 1440 * 100vw), 160px); */
   font-size: 0.75rem;
   font-weight: var(--font-weight-medium);
