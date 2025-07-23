@@ -282,10 +282,21 @@
   border-radius: 10px;
   border: 1px solid #fff;
   margin-bottom: 3rem;
-  padding-inline: 5rem;
+  padding-inline: 2rem;
   padding-block: 2rem;
   width: 70%;
   margin-inline: auto;
+}
+@media (width >= 768px) {
+  .toc {
+    border-radius: 10px;
+    border: 1px solid #fff;
+    margin-bottom: 3rem;
+    padding-inline: 5rem;
+    padding-block: 2rem;
+    width: 70%;
+    margin-inline: auto;
+  }
 }
 .toc h2 {
   margin-bottom: 1.5rem;
