@@ -49,10 +49,10 @@
   inset: 0;
 }
 .closebtn:before {
-  transform: rotate(30deg);
+  transform: rotate(45deg);
 }
 .closebtn::after {
-  transform: rotate(-30deg);
+  transform: rotate(-45deg);
 }
 @media (width >= 768px) {
   .closebtn {
@@ -251,7 +251,9 @@
   font-size: calc(18 * var(--pxToRem));
   top: calc(64 * var(--pxToRem));
   right: calc(106 * var(--pxToRem));
-  border: #fff 1px solid;
+  background-color: #fff;
+  color: #040441;
+  z-index: 11;
   padding: calc(5 * var(--pxToRem)) calc(15 * var(--pxToRem));
   border-radius: 12px;
   line-height: 1;
@@ -393,11 +395,15 @@ input[type="checkbox"].categoryCheckbox:checked {
 
 /* チェックマークを描画 */
 input[type="checkbox"].categoryCheckbox:checked::after {
-  content: "✔";
+  content: "";
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
   color: #fff;
-  font-size: 16px;
+  width: 5px;
+  height: 10px;
+  transform: rotate(40deg);
   position: absolute;
-  left: 2px;
+  left: 5px;
   top: 0px;
 }
 
@@ -412,6 +418,7 @@ input[type="checkbox"].categoryCheckbox:checked::after {
   color: #fff;
   font-family: var(--font-mono);
   font-weight: 700;
+  z-index: 11;
 }
 
 @media (width >= 768px) {

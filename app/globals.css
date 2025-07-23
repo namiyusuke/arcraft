@@ -322,7 +322,7 @@ img {
   font-style: normal;
 }
 .g-bg-dark {
-  positon: relative;
+  position: relative;
   color: #fff;
 }
 .g-bg-dark::after {
@@ -335,7 +335,7 @@ img {
   background: linear-gradient(180deg, #262626 0%, #040441 51.89%, rgba(4, 4, 65, 0.6) 100%);
 }
 .g-bg-purple {
-  positon: relative;
+  position: relative;
   color: #fff;
 }
 
@@ -347,6 +347,19 @@ img {
   z-index: -1;
   position: fixed;
   background: linear-gradient(180deg, #494463 0%, #7e7783 57.33%, #969494 100%);
+}
+.g-bg-about {
+  position: relative;
+  color: #fff;
+}
+.g-bg-about::after {
+  content: "";
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: -1;
+  position: fixed;
+  background: linear-gradient(180deg, #262626 0%, rgba(38, 38, 38, 0.503333) 49.67%, rgba(38, 38, 38, 0) 100%);
 }
 .g-bg-white {
   background-color: #fff;
@@ -581,4 +594,8 @@ ul {
     visibility: visible;
     clip-path: none;
   }
+}
+.text__about h1 {
+  font-family: var(--font-family-noto);
+  font-weight: 400;
 }
