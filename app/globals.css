@@ -524,6 +524,7 @@ ul {
   visibility: visible;
 }
 .menu-item .is-current {
+  padding-bottom: 0.8rem;
   border-bottom: 1px solid #fff;
 }
 .text__life h1,

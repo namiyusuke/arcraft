@@ -83,7 +83,7 @@
   }
 }
 .footerTitle {
-  font-size: clamp(100px, calc(120 / 375 * 100vw), 330px);
+  font-size: max(100px, calc(120 / 375 * 100vw));
   font-weight: 900;
   letter-spacing: 0em;
   line-height: 1.2;
@@ -106,7 +106,7 @@
   .footerTitle {
     font-family: "Satoshi-Bold";
     font-weight: 700;
-    font-size: clamp(200px, calc(400 / 1440 * 100vw), 430px);
+    font-size: max(200px, calc(400 / 1440 * 100vw));
 
     letter-spacing: 0.05em;
     line-height: 1.5;

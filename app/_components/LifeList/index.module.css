@@ -219,10 +219,10 @@
   transition-duration: 0.6s;
   transition-property: background-size;
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  display: -webkit-box; /* 必須 */
-  -webkit-box-orient: vertical; /* 必須 */
-  -webkit-line-clamp: 3; /* 行数を制限 */
-  overflow: hidden; /* はみ出た部分を非表示 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 @keyframes fadeIn {
