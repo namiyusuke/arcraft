@@ -155,3 +155,6 @@
 .nav li + li {
   margin-top: 1rem;
 }
+.footertitle {
+  width: 100%;
+}

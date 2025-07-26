@@ -600,3 +600,15 @@ ul {
   font-family: var(--font-family-noto);
   font-weight: 400;
 }
+/* .rotating-circle {
+  animation: rotateCircle 6s linear infinite;
+}
+
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg) translate(61.9534%, 48.7068%);
+  }
+  100% {
+    transform: rotate(360deg) translate(61.9534%, 48.7068%);
+  }
+} */
