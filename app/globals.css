@@ -35,6 +35,7 @@ body {
     Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
   color: var(--color-text-main);
   line-height: 1.8;
+  background-color: #040441;
 }
 
 code {

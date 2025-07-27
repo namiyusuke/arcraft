@@ -64,7 +64,7 @@ const Plane = ({ position, planeDepth, planeWidth, variant = "default", index = 
   // 黒色のシャドウマテリアル
   const shadowMaterial = useMemo(() => {
     return new THREE.MeshStandardMaterial({
-      color: "#000000",
+      color: "#040441",
       roughness: 0.8,
       metalness: 0.1,
       transparent: false,

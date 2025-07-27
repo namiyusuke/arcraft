@@ -54,7 +54,7 @@ export default function Scene({
   const controls = useRef<CameraControls>(null);
   const { cameraPosition, targetPosition, lightIntensity, lightPosition } = useControls({
     cameraPosition: {
-      value: { x: 3, y: 3, z: 3 },
+      value: { x: 2, y: 2, z: 2 },
       step: 0.1,
     },
     targetPosition: {
@@ -98,13 +98,12 @@ export default function Scene({
     }
   }, [cameraPosition, targetPosition]);
   useEffect(() => {
-    console.log(isScreenClicked);
     if (isScreenClicked && controls.current) {
       document.documentElement.classList.add("is-back");
       controls.current.setLookAt(0.399999999999996, 1.3999999999999988, 0.399999999999998, 0, 1.3, 0.4, true);
     } else {
       document.documentElement.classList.remove("is-back");
-      controls.current?.setLookAt(3, 3, 3, 0, 1, 0, true);
+      controls.current?.setLookAt(2.5, 3, 2.5, 0, 1, 0, true);
       // setIsScreenClicked(false);
     }
   }, [isScreenClicked]);
@@ -154,6 +153,7 @@ export default function Scene({
           dollySpeed={0.5}
           truckSpeed={0.5}
           smoothTime={0.5}
+          enabled={false}
         />
       </group>
       <GridPlanes

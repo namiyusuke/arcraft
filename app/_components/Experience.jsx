@@ -8,8 +8,6 @@ import { useControls } from "leva";
 import { useEffect, useRef, useState } from "react";
 import {} from "@react-three/drei";
 import { MathUtils } from "three";
-import { DEG2RAD } from "three/src/math/MathUtils";
-import { Raycaster, Vector2, Vector3 } from "three";
 
 export const Experience = () => {
   const viewport = useThree((state) => state.viewport);

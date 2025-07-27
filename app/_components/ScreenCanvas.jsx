@@ -12,7 +12,7 @@ export default function ScreenCanvas() {
     <>
       <div style={{ width: "100vw", height: "100vh", position: "relative" }}>
         <Canvas shadows>
-          <color attach="background" args={["#333"]} />
+          <color attach="background" args={["#040441"]} />
           <Experience />
         </Canvas>
       </div>

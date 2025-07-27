@@ -52,7 +52,7 @@ export default function Model3D() {
       {showCanvas && (
         <Canvas
           shadows
-          style={{ backgroundColor: "#262626" }}
+          style={{ backgroundColor: "#040441" }}
           camera={{ position: [10, 10, 10], fov: 45, near: 0.1, far: 1000 }}
         >
           <SoftShadows />
