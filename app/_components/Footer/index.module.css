@@ -50,11 +50,13 @@
   padding-inline: calc(62 / 375 * 100vi);
   box-sizing: content-box;
   padding-top: calc(60 * var(--pxToRem));
+  padding-bottom: calc(40 * var(--pxToRem));
 }
 @media (width >= 768px) {
   .container {
     margin-inline: auto;
     max-inline-size: 1320px;
+    padding-top: calc(80 * var(--pxToRem));
     width: calc(1320 / 1440 * 100%);
     padding-top: calc(80 * var(--pxToRem));
   }
@@ -71,6 +73,7 @@
   position: relative;
 }
 .copy {
+  padding-top: calc(40 * var(--pxToRem));
   display: flex;
   justify-content: center;
   margin-bottom: calc(24 * var(--pxToRem));
