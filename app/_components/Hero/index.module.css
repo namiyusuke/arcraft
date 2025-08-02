@@ -33,6 +33,10 @@
   display: inline-flex;
   justify-content: center;
 }
+.title {
+  position: relative;
+  z-index: 1;
+}
 @media (width >= 768px) {
   .title {
     font-size: calc(96 * var(--pxToRem));

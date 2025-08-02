@@ -333,7 +333,7 @@ img {
   width: 100%;
   height: 100vh;
   top: 0;
-  z-index: -1;
+  z-index: 0;
   position: fixed;
   background: linear-gradient(180deg, #262626 0%, #040441 51.89%, rgba(4, 4, 65, 0.6) 100%);
 }
@@ -558,6 +558,7 @@ ul {
   padding-inline: 5vi;
   margin-inline: auto;
   box-sizing: content-box;
+  z-index: 1;
 }
 .u-wrapper--about {
   position: relative;
