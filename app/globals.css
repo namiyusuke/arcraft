@@ -33,9 +33,9 @@ body {
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3",
     Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
-  color: var(--color-text-main);
+  /* color: var(--color-text-main); */
   line-height: 1.8;
-  background-color: #040441;
+  /* background-color: #040441; */
 }
 
 code {
@@ -322,6 +322,7 @@ img {
   font-display: swap;
   font-style: normal;
 }
+
 .g-bg-dark {
   position: relative;
   color: #fff;
@@ -553,6 +554,13 @@ ul {
 .u-wrapper {
   position: relative;
   max-inline-size: 1440px;
+  padding-inline: 5vi;
+  margin-inline: auto;
+  box-sizing: content-box;
+}
+.u-wrapper--about {
+  position: relative;
+  max-inline-size: 1160px;
   padding-inline: 5vi;
   margin-inline: auto;
   box-sizing: content-box;

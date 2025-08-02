@@ -14,7 +14,7 @@ const Plane = ({ position, planeDepth, planeWidth, variant = "default", index = 
   const material = useMemo(() => {
     const configs = {
       default: {
-        color: "#ffffff",
+        color: "#A62D43",
         transparent: true,
         opacity: 0,
         roughness: 0.3,
