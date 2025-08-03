@@ -85,16 +85,18 @@ export default async function Article({ data }: Props) {
           <h1 className={styles.title}>{data.title}</h1>
         </div>
         {/* <p className={styles.description}>{data.description}</p> */}
-        <div className={styles.toc}>
-          <h2 className={styles.tocTitle}>目次</h2>
-          <ol className={styles.tocList}>
-            {toc.map((item) => (
-              <li key={item.id} className={styles.tocItem}>
-                <TocLink id={item.id} text={item.text} className={styles.tocLink} />
-              </li>
-            ))}
-          </ol>
-        </div>
+        {toc && (
+          <div className={styles.toc}>
+            <h2 className={styles.tocTitle}>目次</h2>
+            <ol className={styles.tocList}>
+              {toc.map((item) => (
+                <li key={item.id} className={styles.tocItem}>
+                  <TocLink id={item.id} text={item.text} className={styles.tocLink} />
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
         <div
           className={styles.content}
           dangerouslySetInnerHTML={{

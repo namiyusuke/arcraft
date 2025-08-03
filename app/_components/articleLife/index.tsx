@@ -56,41 +56,46 @@ export default async function ArticleLife({ data }: Props) {
       ],
     },
   });
+  console.log(toc);
   return (
     <main>
-      {data.thumbnail && (
-        <ViewTransition name={`thumbnail-${data.id}`}>
-          <Image
-            src={data.thumbnail.url}
-            alt=""
-            className={styles.thumbnail}
-            width={data.thumbnail.width}
-            height={data.thumbnail.height}
-          />
-        </ViewTransition>
-      )}
-      <div className={styles.top}>
-        <div className={styles.meta}>
-          <Date date={data.publishedAt ?? data.createdAt} />
+      <div className="u-wrapper">
+        {data.thumbnail && (
+          <ViewTransition name={`thumbnail-${data.id}`}>
+            <Image
+              src={data.thumbnail.url}
+              alt=""
+              className={styles.thumbnail}
+              width={data.thumbnail.width}
+              height={data.thumbnail.height}
+            />
+          </ViewTransition>
+        )}
+        <div className={styles.top}>
+          <div className={styles.meta}>
+            <Date date={data.publishedAt ?? data.createdAt} />
+          </div>
+          <h1 className={styles.title}>{data.title}</h1>
         </div>
-        <h1 className={styles.title}>{data.title}</h1>
+        {toc.length > 0 && (
+          <div className={styles.toc}>
+            <h2 className={styles.tocTitle}>目次</h2>
+            <ol className={styles.tocList}>
+              {toc.map((item) => (
+                <li key={item.id} className={styles.tocItem}>
+                  <TocLink id={item.id} text={item.text} className={styles.tocLink} />
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+        <div
+          className={styles.content}
+          dangerouslySetInnerHTML={{
+            __html: html,
+          }}
+        />
       </div>
-      <div className={styles.toc}>
-        <h2 className={styles.tocTitle}>目次</h2>
-        <ol className={styles.tocList}>
-          {toc.map((item) => (
-            <li key={item.id} className={styles.tocItem}>
-              <TocLink id={item.id} text={item.text} className={styles.tocLink} />
-            </li>
-          ))}
-        </ol>
-      </div>
-      <div
-        className={styles.content}
-        dangerouslySetInnerHTML={{
-          __html: html,
-        }}
-      />
     </main>
   );
 }

@@ -1,4 +1,4 @@
-import Header from "@/app/_components/Header";
+// import Header from "@/app/_components/Header";
 import MouseStalker from "@/app/_components/MouseStalker";
 import "./globals.css";
 // import TransitionComponent from "@/app/TransitionComponent";
@@ -38,7 +38,7 @@ export default function RootLayout({
       <body>
         <MouseStalker />
         <LenisProvider>
-          <Header />
+          {/* <Header /> */}
           <ViewTransition>
             {/* <TransitionComponent> */}
             <div className="g-bg-base">{children}</div>
