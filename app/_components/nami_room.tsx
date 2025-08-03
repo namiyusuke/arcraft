@@ -7,6 +7,7 @@ import * as THREE from "three";
 import React, { useEffect, useState } from "react";
 import { useGLTF, useProgress, useVideoTexture } from "@react-three/drei";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 import gsap from "gsap";
 // type GLTFResult = GLTF & {
 //   nodes: {
@@ -151,6 +152,7 @@ export function NamiRoom({
   isScreenClicked: boolean;
   setIsScreenClicked: (isScreenClicked: boolean) => void;
 }) {
+  const router = useRouter();
   const videoTexture = useVideoTexture("/video/test.mp4");
   const [videoMaterial, setVideoMaterial] = useState<THREE.MeshBasicMaterial | null>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -849,6 +851,17 @@ export function NamiRoom({
         position={[-0.996, 1.016, 1.345]}
         rotation={[Math.PI, 0, Math.PI / 2]}
         scale={[-0.115, -1, -0.286]}
+        onClick={() => {
+          router.push("/about");
+        }}
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          gsap.to(e.object.scale, { x: -0.13, y: -1.1, z: -0.315, duration: 0.2 });
+        }}
+        onPointerOut={(e) => {
+          e.stopPropagation();
+          gsap.to(e.object.scale, { x: -0.115, y: -1, z: -0.286, duration: 0.2 });
+        }}
       />
       <mesh
         geometry={nodes.Text_about.geometry}
@@ -863,6 +876,17 @@ export function NamiRoom({
         position={[-0.992, 1.291, 1.345]}
         rotation={[Math.PI, 0, Math.PI / 2]}
         scale={[-0.115, -1, -0.286]}
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          gsap.to(e.object.scale, { x: -0.13, y: -1.1, z: -0.315, duration: 0.2 });
+        }}
+        onPointerOut={(e) => {
+          e.stopPropagation();
+          gsap.to(e.object.scale, { x: -0.115, y: -1, z: -0.286, duration: 0.2 });
+        }}
+        onClick={() => {
+          router.push("/life");
+        }}
       />
       <mesh
         geometry={nodes.Text_lifelog.geometry}
@@ -877,6 +901,17 @@ export function NamiRoom({
         position={[-0.988, 1.561, 1.345]}
         rotation={[Math.PI, 0, Math.PI / 2]}
         scale={[-0.115, -1, -0.286]}
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          gsap.to(e.object.scale, { x: -0.13, y: -1.1, z: -0.315, duration: 0.2 });
+        }}
+        onPointerOut={(e) => {
+          e.stopPropagation();
+          gsap.to(e.object.scale, { x: -0.115, y: -1, z: -0.286, duration: 0.2 });
+        }}
+        onClick={() => {
+          router.push("/techlog");
+        }}
       />
       <mesh
         geometry={nodes.Text_techlog.geometry}
