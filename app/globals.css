@@ -632,3 +632,17 @@ ul {
     transform: rotate(360deg) translate(61.9534%, 48.7068%);
   }
 } */
+.g-lifelog-modal {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: all 0.5s;
+  transition-delay: 0.5s;
+  opacity: 0;
+  transform: translateY(10px);
+  color: #111;
+}
+.is-lifelog .g-lifelog-modal {
+  opacity: 1;
+  transform: translateY(0px);
+}

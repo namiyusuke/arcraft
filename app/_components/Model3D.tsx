@@ -51,7 +51,7 @@ export default function Model3D() {
       </div>
       <div className="g-btn__wrapper g-btn__wrapper--lifelog">
         <div className="">
-          <Link className="g-techlog" href={`/techlog`}>
+          <Link className="g-lifelog" href={`/life`}>
             namiさんの日常を見に行く？
           </Link>
           {
@@ -65,6 +65,14 @@ export default function Model3D() {
               カメラを戻す
             </button>
           }
+        </div>
+        <div className="g-lifelog-modal">
+          <p>namiさんは筋トレが好きです</p>
+          <p>namiさんは筋トレが好きです</p>
+          <p>namiさんは筋トレが好きです</p>
+          <p>namiさんは筋トレが好きです</p>
+          <p>namiさんは筋トレが好きです</p>
+          <p>namiさんは筋トレが好きです</p>
         </div>
       </div>
 
