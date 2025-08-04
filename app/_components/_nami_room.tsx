@@ -814,6 +814,9 @@ export function NamiRoom({
         position={[0.614, 0.348, 0.494]}
         rotation={[Math.PI / 2, 0, 0.358]}
         scale={[0.02, 0.409, 0.02]}
+        onClick={() => {
+          setIsScreenClicked(!isScreenClicked);
+        }}
       />
       <mesh
         geometry={nodes.dumbbell_parts.geometry}

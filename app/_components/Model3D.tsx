@@ -9,6 +9,7 @@ import Scene from "./Scene";
 // export default function Model3D(isScreenClicked: boolean, setIsScreenClicked: (isScreenClicked: boolean) => void) {
 export default function Model3D() {
   const [isScreenClicked, setIsScreenClicked] = useState<boolean>(false);
+  const [isDumbbleClicked, setIsDumbbleClicked] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState(true);
   const [showCanvas, setShowCanvas] = useState(false);
   const pointerRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -30,7 +31,7 @@ export default function Model3D() {
   };
   return (
     <div style={{ width: "100vw", height: "100vh", position: "relative" }}>
-      <div className="g-btn__wrapper">
+      <div className="g-btn__wrapper g-btn__wrapper--techlog">
         <div className="">
           <Link className="g-techlog" href={`/techlog`}>
             技術のお話を見に行く？
@@ -40,6 +41,24 @@ export default function Model3D() {
               onClick={() => {
                 if (isScreenClicked) {
                   setIsScreenClicked(false);
+                }
+              }}
+            >
+              カメラを戻す
+            </button>
+          }
+        </div>
+      </div>
+      <div className="g-btn__wrapper g-btn__wrapper--lifelog">
+        <div className="">
+          <Link className="g-techlog" href={`/techlog`}>
+            namiさんの日常を見に行く？
+          </Link>
+          {
+            <button
+              onClick={() => {
+                if (isDumbbleClicked) {
+                  setIsDumbbleClicked(false);
                 }
               }}
             >
@@ -62,6 +81,8 @@ export default function Model3D() {
               pointerRef={pointerRef.current}
               isScreenClicked={isScreenClicked}
               setIsScreenClicked={setIsScreenClicked}
+              isDumbbleClicked={isDumbbleClicked}
+              setIsDumbbleClicked={setIsDumbbleClicked}
             />
           </Suspense>
         </Canvas>

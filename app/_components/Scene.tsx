@@ -15,11 +15,15 @@ export default function Scene({
   pointerRef,
   isScreenClicked,
   setIsScreenClicked,
+  isDumbbleClicked,
+  setIsDumbbleClicked,
 }: {
   onLoad: () => void;
   pointerRef: { x: number; y: number };
   isScreenClicked: boolean;
   setIsScreenClicked: (isScreenClicked: boolean) => void;
+  isDumbbleClicked: boolean;
+  setIsDumbbleClicked: (isScreenClicked: boolean) => void;
 }) {
   const lightRef = useRef<THREE.Object3D>(null);
   const spotLightRef = useRef<THREE.Object3D>(null);
@@ -30,7 +34,6 @@ export default function Scene({
   const modelRef = useRef<THREE.Group>(null);
   const groupRef = useRef<THREE.Group>(null);
   const groupRotation = useRef<number>(0);
-  // const [isScreenClicked, setIsScreenClicked] = useState<boolean>(false);
   useEffect(() => {
     if (progress == 100 && modelRef.current) {
       gsap.to(modelRef.current, {
@@ -86,7 +89,6 @@ export default function Scene({
       step: 0.1,
     },
     spotLightPosition: {
-      // value: { x: 2.5, y: 3.5, z: -0.5 },
       value: { x: 2.5, y: 4.5, z: 2.5 },
       step: 0.1,
     },
@@ -100,13 +102,33 @@ export default function Scene({
   useEffect(() => {
     if (isScreenClicked && controls.current) {
       document.documentElement.classList.add("is-back");
+      document.documentElement.classList.add("is-techlog");
       controls.current.setLookAt(0.399999999999996, 1.3999999999999988, 0.399999999999998, 0, 1.3, 0.4, true);
     } else {
       document.documentElement.classList.remove("is-back");
+      document.documentElement.classList.remove("is-techlog");
       controls.current?.setLookAt(2.5, 3, 2.5, 0, 1, 0, true);
-      // setIsScreenClicked(false);
     }
   }, [isScreenClicked]);
+  useEffect(() => {
+    if (isDumbbleClicked && controls.current) {
+      document.documentElement.classList.add("is-back");
+      document.documentElement.classList.add("is-lifelog");
+      controls.current.setLookAt(
+        1.9999999999999998,
+        1.7000000000000002,
+        1.1999999999999997,
+        0.10000000000000003,
+        -0.5000000000000001,
+        0,
+        true
+      );
+    } else {
+      document.documentElement.classList.remove("is-back");
+      document.documentElement.classList.remove("is-lifelog");
+      controls.current?.setLookAt(2.5, 3, 2.5, 0, 1, 0, true);
+    }
+  }, [isDumbbleClicked]);
   useControls("Helper", {
     getLookAt: button(() => {
       if (controls.current) {
@@ -145,7 +167,12 @@ export default function Scene({
           // shadow-bias={-0.0005}
           castShadow
         />
-        <NamiRoom isScreenClicked={isScreenClicked} setIsScreenClicked={setIsScreenClicked} />
+        <NamiRoom
+          isScreenClicked={isScreenClicked}
+          setIsScreenClicked={setIsScreenClicked}
+          isDumbbleClicked={isDumbbleClicked}
+          setIsDumbbleClicked={setIsDumbbleClicked}
+        />
         <CameraControls
           ref={controls}
           minDistance={0.1}

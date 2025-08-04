@@ -148,9 +148,13 @@ import gsap from "gsap";
 export function NamiRoom({
   isScreenClicked,
   setIsScreenClicked,
+  isDumbbleClicked,
+  setIsDumbbleClicked,
 }: {
   isScreenClicked: boolean;
   setIsScreenClicked: (isScreenClicked: boolean) => void;
+  isDumbbleClicked: boolean;
+  setIsDumbbleClicked: (isScreenClicked: boolean) => void;
 }) {
   const router = useRouter();
   const videoTexture = useVideoTexture("/video/test.mp4");
@@ -673,6 +677,9 @@ export function NamiRoom({
         position={[0.614, 0.353, 0.494]}
         rotation={[Math.PI / 2, 0, 0.358]}
         scale={[0.02, 0.409, 0.02]}
+        onClick={() => {
+          setIsDumbbleClicked(!isDumbbleClicked);
+        }}
       />
       <mesh
         geometry={nodes.dumbbell_parts.geometry}

@@ -504,7 +504,8 @@ ul {
   left: 0;
 }
 
-.g-btn__wrapper {
+.g-btn__wrapper--techlog,
+.g-btn__wrapper--lifelog {
   z-index: 100;
   color: #fff;
   position: fixed;
@@ -518,14 +519,22 @@ ul {
   transition: all 0.9s;
   display: flex;
   justify-content: center;
-  /* width: 100vw;
-  height: 100vh; */
 }
-.is-back .g-btn__wrapper {
+.is-techlog .g-btn__wrapper--techlog {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.is-lifelog .g-btn__wrapper--lifelog {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+/* .is-back .g-btn__wrapper {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
-}
+} */
 .menu-item .is-current {
   padding-bottom: 0.8rem;
   border-bottom: 1px solid #fff;
