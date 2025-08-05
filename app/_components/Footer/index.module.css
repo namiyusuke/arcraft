@@ -161,3 +161,17 @@
 .footertitle {
   width: 100%;
 }
+.contactText {
+  display: inline-flex;
+  column-gap: calc(8 * var(--pxToRem));
+}
+.itemInner {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+  font-size: calc(14 * var(--pxToRem));
+  line-height: 1.5;
+}
+.itemInner a {
+  font-size: calc(18 * var(--pxToRem));
+}

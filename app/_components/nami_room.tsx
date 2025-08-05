@@ -9,6 +9,7 @@ import { useGLTF, useProgress, useVideoTexture } from "@react-three/drei";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
+import { useModel3DStore } from "../store/model3dStore";
 // type GLTFResult = GLTF & {
 //   nodes: {
 //     poster_nami: THREE.Mesh
@@ -145,17 +146,8 @@ import gsap from "gsap";
 //   animations: GLTFAction[]
 // }
 
-export function NamiRoom({
-  isScreenClicked,
-  setIsScreenClicked,
-  isDumbbleClicked,
-  setIsDumbbleClicked,
-}: {
-  isScreenClicked: boolean;
-  setIsScreenClicked: (isScreenClicked: boolean) => void;
-  isDumbbleClicked: boolean;
-  setIsDumbbleClicked: (isScreenClicked: boolean) => void;
-}) {
+export function NamiRoom() {
+  const { isScreenClicked, setIsScreenClicked, isDumbbleClicked, setIsDumbbleClicked } = useModel3DStore();
   const router = useRouter();
   const videoTexture = useVideoTexture("/video/test.mp4");
   const [videoMaterial, setVideoMaterial] = useState<THREE.MeshBasicMaterial | null>(null);

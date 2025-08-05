@@ -264,7 +264,7 @@
     border: none;
     padding: calc(0 * var(--pxToRem));
     padding-left: 40px;
-    top: calc(0 * var(--pxToRem));
+    top: calc(-6 * var(--pxToRem));
     right: calc(0 * var(--pxToRem));
     position: relative;
     display: block;

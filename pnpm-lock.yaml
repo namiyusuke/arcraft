@@ -38,9 +38,6 @@ dependencies:
   three-stdlib:
     specifier: ^2.36.0
     version: 2.36.0(three@0.176.0)
-  zustand:
-    specifier: ^5.0.5
-    version: 5.0.6(@types/react@19.1.2)(react@19.1.0)(use-sync-external-store@1.5.0)
 
 devDependencies:
   '@eslint/eslintrc':
@@ -79,6 +76,9 @@ devDependencies:
   typescript:
     specifier: ^5
     version: 5.8.3
+  zustand:
+    specifier: ^5.0.6
+    version: 5.0.6(@types/react@19.1.2)(react@19.1.0)(use-sync-external-store@1.5.0)
 
 packages:
 
@@ -4221,7 +4221,6 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     dependencies:
       react: 19.1.0
-    dev: false
 
   /utility-types@3.11.0:
     resolution: {integrity: sha512-6Z7Ma2aVEWisaL6TvBCy7P8rm2LQoPv6dJ7ecIaIixHcwfbJ0x7mWdbcwlIM5IGQxPZSFYeqRCqlOOeKoJYMkw==}
@@ -4389,7 +4388,6 @@ packages:
       '@types/react': 19.1.2
       react: 19.1.0
       use-sync-external-store: 1.5.0(react@19.1.0)
-    dev: false
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}

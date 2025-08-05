@@ -5,11 +5,12 @@ import { SoftShadows } from "@react-three/drei";
 import { Suspense, useState, useEffect, useRef } from "react";
 import { LoadingScreen } from "./loading";
 import Scene from "./Scene";
+import Modal from "./modal";
+import { useModel3DStore } from "../store/model3dStore";
 
 // export default function Model3D(isScreenClicked: boolean, setIsScreenClicked: (isScreenClicked: boolean) => void) {
 export default function Model3D() {
-  const [isScreenClicked, setIsScreenClicked] = useState<boolean>(false);
-  const [isDumbbleClicked, setIsDumbbleClicked] = useState<boolean>(false);
+  const { isScreenClicked, setIsScreenClicked, isDumbbleClicked, setIsDumbbleClicked } = useModel3DStore();
   const [isLoading, setIsLoading] = useState(true);
   const [showCanvas, setShowCanvas] = useState(false);
   const pointerRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -31,51 +32,7 @@ export default function Model3D() {
   };
   return (
     <div style={{ width: "100vw", height: "100vh", position: "relative" }}>
-      <div className="g-btn__wrapper g-btn__wrapper--techlog">
-        <div className="">
-          <Link className="g-techlog" href={`/techlog`}>
-            技術のお話を見に行く？
-          </Link>
-          {
-            <button
-              onClick={() => {
-                if (isScreenClicked) {
-                  setIsScreenClicked(false);
-                }
-              }}
-            >
-              カメラを戻す
-            </button>
-          }
-        </div>
-      </div>
-      <div className="g-btn__wrapper g-btn__wrapper--lifelog">
-        <div className="">
-          <Link className="g-lifelog" href={`/life`}>
-            namiさんの日常を見に行く？
-          </Link>
-          {
-            <button
-              onClick={() => {
-                if (isDumbbleClicked) {
-                  setIsDumbbleClicked(false);
-                }
-              }}
-            >
-              カメラを戻す
-            </button>
-          }
-        </div>
-        <div className="g-lifelog-modal">
-          <p>namiさんは筋トレが好きです</p>
-          <p>namiさんは筋トレが好きです</p>
-          <p>namiさんは筋トレが好きです</p>
-          <p>namiさんは筋トレが好きです</p>
-          <p>namiさんは筋トレが好きです</p>
-          <p>namiさんは筋トレが好きです</p>
-        </div>
-      </div>
-
+      <Modal />
       {showCanvas && (
         <Canvas
           shadows

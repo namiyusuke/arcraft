@@ -9,22 +9,10 @@ import { useControls, button } from "leva";
 import { NamiRoom } from "./nami_room";
 import GridPlanes from "./GridPlanes";
 import { PointLightHelper, SpotLightHelper } from "three";
+import { useModel3DStore } from "../store/model3dStore";
 
-export default function Scene({
-  onLoad,
-  pointerRef,
-  isScreenClicked,
-  setIsScreenClicked,
-  isDumbbleClicked,
-  setIsDumbbleClicked,
-}: {
-  onLoad: () => void;
-  pointerRef: { x: number; y: number };
-  isScreenClicked: boolean;
-  setIsScreenClicked: (isScreenClicked: boolean) => void;
-  isDumbbleClicked: boolean;
-  setIsDumbbleClicked: (isScreenClicked: boolean) => void;
-}) {
+export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; pointerRef: { x: number; y: number } }) {
+  const { isScreenClicked, setIsScreenClicked, isDumbbleClicked, setIsDumbbleClicked } = useModel3DStore();
   const lightRef = useRef<THREE.Object3D>(null);
   const spotLightRef = useRef<THREE.Object3D>(null);
   const gridPlanesRef = useRef<THREE.Group>(null);
