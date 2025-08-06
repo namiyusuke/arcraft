@@ -335,9 +335,11 @@ img {
   top: 0;
   z-index: 0;
   position: fixed;
-  background: linear-gradient(180deg, #262626 0%, #040441 51.89%, rgba(4, 4, 65, 0.6) 100%);
+  background: linear-gradient(180deg, #2d2f4e 0%, #a4abbb 100%);
 }
-.g-bg-dark::before {
+.g-bg-dark::before,
+.g-bg-purple:before,
+.g-bg-about::before {
   content: "";
   width: 100%;
   height: 100vh;
@@ -345,14 +347,23 @@ img {
   z-index: 0;
   position: fixed;
   left: 50%;
-  opacity: 0.1;
+  opacity: 1;
   transform: translateX(-50%);
   pointer-events: none;
   background-size: 70px 70px;
   background-position: top 0 left calc(50% + 28px);
-  background-image: linear-gradient(hsla(0, 0%, 95%, 0.2) 1px, transparent 1px),
-    linear-gradient(to right, hsla(0, 0%, 95%, 0.2) 1px, transparent 1px);
+  background-image: linear-gradient(hsla(0, 0%, 95%, 0.02) 1px, transparent 1px),
+    linear-gradient(to right, hsla(0, 0%, 95%, 0.02) 1px, transparent 1px);
   z-index: 1;
+}
+.g-bg-purple:before {
+  opacity: 1;
+  background-image: linear-gradient(hsla(100, 100%, 100%, 15%) 1px, transparent 1px),
+    linear-gradient(to right, hsla(100, 100%, 100%, 15%) 1px, transparent 1px);
+}
+.g-bg-about::before {
+  background-image: linear-gradient(hsla(100, 100%, 100%, 3%) 1px, transparent 1px),
+    linear-gradient(to right, hsla(100, 100%, 100%, 3%) 1px, transparent 1px);
 }
 .g-bg-purple {
   position: relative;
@@ -366,7 +377,7 @@ img {
   top: 0;
   z-index: -1;
   position: fixed;
-  background: linear-gradient(180deg, #494463 0%, #7e7783 57.33%, #969494 100%);
+  background: linear-gradient(180deg, #a4abbb 0%, #eff1f3 100%);
 }
 .g-bg-about {
   position: relative;
@@ -541,6 +552,7 @@ ul {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  text-align: center;
 }
 .is-lifelog .g-btn__wrapper--lifelog {
   opacity: 1;
@@ -554,12 +566,14 @@ ul {
 } */
 .menu-item .is-current {
   padding-bottom: 0.8rem;
-  border-bottom: 1px solid #fff;
+  color: #a62d43;
+  border-bottom: 1px solid #a62d43;
 }
 .text__life h1,
 .is-life .footerTitle {
   font-style: italic;
   font-weight: 300;
+  color: #38446a;
   font-family: var(--font-family-jost);
 }
 /* globals.cssに追加 */
@@ -568,6 +582,7 @@ ul {
 }
 .g-techlog {
   display: block;
+  margin-bottom: 1rem;
 }
 .g-mouseStalker {
   opacity: 1;
@@ -662,4 +677,8 @@ ul {
 .is-lifelog .g-lifelog-modal {
   opacity: 1;
   transform: translateY(0px);
+}
+.c-button {
+  border: none;
+  background-color: transparent;
 }
