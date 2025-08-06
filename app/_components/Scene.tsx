@@ -155,12 +155,7 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
           // shadow-bias={-0.0005}
           castShadow
         />
-        <NamiRoom
-          isScreenClicked={isScreenClicked}
-          setIsScreenClicked={setIsScreenClicked}
-          isDumbbleClicked={isDumbbleClicked}
-          setIsDumbbleClicked={setIsDumbbleClicked}
-        />
+        <NamiRoom />
         <CameraControls
           ref={controls}
           minDistance={0.1}

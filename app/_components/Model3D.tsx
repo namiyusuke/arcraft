@@ -10,7 +10,7 @@ import { useModel3DStore } from "../store/model3dStore";
 
 // export default function Model3D(isScreenClicked: boolean, setIsScreenClicked: (isScreenClicked: boolean) => void) {
 export default function Model3D() {
-  // const { isScreenClicked, setIsScreenClicked, isDumbbleClicked, setIsDumbbleClicked } = useModel3DStore();
+  const { isScreenClicked, setIsScreenClicked, isDumbbleClicked, setIsDumbbleClicked } = useModel3DStore();
   const [isLoading, setIsLoading] = useState(true);
   const [showCanvas, setShowCanvas] = useState(false);
   const pointerRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -44,10 +44,6 @@ export default function Model3D() {
             <Scene
               onLoad={handleLoad}
               pointerRef={pointerRef.current}
-              // isScreenClicked={isScreenClicked}
-              // setIsScreenClicked={setIsScreenClicked}
-              // isDumbbleClicked={isDumbbleClicked}
-              // setIsDumbbleClicked={setIsDumbbleClicked}
             />
           </Suspense>
         </Canvas>
