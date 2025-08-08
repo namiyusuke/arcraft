@@ -175,3 +175,7 @@
 .itemInner a {
   font-size: calc(18 * var(--pxToRem));
 }
+.footerText svg {
+  width: 100%;
+  max-inline-size: initial;
+}

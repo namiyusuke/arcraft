@@ -565,9 +565,13 @@ ul {
   visibility: visible;
 } */
 .menu-item .is-current {
-  padding-bottom: 0.8rem;
   color: #a62d43;
-  border-bottom: 1px solid #a62d43;
+}
+@media (width >= 768px) {
+  .menu-item .is-current {
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #a62d43;
+  }
 }
 .text__life h1,
 .is-life .footerTitle {
