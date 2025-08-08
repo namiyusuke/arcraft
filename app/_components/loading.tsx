@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useProgress } from "@react-three/drei";
 
-const CELL_SIZE = 100; // セルの大きさ(px)
+const CELL_SIZE = 60; // セルの大きさ(px)
 
 function useGridSize() {
   const [grid, setGrid] = useState({ rows: 1, cols: 1 });

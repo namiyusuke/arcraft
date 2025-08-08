@@ -200,17 +200,20 @@ export function NamiRoom() {
         position={[-0.99, 1.683, -0.483]}
         rotation={[Math.PI / 2, 0, -Math.PI / 2]}
         scale={[0.454, 0.231, 0.255]}
+        castShadow
       />
       <mesh
         geometry={nodes.wall_shelf.geometry}
         material={materials["Material.011"]}
         position={[-0.846, 1.72, 0.531]}
+        castShadow
       />
       <mesh
         geometry={nodes.wall_shelf001.geometry}
         material={materials["Material.011"]}
         position={[-0.888, 1.402, 0.531]}
         scale={[0.837, 1, 1]}
+        castShadow
       />
       <mesh
         geometry={nodes.poster_sakaba.geometry}
@@ -218,58 +221,90 @@ export function NamiRoom() {
         position={[-0.997, 1.115, -0.483]}
         rotation={[Math.PI / 2, 0, -Math.PI / 2]}
         scale={[0.454, 0.231, 0.255]}
+        castShadow
       />
-      <mesh geometry={nodes.Cube.geometry} material={materials["Material.010"]} position={[0.001, 1.01, 0]} />
-      <mesh geometry={nodes.Cube001.geometry} material={materials["Material.010"]} position={[0, 1.024, 0]} />
-      <mesh geometry={nodes.Cube002.geometry} material={materials["Material.001"]} position={[-0.002, 1.318, -1.1]} />
-      <mesh geometry={nodes.Cube003.geometry} material={materials["Material.011"]} position={[0, 1.155, 0]} />
+      <mesh
+        geometry={nodes.Cube.geometry}
+        material={materials["Material.010"]}
+        position={[0.001, 1.01, 0]}
+        castShadow
+        receiveShadow
+      />
+      <mesh
+        geometry={nodes.Cube001.geometry}
+        material={materials["Material.010"]}
+        position={[0, 1.024, 0]}
+        castShadow
+        receiveShadow
+      />
+      <mesh
+        geometry={nodes.Cube002.geometry}
+        material={materials["Material.001"]}
+        position={[-0.002, 1.318, -1.1]}
+        castShadow
+      />
+      <mesh
+        geometry={nodes.Cube003.geometry}
+        material={materials["Material.011"]}
+        position={[0, 1.155, 0]}
+        castShadow
+        receiveShadow
+      />
       <mesh
         geometry={nodes.Cube004.geometry}
         material={materials["Material.008"]}
         position={[-0.685, 0.779, 0.431]}
         scale={[0.357, 0.514, 0.357]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube005.geometry}
         material={materials["Material.008"]}
         position={[-0.685, 0.725, 0.431]}
         scale={[0.357, 0.565, 0.357]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube006.geometry}
         material={materials.white}
         position={[-0.672, 0.645, 0.707]}
         scale={[0.357, 0.368, 0.357]}
+        castShadow
       />
       <mesh
         geometry={nodes.Sphere.geometry}
         material={materials.gold}
         position={[-0.355, 0.645, 0.707]}
         scale={0.009}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube007.geometry}
         material={materials.white}
         position={[-0.672, 0.494, 0.707]}
         scale={[0.357, 0.368, 0.357]}
+        castShadow
       />
       <mesh
         geometry={nodes.Sphere001.geometry}
         material={materials.gold}
         position={[-0.355, 0.494, 0.707]}
         scale={0.009}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube008.geometry}
         material={materials.white}
         position={[-0.672, 0.343, 0.707]}
         scale={[0.357, 0.368, 0.357]}
+        castShadow
       />
       <mesh
         geometry={nodes.Sphere002.geometry}
         material={materials.gold}
         position={[-0.355, 0.343, 0.707]}
         scale={0.009}
+        castShadow
       />
       <mesh
         geometry={nodes.BézierCurve.geometry}
@@ -277,24 +312,28 @@ export function NamiRoom() {
         position={[0.801, 0.52, -0.699]}
         rotation={[0, 0, Math.PI / 2]}
         scale={0.145}
+        castShadow
       />
       <mesh
         geometry={nodes.Circle.geometry}
         material={materials.blown}
         position={[0.801, 0.52, -0.699]}
         scale={0.114}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube009.geometry}
         material={materials.black_gray}
         position={[0.801, 0.52, -0.699]}
         scale={0.132}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder.geometry}
         material={materials["Material.001"]}
         position={[0.801, 0.407, -0.699]}
         scale={0.132}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube012.geometry}
@@ -302,6 +341,7 @@ export function NamiRoom() {
         position={[-0.92, 1.853, 0.715]}
         rotation={[-1.419, -1.553, -3.029]}
         scale={[0.099, 0.022, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube013.geometry}
@@ -309,6 +349,7 @@ export function NamiRoom() {
         position={[-0.92, 1.853, 0.715]}
         rotation={[-1.419, -1.553, -3.029]}
         scale={[0.099, 0.022, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube018.geometry}
@@ -316,6 +357,7 @@ export function NamiRoom() {
         position={[-0.845, 1.761, 0.412]}
         rotation={[0, -0.624, 0]}
         scale={[0.099, 0.022, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube019.geometry}
@@ -323,6 +365,7 @@ export function NamiRoom() {
         position={[-0.845, 1.761, 0.412]}
         rotation={[0, -0.624, 0]}
         scale={[0.099, 0.022, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube020.geometry}
@@ -330,6 +373,7 @@ export function NamiRoom() {
         position={[-0.921, 1.851, 0.66]}
         rotation={[-2.28, -1.547, 2.393]}
         scale={[0.099, 0.022, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube021.geometry}
@@ -337,6 +381,7 @@ export function NamiRoom() {
         position={[-0.921, 1.851, 0.66]}
         rotation={[-1.419, -1.553, -3.029]}
         scale={[0.099, 0.022, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube022.geometry}
@@ -344,6 +389,7 @@ export function NamiRoom() {
         position={[-0.921, 1.853, 0.6]}
         rotation={[-1.615, -1.553, 3.058]}
         scale={[0.099, 0.022, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube023.geometry}
@@ -351,6 +397,7 @@ export function NamiRoom() {
         position={[-0.921, 1.853, 0.6]}
         rotation={[-1.615, -1.553, 3.058]}
         scale={[0.099, 0.022, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube029.geometry}
@@ -358,6 +405,7 @@ export function NamiRoom() {
         position={[-0.935, 1.521, 0.426]}
         rotation={[-1.45, -1.55, -3.056]}
         scale={[0.089, 0.02, 0.053]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube030.geometry}
@@ -365,6 +413,7 @@ export function NamiRoom() {
         position={[-0.935, 1.521, 0.426]}
         rotation={[-1.45, -1.55, -3.056]}
         scale={[0.089, 0.02, 0.053]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube031.geometry}
@@ -372,6 +421,7 @@ export function NamiRoom() {
         position={[-0.935, 1.518, 0.377]}
         rotation={[-1.45, -1.55, -3.056]}
         scale={[0.089, 0.02, 0.053]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube032.geometry}
@@ -379,6 +429,7 @@ export function NamiRoom() {
         position={[-0.935, 1.518, 0.377]}
         rotation={[-1.45, -1.55, -3.056]}
         scale={[0.089, 0.02, 0.053]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube033.geometry}
@@ -386,6 +437,7 @@ export function NamiRoom() {
         position={[-0.935, 1.52, 0.323]}
         rotation={[-1.45, -1.55, -3.056]}
         scale={[0.089, 0.02, 0.053]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube034.geometry}
@@ -393,6 +445,7 @@ export function NamiRoom() {
         position={[-0.935, 1.52, 0.323]}
         rotation={[-1.45, -1.55, -3.056]}
         scale={[0.089, 0.02, 0.053]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube035.geometry}
@@ -400,6 +453,7 @@ export function NamiRoom() {
         position={[-0.934, 1.516, 0.585]}
         rotation={[-1.45, -1.55, -3.056]}
         scale={[0.089, 0.02, 0.053]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube036.geometry}
@@ -407,6 +461,7 @@ export function NamiRoom() {
         position={[-0.934, 1.516, 0.585]}
         rotation={[-1.45, -1.55, -3.056]}
         scale={[0.089, 0.02, 0.053]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube037.geometry}
@@ -414,6 +469,7 @@ export function NamiRoom() {
         position={[-0.934, 1.517, 0.536]}
         rotation={[-1.45, -1.55, -3.056]}
         scale={[0.089, 0.02, 0.053]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube040.geometry}
@@ -428,6 +484,7 @@ export function NamiRoom() {
         position={[-0.934, 1.515, 0.483]}
         rotation={[-1.45, -1.55, -3.056]}
         scale={[0.089, 0.02, 0.053]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube042.geometry}
@@ -435,6 +492,7 @@ export function NamiRoom() {
         position={[-0.934, 1.515, 0.483]}
         rotation={[-1.45, -1.55, -3.056]}
         scale={[0.089, 0.02, 0.053]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube043.geometry}
@@ -442,6 +500,7 @@ export function NamiRoom() {
         position={[-0.84, 1.443, 0.757]}
         rotation={[0, -0.624, 0]}
         scale={[0.099, 0.022, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube044.geometry}
@@ -449,6 +508,7 @@ export function NamiRoom() {
         position={[-0.84, 1.443, 0.757]}
         rotation={[0, -0.624, 0]}
         scale={[0.099, 0.022, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube046.geometry}
@@ -456,6 +516,7 @@ export function NamiRoom() {
         position={[-0.669, 0.521, -0.776]}
         rotation={[0, -0.624, 0]}
         scale={[0.099, 0.022, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube047.geometry}
@@ -463,12 +524,14 @@ export function NamiRoom() {
         position={[-0.669, 0.521, -0.776]}
         rotation={[0, -0.624, 0]}
         scale={[0.099, 0.022, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.keyboard.geometry}
         material={materials["Material.024"]}
         position={[-0.611, 0.821, 0.42]}
         scale={[1.269, 1, 1]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube014.geometry}
@@ -476,60 +539,70 @@ export function NamiRoom() {
         position={[-0.657, 0.834, 0.574]}
         rotation={[-Math.PI, 1.564, -Math.PI]}
         scale={[0.012, 0.005, 0.012]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube038.geometry}
         material={materials["Material.011"]}
         position={[-0.774, 0.463, -0.75]}
         scale={[0.178, 0.267, 0.178]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube039.geometry}
         material={materials.black_gray}
         position={[-0.774, 0.466, -0.75]}
         scale={0.178}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube028.geometry}
         material={materials["Material.011"]}
         position={[-0.774, 0.812, -0.75]}
         scale={[0.178, 0.263, 0.178]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube045.geometry}
         material={materials.black_gray}
         position={[-0.774, 0.741, -0.75]}
         scale={0.178}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder001.geometry}
         material={materials["Material.008"]}
         position={[0.36, 0.463, -0.382]}
         scale={0.313}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder003.geometry}
         material={materials["Material.011"]}
         position={[0.581, 0.33, -0.377]}
         scale={0.313}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder002.geometry}
         material={materials["Material.014"]}
         position={[0.147, 0.33, -0.377]}
         scale={0.313}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder005.geometry}
         material={materials["Material.011"]}
         position={[0.37, 0.33, -0.17]}
         scale={0.313}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder006.geometry}
         material={materials["Material.011"]}
         position={[0.37, 0.33, -0.589]}
         scale={0.313}
+        castShadow
       />
       <mesh
         geometry={nodes.Circle002.geometry}
@@ -537,6 +610,7 @@ export function NamiRoom() {
         position={[0.306, 0.58, -0.361]}
         rotation={[0.684, -1.453, 0.703]}
         scale={0.043}
+        castShadow
       />
       <mesh
         geometry={nodes.Torus005.geometry}
@@ -544,6 +618,7 @@ export function NamiRoom() {
         position={[0.356, 0.558, -0.366]}
         rotation={[0.2, -1.301, -1.351]}
         scale={0.027}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube015.geometry}
@@ -551,12 +626,14 @@ export function NamiRoom() {
         position={[0.308, 0.548, -0.36]}
         rotation={[0.684, -1.453, 0.703]}
         scale={0.052}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder009.geometry}
         material={materials["Material.012"]}
         position={[-0.805, 0.862, -0.764]}
         scale={0.08}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder010.geometry}
@@ -564,6 +641,7 @@ export function NamiRoom() {
         position={[-0.792, 0.946, -0.765]}
         rotation={[-0.028, 0.092, 0.121]}
         scale={0.08}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder011.geometry}
@@ -571,6 +649,7 @@ export function NamiRoom() {
         position={[-0.759, 0.963, -0.762]}
         rotation={[-0.042, -0.286, -0.025]}
         scale={0.08}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder012.geometry}
@@ -578,6 +657,7 @@ export function NamiRoom() {
         position={[-0.752, 0.951, -0.782]}
         rotation={[-0.156, -0.343, -0.198]}
         scale={0.08}
+        castShadow
       />
       <mesh
         geometry={nodes.Plane006.geometry}
@@ -585,6 +665,7 @@ export function NamiRoom() {
         position={[-0.069, 0.372, -0.794]}
         rotation={[0, -1.146, -0.798]}
         scale={0.215}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder004.geometry}
@@ -592,6 +673,7 @@ export function NamiRoom() {
         position={[-0.001, 1.842, -0.965]}
         rotation={[0, 0, -Math.PI / 2]}
         scale={[0.036, 0.431, 0.036]}
+        castShadow
       />
       <mesh
         geometry={nodes.Plane008.geometry}
@@ -599,13 +681,20 @@ export function NamiRoom() {
         position={[-0.001, 1.552, -0.98]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={[0.419, 0.419, 0.256]}
+        castShadow
       />
-      <mesh geometry={nodes.Cube010.geometry} material={materials.Material} position={[-0.603, 0.837, -0.058]} />
+      <mesh
+        geometry={nodes.Cube010.geometry}
+        material={materials.Material}
+        position={[-0.603, 0.837, -0.058]}
+        castShadow
+      />
       <mesh
         geometry={nodes.Cylinder007.geometry}
         material={materials.switch_black}
         position={[-0.627, 0.849, 0.139]}
         rotation={[Math.PI / 2, 0, 0]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube011.geometry}
@@ -613,6 +702,7 @@ export function NamiRoom() {
         position={[-0.854, 0.891, 0.73]}
         rotation={[0.064, 0.488, 0.091]}
         scale={[0.059, 0.058, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube016.geometry}
@@ -620,6 +710,7 @@ export function NamiRoom() {
         position={[-0.833, 0.892, 0.751]}
         rotation={[-2.711, -1.346, -2.497]}
         scale={[0.059, 0.067, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube017.geometry}
@@ -627,6 +718,7 @@ export function NamiRoom() {
         position={[-0.857, 0.896, 0.757]}
         rotation={[-Math.PI, 0.623, -Math.PI]}
         scale={[0.053, 0.059, 0.057]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube024.geometry}
@@ -634,6 +726,7 @@ export function NamiRoom() {
         position={[-0.843, 0.885, 0.76]}
         rotation={[Math.PI, -0.425, Math.PI]}
         scale={0.05}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube026.geometry}
@@ -641,6 +734,7 @@ export function NamiRoom() {
         position={[-0.865, 0.895, 0.744]}
         rotation={[-0.802, 1.475, 0.801]}
         scale={[0.059, 0.069, 0.059]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube027.geometry}
@@ -648,6 +742,7 @@ export function NamiRoom() {
         position={[-0.835, 0.89, 0.731]}
         rotation={[0, -0.623, 0]}
         scale={0.059}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder008.geometry}
@@ -655,6 +750,7 @@ export function NamiRoom() {
         position={[-0.847, 0.828, 0.747]}
         rotation={[0, 0.425, 0]}
         scale={0.059}
+        castShadow
       />
       <mesh
         geometry={nodes.Circle001.geometry}
@@ -662,6 +758,7 @@ export function NamiRoom() {
         position={[-0.847, 0.886, 0.747]}
         rotation={[0, 0.425, 0]}
         scale={0.046}
+        castShadow
       />
       <mesh
         geometry={nodes.dumbbell_bar.geometry}
@@ -672,6 +769,7 @@ export function NamiRoom() {
         onClick={() => {
           setIsDumbbleClicked(!isDumbbleClicked);
         }}
+        castShadow
       />
       <mesh
         geometry={nodes.dumbbell_parts.geometry}
@@ -679,6 +777,7 @@ export function NamiRoom() {
         position={[0.539, 0.353, 0.695]}
         rotation={[Math.PI / 2, 0, 0.358]}
         scale={[0.033, 0.052, 0.033]}
+        castShadow
       />
       <mesh
         geometry={nodes.dumbbell_weights.geometry}
@@ -686,6 +785,7 @@ export function NamiRoom() {
         position={[0.539, 0.395, 0.695]}
         rotation={[Math.PI / 2, 0, 0.358]}
         scale={[0.144, 0.045, 0.144]}
+        castShadow
       />
       <mesh
         geometry={nodes.dumbbell_bar001.geometry}
@@ -693,6 +793,7 @@ export function NamiRoom() {
         position={[-1.074, 0.992, 1.346]}
         rotation={[-2.95, -1.542, -2.948]}
         scale={[0.02, 0.865, 0.02]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube025.geometry}
@@ -700,6 +801,7 @@ export function NamiRoom() {
         position={[-0.049, 0.75, 0.194]}
         rotation={[Math.PI, -0.939, Math.PI]}
         scale={[0.217, 0.028, 0.217]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube048.geometry}
@@ -707,6 +809,7 @@ export function NamiRoom() {
         position={[-0.101, 0.297, 0.387]}
         rotation={[-Math.PI, 0.318, -Math.PI]}
         scale={[0.028, 0.022, 0.107]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube049.geometry}
@@ -714,6 +817,7 @@ export function NamiRoom() {
         position={[-0.197, 0.297, 0.254]}
         rotation={[0, 1.567, 0]}
         scale={[0.028, 0.022, 0.107]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube050.geometry}
@@ -721,6 +825,7 @@ export function NamiRoom() {
         position={[-0.099, 0.297, 0.122]}
         rotation={[0, 0.31, 0]}
         scale={[0.028, 0.022, 0.107]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube051.geometry}
@@ -728,6 +833,7 @@ export function NamiRoom() {
         position={[0.056, 0.297, 0.174]}
         rotation={[0, -0.946, 0]}
         scale={[0.028, 0.022, 0.107]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube052.geometry}
@@ -735,6 +841,7 @@ export function NamiRoom() {
         position={[0.055, 0.297, 0.338]}
         rotation={[Math.PI, -0.939, Math.PI]}
         scale={[0.028, 0.022, 0.107]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube053.geometry}
@@ -742,6 +849,7 @@ export function NamiRoom() {
         position={[-0.03, 0.562, 0.208]}
         rotation={[Math.PI, -0.939, Math.PI]}
         scale={[0.122, 0.016, 0.122]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube054.geometry}
@@ -749,6 +857,7 @@ export function NamiRoom() {
         position={[-0.03, 0.625, 0.208]}
         rotation={[Math.PI, -0.939, Math.PI]}
         scale={[0.217, 0.039, 0.217]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cube055.geometry}
@@ -756,6 +865,7 @@ export function NamiRoom() {
         position={[0.182, 0.794, -0.082]}
         rotation={[Math.PI, -0.939, Math.PI]}
         scale={[0.219, 0.159, 0.219]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder019.geometry}
@@ -763,6 +873,7 @@ export function NamiRoom() {
         position={[-0.133, 0.252, 0.478]}
         rotation={[-Math.PI / 2, 0, 2.176]}
         scale={[0.029, 0.016, 0.029]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder020.geometry}
@@ -770,6 +881,7 @@ export function NamiRoom() {
         position={[-0.292, 0.252, 0.252]}
         rotation={[-Math.PI / 2, 0, 0.813]}
         scale={[0.029, 0.016, 0.029]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder021.geometry}
@@ -777,6 +889,7 @@ export function NamiRoom() {
         position={[-0.127, 0.252, 0.031]}
         rotation={[-Math.PI / 2, 0, -1.649]}
         scale={[0.029, 0.016, 0.029]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder022.geometry}
@@ -784,6 +897,7 @@ export function NamiRoom() {
         position={[0.134, 0.252, 0.119]}
         rotation={[-Math.PI / 2, 0, -1.727]}
         scale={[0.029, 0.016, 0.029]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder023.geometry}
@@ -791,6 +905,7 @@ export function NamiRoom() {
         position={[0.131, 0.252, 0.396]}
         rotation={[-Math.PI / 2, 0, 2.12]}
         scale={[0.029, 0.016, 0.029]}
+        castShadow
       />
       <mesh
         geometry={nodes.Cylinder024.geometry}
@@ -798,6 +913,7 @@ export function NamiRoom() {
         position={[-0.057, 0.312, 0.255]}
         rotation={[Math.PI, -0.939, Math.PI]}
         scale={[0.039, 0.057, 0.039]}
+        castShadow
       />
       <mesh
         geometry={nodes.pc_base.geometry}
@@ -805,6 +921,7 @@ export function NamiRoom() {
         position={[-0.805, 0.829, 0.444]}
         rotation={[0, Math.PI / 2, 0]}
         scale={[0.347, 0.347, 0.091]}
+        castShadow
       />
       <mesh
         geometry={nodes.pc_frame.geometry}
@@ -812,6 +929,7 @@ export function NamiRoom() {
         position={[-0.833, 1.108, 0.428]}
         rotation={[Math.PI / 2, 0, -Math.PI / 2]}
         scale={[0.305, 0.381, 0.172]}
+        castShadow
       />
       <mesh
         ref={pcScreenRef}
@@ -843,6 +961,7 @@ export function NamiRoom() {
             mouseStalker.classList.remove("is-hover");
           }
         }}
+        castShadow
       />
       <mesh
         geometry={nodes.Plane_about.geometry}
@@ -861,6 +980,7 @@ export function NamiRoom() {
           e.stopPropagation();
           gsap.to(e.object.scale, { x: -0.115, y: -1, z: -0.286, duration: 0.2 });
         }}
+        castShadow
       />
       <mesh
         geometry={nodes.Text_about.geometry}
@@ -868,6 +988,7 @@ export function NamiRoom() {
         position={[-0.989, 0.982, 1.484]}
         rotation={[Math.PI / 2, 0, -Math.PI / 2]}
         scale={0.12}
+        castShadow
       />
       <mesh
         geometry={nodes.Plane_lifelog.geometry}
@@ -886,6 +1007,7 @@ export function NamiRoom() {
         onClick={() => {
           router.push("/life");
         }}
+        castShadow
       />
       <mesh
         geometry={nodes.Text_lifelog.geometry}
@@ -893,6 +1015,7 @@ export function NamiRoom() {
         position={[-0.989, 1.252, 1.481]}
         rotation={[Math.PI / 2, 0, -Math.PI / 2]}
         scale={0.12}
+        castShadow
       />
       <mesh
         geometry={nodes.Plane_techlog.geometry}
@@ -911,6 +1034,7 @@ export function NamiRoom() {
         onClick={() => {
           router.push("/techlog");
         }}
+        castShadow
       />
       <mesh
         geometry={nodes.Text_techlog.geometry}
@@ -918,12 +1042,15 @@ export function NamiRoom() {
         position={[-0.988, 1.525, 1.521]}
         rotation={[Math.PI / 2, 0, -Math.PI / 2]}
         scale={0.12}
+        castShadow
       />
       <mesh
         geometry={nodes.rug.geometry}
         material={materials["Material.023"]}
         position={[0.59, 0.239, 0.482]}
         scale={[0.32, 1, 0.427]}
+        castShadow
+        receiveShadow
       />
     </group>
   );

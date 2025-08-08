@@ -36,15 +36,12 @@ export default function Model3D() {
       {showCanvas && (
         <Canvas
           shadows
-          style={{ backgroundColor: "#040441" }}
+          style={{ backgroundColor: "#000000" }}
           camera={{ position: [10, 10, 10], fov: 45, near: 0.1, far: 1000 }}
         >
           <SoftShadows />
           <Suspense fallback={null}>
-            <Scene
-              onLoad={handleLoad}
-              pointerRef={pointerRef.current}
-            />
+            <Scene onLoad={handleLoad} pointerRef={pointerRef.current} />
           </Suspense>
         </Canvas>
       )}
