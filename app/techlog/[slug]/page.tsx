@@ -1,6 +1,7 @@
 import { getNewsDetail } from "@/app/_libs/microcms";
 import Article from "@/app/_components/article";
 import Link from "next/link";
+import Menu from "@/app/_components/menu";
 import styles from "./page.module.css";
 import { notFound } from "next/navigation";
 
@@ -23,10 +24,9 @@ export default async function NewsDetail({ params, searchParams }: Props) {
   });
   return (
     <>
+      <Menu />
+
       <Article data={data} />
-      <div className={styles.footer}>
-        <Link href="/techlog">一覧に戻る</Link>
-      </div>
     </>
   );
 }

@@ -328,3 +328,25 @@
     margin-inline: auto;
   }
 }
+.back {
+  margin-bottom: 2rem;
+  display: block;
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-left: 0.5rem;
+}
+.back::after {
+  content: "";
+  width: 6px;
+  height: 10px;
+  position: absolute;
+  right: 100%;
+  top: 0;
+  bottom: 0;
+  margin-block: auto;
+  transform: rotate(180deg);
+  background-image: url(../../../public/arrow_blue.svg);
+  background-size: cover;
+}

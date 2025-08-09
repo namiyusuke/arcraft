@@ -25,9 +25,14 @@
 }
 
 .thumbnail {
+  display: block;
   width: 100%;
   height: auto;
   margin-bottom: 64px;
+  max-width: 1200px;
+  margin-inline: auto;
+  aspect-ratio: 2/1;
+  object-fit: cover;
 }
 
 .content *:first-child {
@@ -218,4 +223,26 @@
     font-weight: bold;
     margin: 2.8rem 0 1rem;
   }
+}
+.back {
+  margin-bottom: 2rem;
+  display: block;
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-left: 0.5rem;
+}
+.back::after {
+  content: "";
+  width: 6px;
+  height: 10px;
+  position: absolute;
+  right: 100%;
+  top: 0;
+  bottom: 0;
+  margin-block: auto;
+  transform: rotate(180deg);
+  background-image: url(../../../public/arrow_blue.svg);
+  background-size: cover;
 }

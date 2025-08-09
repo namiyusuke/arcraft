@@ -9,6 +9,7 @@ import { useGLTF, useProgress, useVideoTexture } from "@react-three/drei";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
+import { usePathname } from "next/navigation";
 import { useModel3DStore } from "../store/model3dStore";
 // type GLTFResult = GLTF & {
 //   nodes: {
@@ -157,7 +158,7 @@ export function NamiRoom() {
   const groupRef = useRef<THREE.Group>(null);
   const pcScreenRef = useRef<THREE.Mesh>(null);
   const { progress } = useProgress();
-
+  const pathname = usePathname();
   useEffect(() => {
     if (progress === 100 && groupRef.current) {
       // 初期状態を設定
@@ -192,6 +193,32 @@ export function NamiRoom() {
       setVideoMaterial(material);
     }
   }, [videoTexture]);
+  function mouseOn(e: any) {
+    e.stopPropagation();
+    setIsHovered(true);
+    document.body.classList.add("custom-cursor");
+    const mouseStalker = document.querySelector("[data-mouse-stalker]");
+    if (mouseStalker) {
+      mouseStalker.classList.add("is-hover");
+    }
+  }
+  function mouseOut(e: any) {
+    e.stopPropagation();
+    setIsHovered(false);
+    document.body.classList.remove("custom-cursor");
+    const mouseStalker = document.querySelector("[data-mouse-stalker]");
+    if (mouseStalker) {
+      mouseStalker.classList.remove("is-hover");
+    }
+  }
+  useEffect(() => {
+    setIsHovered(false);
+    document.body.classList.remove("custom-cursor");
+    const mouseStalker = document.querySelector("[data-mouse-stalker]");
+    if (mouseStalker) {
+      mouseStalker.classList.remove("is-hover");
+    }
+  }, [pathname]);
   return (
     <group ref={groupRef} dispose={null}>
       <mesh
@@ -228,14 +255,12 @@ export function NamiRoom() {
         material={materials["Material.010"]}
         position={[0.001, 1.01, 0]}
         castShadow
-        receiveShadow
       />
       <mesh
         geometry={nodes.Cube001.geometry}
         material={materials["Material.010"]}
         position={[0, 1.024, 0]}
         castShadow
-        receiveShadow
       />
       <mesh
         geometry={nodes.Cube002.geometry}
@@ -248,7 +273,6 @@ export function NamiRoom() {
         material={materials["Material.011"]}
         position={[0, 1.155, 0]}
         castShadow
-        receiveShadow
       />
       <mesh
         geometry={nodes.Cube004.geometry}
@@ -769,6 +793,12 @@ export function NamiRoom() {
         onClick={() => {
           setIsDumbbleClicked(!isDumbbleClicked);
         }}
+        onPointerOver={(e) => {
+          mouseOn(e);
+        }}
+        onPointerOut={(e) => {
+          mouseOut(e);
+        }}
         castShadow
       />
       <mesh
@@ -942,24 +972,10 @@ export function NamiRoom() {
           setIsScreenClicked(!isScreenClicked);
         }}
         onPointerOver={(e) => {
-          e.stopPropagation();
-          setIsHovered(true);
-          document.body.classList.add("custom-cursor");
-          // マウスストーカーにホバー状態を通知
-          const mouseStalker = document.querySelector("[data-mouse-stalker]");
-          if (mouseStalker) {
-            mouseStalker.classList.add("is-hover");
-          }
+          mouseOn(e);
         }}
         onPointerOut={(e) => {
-          e.stopPropagation();
-          setIsHovered(false);
-          document.body.classList.remove("custom-cursor");
-          // マウスストーカーからホバー状態を削除
-          const mouseStalker = document.querySelector("[data-mouse-stalker]");
-          if (mouseStalker) {
-            mouseStalker.classList.remove("is-hover");
-          }
+          mouseOut(e);
         }}
         castShadow
       />
@@ -1050,7 +1066,6 @@ export function NamiRoom() {
         position={[0.59, 0.239, 0.482]}
         scale={[0.32, 1, 0.427]}
         castShadow
-        receiveShadow
       />
     </group>
   );

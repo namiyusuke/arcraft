@@ -1,6 +1,6 @@
 "use client";
 import styles from "./index.module.css";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 type Props = {
   title: string;
@@ -21,8 +21,6 @@ export default function Hero({ title, className }: Props) {
     setTimeout(() => {
       document.documentElement.classList.add("is-loaded");
     }, 40);
-
-    console.log("ページ遷移された");
   }, [pathname]);
 
   return (

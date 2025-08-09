@@ -584,6 +584,9 @@ ul {
 .custom-cursor {
   cursor: none;
 }
+.is-back .custom-cursor {
+  cursor: initial;
+}
 .g-techlog {
   display: block;
   margin-bottom: 1rem;
@@ -593,6 +596,10 @@ ul {
   transition: all 0.5s;
   background-color: #000;
   color: #fff;
+  /* transform: scale(0); */
+}
+.custom-cursor .g-mouseStalker {
+  /* transform: scale(1); */
 }
 .is-back .g-mouseStalker {
   display: none;
@@ -685,4 +692,7 @@ ul {
 .c-button {
   border: none;
   background-color: transparent;
+}
+.article-margin {
+  padding-bottom: 3rem;
 }

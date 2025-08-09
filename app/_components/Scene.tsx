@@ -5,6 +5,7 @@ import { CameraControls, Stats, useHelper, useProgress, Html } from "@react-thre
 import { useState, useEffect, useRef } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
+import { usePathname } from "next/navigation";
 import { useControls, button } from "leva";
 import { NamiRoom } from "./nami_room";
 import GridPlanes from "./GridPlanes";
@@ -17,13 +18,13 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
   const spotLightRef = useRef<THREE.Object3D>(null);
   const gridPlanesRef = useRef<THREE.Group>(null);
   const { progress } = useProgress();
-  useHelper(lightRef as any, PointLightHelper, 1);
-  useHelper(spotLightRef as any, SpotLightHelper, 1);
+  // useHelper(lightRef as any, PointLightHelper, 1);
+  // useHelper(spotLightRef as any, SpotLightHelper, 1);
   const modelRef = useRef<THREE.Group>(null);
   const groupRef = useRef<THREE.Group>(null);
   const groupRotation = useRef<number>(0);
   const [isMobile, setIsMobile] = useState(false);
-
+  const pathname = usePathname();
   // モバイル判定
   useEffect(() => {
     const checkMobile = () => {
@@ -125,6 +126,12 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
       }
     }
   }, [isScreenClicked, isMobile]);
+
+  useEffect(() => {
+    document.documentElement.classList.remove("is-back");
+    document.documentElement.classList.remove("is-techlog");
+    document.documentElement.classList.remove("is-lifelog");
+  }, [pathname]);
   useEffect(() => {
     if (isDumbbleClicked && controls.current) {
       document.documentElement.classList.add("is-back");

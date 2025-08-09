@@ -61,11 +61,12 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
             div.style.display = "flex";
             div.style.alignItems = "center";
             div.style.justifyContent = "center";
-            div.style.fontSize = "48px";
-            div.style.color = "#fff";
+            div.style.fontSize = "40px";
+            div.style.color = "#212121";
             div.style.fontFamily = "monospace";
             div.style.fontWeight = "bold";
             div.style.pointerEvents = "none";
+            div.style.letterSpacing = ".1em";
             counterElement.appendChild(div);
           }
           // 初期位置を0に設定
@@ -101,12 +102,21 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
         onUpdate: function () {
           const currentValue = Math.floor(this.targets()[0].value);
 
-          // 3桁に分解
-          const hundreds = Math.floor(currentValue / 100);
-          const tens = Math.floor((currentValue % 100) / 10);
-          const ones = currentValue % 10;
+          // 3桁に分解（100の場合も含む）
+          let hundreds, tens, ones;
 
-          // 各桁を即座に更新（アニメーション内で段階的に変化）
+          if (currentValue >= 100) {
+            // 100以上の場合は100として表示
+            hundreds = 1;
+            tens = 0;
+            ones = 0;
+          } else {
+            hundreds = Math.floor(currentValue / 100);
+            tens = Math.floor((currentValue % 100) / 10);
+            ones = currentValue % 10;
+          }
+
+          // 各桁を更新（durationを短くして即座に更新）
           if (counter1) {
             gsap.set(counter1, { y: -hundreds * 60 });
           }
@@ -175,7 +185,7 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
             ease: "power2.out",
           });
         }
-        setTimeout(() => {}, 500);
+
         setTimeout(() => {
           if (overlayRef.current) {
             gsap.to(overlayRef.current, {
@@ -288,14 +298,16 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
         className="counter"
         style={{
           position: "fixed",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
+          bottom: "10%",
+          right: "10%",
+          // transform: "translate(-50%, -50%)",
           display: "flex",
-          gap: "5px",
+          gap: "0px",
+          overflow: "hidden",
           zIndex: 2000,
-          backgroundColor: "#262626",
+          backgroundColor: "#fff",
           color: "#222",
+          fontSize: "10px",
         }}
       >
         <div
@@ -303,7 +315,7 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
           style={{
             // overflow: "hidden",
             height: "60px",
-            width: "45px",
+            width: "max-content",
             position: "relative",
             color: "#222",
           }}
@@ -315,7 +327,7 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
           style={{
             //  overflow: "hidden",
             height: "60px",
-            width: "45px",
+            width: "max-content",
             position: "relative",
           }}
         >
@@ -326,11 +338,35 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
           style={{
             // overflow: "hidden",
             height: "60px",
-            width: "45px",
+            width: "max-content",
             position: "relative",
           }}
         >
           {/* 数字は動的に生成される */}
+        </div>
+        <div
+          style={{
+            height: "60px",
+            display: "flex",
+            alignItems: "center",
+            fontSize: "30px",
+            color: "#212121",
+            fontFamily: "monospace",
+            fontWeight: "bold",
+          }}
+        >
+          <span
+            style={{
+              fontSize: "20px",
+              position: "relative",
+              top: "5px",
+              color: "#212121",
+              fontFamily: "monospace",
+              fontWeight: "bold",
+            }}
+          >
+            %
+          </span>
         </div>
       </div>
     </>

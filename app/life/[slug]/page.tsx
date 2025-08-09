@@ -3,7 +3,7 @@ import ArticleLife from "@/app/_components/articleLife";
 import Link from "next/link";
 import styles from "./page.module.css";
 import { notFound } from "next/navigation";
-
+import Menu from "@/app/_components/menu";
 type Props = {
   params: Promise<{
     slug: string;
@@ -23,10 +23,8 @@ export default async function NewsDetail({ params, searchParams }: Props) {
   });
   return (
     <>
+      <Menu />
       <ArticleLife data={data} />
-      <div className={styles.footer}>
-        <Link href="/life">一覧に戻る</Link>
-      </div>
     </>
   );
 }
