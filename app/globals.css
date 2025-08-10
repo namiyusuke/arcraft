@@ -367,7 +367,7 @@ img {
 }
 .g-bg-purple {
   position: relative;
-  color: #fff;
+  color: #2d2f4e;
 }
 
 .g-bg-purple::after {
@@ -598,9 +598,7 @@ ul {
   color: #fff;
   /* transform: scale(0); */
 }
-.custom-cursor .g-mouseStalker {
-  /* transform: scale(1); */
-}
+
 .is-back .g-mouseStalker {
   display: none;
 }

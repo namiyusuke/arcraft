@@ -18,7 +18,6 @@ export default function TechlogClient({ initialNews, initialCategories, totalCou
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   const handleCategoryChange = (categoryIds: string[]) => {
-    console.log("親コンポーネントでカテゴリ変更:", categoryIds);
     setSelectedCategories(categoryIds);
   };
 

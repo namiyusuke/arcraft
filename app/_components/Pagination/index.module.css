@@ -4,10 +4,13 @@
   align-items: center;
   padding-block: 80px;
   column-gap: calc(24 * var(--pxToRem));
+  position: relative;
+  z-index: 10;
 }
 @media (width >= 768px) {
   .container {
     padding-block: 180px;
+    padding-bottom: 80px;
   }
 }
 

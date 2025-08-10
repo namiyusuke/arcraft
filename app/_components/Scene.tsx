@@ -203,7 +203,7 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
         <NamiRoom />
         <CameraControls
           ref={controls}
-          minDistance={0.1}
+          minDistance={1.0}
           maxDistance={10}
           dollySpeed={0.5}
           truckSpeed={0.5}
