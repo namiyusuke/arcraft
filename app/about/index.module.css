@@ -4,6 +4,9 @@
 
 .jaText {
   margin-bottom: calc(28 * var(--pxToRem));
+  color: #262626;
+  line-height: 180%;
+  font-family: var(--font-family-noto);
 }
 .enText {
   font-size: calc(13 * var(--pxToRem));
@@ -13,17 +16,38 @@
 }
 .introInner {
   display: flex;
-  justify-content: space-between;
-  column-gap: 80px;
+  flex-direction: column-reverse;
   margin-top: 4rem;
+  row-gap: 2rem;
+}
+@media (width >= 768px) {
+  .introInner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 80px;
+    margin-top: 4rem;
+  }
 }
 .introBody {
-  width: calc(760 / 1160 * 100%);
   font-size: 1rem;
+  max-width: 620px;
 }
-.introCanvas {
-  width: calc(520 / 1160 * 100%);
+@media (width >= 768px) {
+  .introBody {
+    width: calc(760 / 1160 * 100%);
+    font-size: 1rem;
+    max-width: 620px;
+  }
 }
 .introWrapper {
   padding-bottom: calc(160 / 16 * 1rem);
+}
+@media (width >= 768px) {
+  .introCanvas {
+    width: calc(394 / 1160 * 100%);
+  }
+  .introWrapper {
+    padding-bottom: calc(160 / 16 * 1rem);
+  }
 }

@@ -9,7 +9,7 @@ export default function Modal() {
     <>
       <div className="g-btn__wrapper g-btn__wrapper--techlog">
         <div className="">
-          <Link className="g-techlog" href={`/techlog`}>
+          <Link className="g-techlog c-button__link" href={`/techlog`}>
             技術のお話を見に行く？
           </Link>
           {

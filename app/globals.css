@@ -650,7 +650,6 @@ ul {
 } */
 .menu-item-wrap {
   visibility: hidden;
-  /* transition: clip-path 0.3s, visibility 0.3s; */
   clip-path: polygon(0px 0%, 100% 0%, 100% 0%, 0px 0%);
   @media (width >= 768px) {
     visibility: visible;
@@ -694,3 +693,14 @@ ul {
 .article-margin {
   padding-bottom: 3rem;
 }
+.footerLife,
+.footerAbout {
+  padding-top: 2rem;
+}
+@media (width >= 768px) {
+  .footerLife,
+  .footerAbout {
+    padding-top: 4rem;
+  }
+}
+.c-button__link

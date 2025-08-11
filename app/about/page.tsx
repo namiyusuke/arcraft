@@ -7,7 +7,7 @@ export default function About() {
       <Menu />
       <p className={styles.text}>I like making things. As a creator, I always aim high.</p>
       <div className={styles.introWrapper}>
-        <div className="u-wrapper">
+        <div className="u-wrapper--about">
           <div className={styles.intro}>
             <div className={styles.introInner}>
               <div className={styles.introBody}>
