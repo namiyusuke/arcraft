@@ -61,9 +61,6 @@ export default async function Article({ data }: Props) {
   });
   return (
     <main>
-      <Link className={styles.back} href="/techlog">
-        一覧に戻る
-      </Link>
       <div className="article-margin">
         <div className="u-wrapper">
           {data.thumbnail && (

@@ -94,14 +94,14 @@ export default function Footer() {
                             <path
                               d="M6 5L11 8.5L16 5"
                               stroke="#2D2F4E"
-                              stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             />
                             <path
                               d="M1 13V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H19C19.5304 1 20.0391 1.21071 20.4142 1.58579C20.7893 1.96086 21 2.46957 21 3V13C21 13.5304 20.7893 14.0391 20.4142 14.4142C20.0391 14.7893 19.5304 15 19 15H3C2.46957 15 1.96086 14.7893 1.58579 14.4142C1.21071 14.0391 1 13.5304 1 13Z"
                               stroke="#2D2F4E"
-                              stroke-width="1.5"
+                              strokeWidth="1.5"
                             />
                           </svg>
                           <span>

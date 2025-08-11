@@ -11,3 +11,19 @@
 .intro {
   margin-top: calc(28 * var(--pxToRem));
 }
+.introInner {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 80px;
+  margin-top: 4rem;
+}
+.introBody {
+  width: calc(760 / 1160 * 100%);
+  font-size: 1rem;
+}
+.introCanvas {
+  width: calc(520 / 1160 * 100%);
+}
+.introWrapper {
+  padding-bottom: calc(160 / 16 * 1rem);
+}
