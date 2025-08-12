@@ -9,8 +9,8 @@
 }
 @media (width >= 768px) {
   .container {
-    padding-block: 180px;
-    padding-bottom: 80px;
+    padding-block: calc(80 * var(--pxToRem));
+    padding-bottom: calc(180 * var(--pxToRem));
   }
 }
 

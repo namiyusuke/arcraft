@@ -26,7 +26,7 @@
     flex-direction: row;
     justify-content: space-between;
     column-gap: 80px;
-    margin-top: 4rem;
+    margin-top: calc(120 / 16 * 1rem);
   }
 }
 .introBody {
@@ -35,7 +35,7 @@
 }
 @media (width >= 768px) {
   .introBody {
-    width: calc(760 / 1160 * 100%);
+    width: calc(619 / 1093 * 100%);
     font-size: 1rem;
     max-width: 620px;
   }
@@ -45,7 +45,7 @@
 }
 @media (width >= 768px) {
   .introCanvas {
-    width: calc(394 / 1160 * 100%);
+    width: calc(394 / 1093 * 100%);
   }
   .introWrapper {
     padding-bottom: calc(160 / 16 * 1rem);

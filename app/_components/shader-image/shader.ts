@@ -6,10 +6,10 @@ export const uniforms = {
   uTime: { value: 0 },
   uMouse: { value: new THREE.Vector2(0.5, 0.5) },
   uResolution: { value: new THREE.Vector2(1, 1) },
-  uStrength: { value: 1.0 },
-  uNoiseScale: { value: 2.0 },
+  uStrength: { value: 0.0 },
+  uNoiseScale: { value: 1.0 },
   uNoiseSpeed: { value: 0.25 },
-  uFeather: { value: 0.85 },
+  uFeather: { value: 0.25 },
 };
 
 export const vertexShader = /* glsl */ `
@@ -64,14 +64,11 @@ export const fragmentShader = /* glsl */ `
 
   ${simplex}
 
-  float radialFalloff(vec2 uv, vec2 center, float feather, vec2 resolution){
-    // アスペクト比を考慮した距離計算
-    vec2 aspect = vec2(1.0, resolution.y / resolution.x);
-    vec2 delta = (uv - center) * aspect;
-    float d = length(delta);
+  float radialFalloff(vec2 uv, vec2 center, float feather){
+    float d = distance(uv, center);
     float r = 0.15;
-    float edge = smoothstep(r - feather, r, d);
-    return edge;
+    float edge = smoothstep(r, r - feather, d);
+    return 1.0 - edge;
   }
 
   void main () {
@@ -83,11 +80,11 @@ export const fragmentShader = /* glsl */ `
     float turbulence = (n*0.6 + n2*0.4);
     turbulence = 0.5 + 0.5 * turbulence;
 
-    // マウス位置中心のフォールオフ（アスペクト比を考慮）
-    float brush = radialFalloff(uv, uMouse, uFeather, uResolution);
+    // マウス位置中心のフォールオフ
+    float brush = radialFalloff(uv, uMouse, uFeather);
 
-    // マスクの計算（マウスから離れた部分でエフェクトが適用される）
-    float mask = turbulence * brush * 1.0;
+    // マスクの計算
+    float mask = turbulence * brush * uStrength;
 
     // テクスチャの取得
     vec4 baseCol = texture2D(uTexture, uv);

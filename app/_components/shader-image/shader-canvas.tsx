@@ -72,15 +72,15 @@ function ShaderPlane({ imageSrc, altImageSrc }: ShaderPlaneProps) {
     localUniforms.uMouse.value.set(mouse.x, mouse.y);
 
     // デバッグ情報（開発時のみ）
-    if (Math.floor(clock.elapsedTime) % 2 === 0 && clock.elapsedTime % 1 < 0.01) {
-      console.log("Shader Debug:", {
-        time: clock.elapsedTime,
-        strength: localUniforms.uStrength.value,
-        mouse: { x: mouse.x, y: mouse.y },
-        hovered,
-        textureLoaded: !!localUniforms.uTexture.value,
-      });
-    }
+    // if (Math.floor(clock.elapsedTime) % 2 === 0 && clock.elapsedTime % 1 < 0.01) {
+    //   console.log("Shader Debug:", {
+    //     time: clock.elapsedTime,
+    //     strength: localUniforms.uStrength.value,
+    //     mouse: { x: mouse.x, y: mouse.y },
+    //     hovered,
+    //     textureLoaded: !!localUniforms.uTexture.value,
+    //   });
+    // }
   });
 
   const handlePointerMove = (event: ThreeEvent<PointerEvent>) => {

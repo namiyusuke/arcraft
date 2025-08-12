@@ -1,0 +1,56 @@
+.target {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.targetTxt {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.targetTxt span {
+  display: inline-block;
+}
+
+.normal {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
+.hover {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: 1;
+  opacity: 1;
+}
+.hover span {
+  opacity: 0;
+}
+
+.target:hover .hover {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.target:hover .normal span {
+  transform: translateY(-1px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.5s;
+  transition-delay: calc(var(--ls-index) * 0.05s);
+}
+
+.target:hover .hover span {
+  transform: translateY(0px);
+  opacity: 1;
+  transition: transform 0.3s ease, opacity 0.5s;
+  transition-delay: calc(var(--ls-index) * 0.05s + 0.3s);
+}

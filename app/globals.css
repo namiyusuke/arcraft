@@ -612,7 +612,7 @@ ul {
 }
 .u-wrapper--about {
   position: relative;
-  max-inline-size: 1160px;
+  max-inline-size: 1093px;
   padding-inline: 5vi;
   margin-inline: auto;
   box-sizing: content-box;
@@ -702,4 +702,62 @@ ul {
   .footerAbout {
     padding-top: 4rem;
   }
+}
+.c-button__link {
+  width: 120px;
+  height: 40px;
+  background-color: #262626;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: background-color 0.5s, color 0.5s;
+}
+.c-button-back {
+  width: 120px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: background-color 0.5s, color 0.5s;
+  position: relative;
+}
+.c-button-back-arrow {
+  width: 1rem;
+  height: 1rem;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0.4%203.4L2.8%200H5.3L3.2%203H9.5C11.2239%203%2012.8772%203.68482%2014.0962%204.90381C15.3152%206.12279%2016%207.77609%2016%209.5C16%2011.2239%2015.3152%2012.8772%2014.0962%2014.0962C12.8772%2015.3152%2011.2239%2016%209.5%2016H5L6%2014H9.5C10.6935%2014%2011.8381%2013.5259%2012.682%2012.682C13.5259%2011.8381%2014%2010.6935%2014%209.5C14%208.30653%2013.5259%207.16193%2012.682%206.31802C11.8381%205.47411%2010.6935%205%209.5%205H3.2L5.3%208H2.8L0.4%204.6L0%204L0.4%203.4Z%22%20fill%3D%22%231E1E1E%22%2F%3E%3C%2Fsvg%3E");
+  background-size: cover;
+  transition: background-image 0.5s;
+}
+.c-button-back {
+  background-color: #fff;
+}
+.c-button-back:hover {
+  background-color: #262626;
+}
+.c-button-back:hover .c-button-back-arrow {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0.4%203.4L2.8%200H5.3L3.2%203H9.5C11.2239%203%2012.8772%203.68482%2014.0962%204.90381C15.3152%206.12279%2016%207.77609%2016%209.5C16%2011.2239%2015.3152%2012.8772%2014.0962%2014.0962C12.8772%2015.3152%2011.2239%2016%209.5%2016H5L6%2014H9.5C10.6935%2014%2011.8381%2013.5259%2012.682%2012.682C13.5259%2011.8381%2014%2010.6935%2014%209.5C14%208.30653%2013.5259%207.16193%2012.682%206.31802C11.8381%205.47411%2010.6935%205%209.5%205H3.2L5.3%208H2.8L0.4%204.6L0%204L0.4%203.4Z%22%20fill%3D%22%23EFF1F3%22%2F%3E%3C%2Fsvg%3E");
+}
+.c-button__link:hover {
+  color: #262626;
+  background-color: #fff;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.c-button__link-wrap {
+  display: flex;
+  flex-direction: column;
 }
