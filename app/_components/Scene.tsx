@@ -116,7 +116,6 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
         controls.current.setLookAt(0.399999999999996, 1.3999999999999988, 0.399999999999998, 0, 1.3, 0.4, true);
       } else {
         controls.current.setLookAt(0.399999999999996, 1.3999999999999988, 0.399999999999998, 0, 1.3, 0.4, true);
-        controls;
       }
     } else {
       document.documentElement.classList.remove("is-back");

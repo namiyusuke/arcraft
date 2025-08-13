@@ -808,6 +808,15 @@ export function NamiRoom() {
         rotation={[Math.PI / 2, 0, 0.358]}
         scale={[0.033, 0.052, 0.033]}
         castShadow
+        onClick={() => {
+          setIsDumbbleClicked(!isDumbbleClicked);
+        }}
+        onPointerOver={(e) => {
+          mouseOn(e);
+        }}
+        onPointerOut={(e) => {
+          mouseOut(e);
+        }}
       />
       <mesh
         geometry={nodes.dumbbell_weights.geometry}
@@ -816,6 +825,15 @@ export function NamiRoom() {
         rotation={[Math.PI / 2, 0, 0.358]}
         scale={[0.144, 0.045, 0.144]}
         castShadow
+        onClick={() => {
+          setIsDumbbleClicked(!isDumbbleClicked);
+        }}
+        onPointerOver={(e) => {
+          mouseOn(e);
+        }}
+        onPointerOut={(e) => {
+          mouseOut(e);
+        }}
       />
       <mesh
         geometry={nodes.dumbbell_bar001.geometry}

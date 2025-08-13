@@ -69,7 +69,7 @@
   opacity: 1;
 }
 
-.isHover .mouseStalker__follower {
+/* .isHover .mouseStalker__follower {
   z-index: 5;
   width: 120px;
   height: 120px;
@@ -79,7 +79,7 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;
   opacity: 1;
-}
+} */
 .is-back .mouseStalker {
   display: none;
 }

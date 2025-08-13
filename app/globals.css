@@ -564,8 +564,9 @@ ul {
   pointer-events: auto;
   visibility: visible;
 } */
-.menu-item .is-current {
+.menu-item .is-current a {
   color: #a62d43;
+  font-weight: 700;
 }
 @media (width >= 768px) {
   .menu-item .is-current {
