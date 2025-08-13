@@ -56,6 +56,7 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
     }
   });
   const controls = useRef<CameraControls>(null);
+  // controls.current?.cancel()
   const { cameraPosition, targetPosition, lightIntensity, lightPosition } = useControls({
     cameraPosition: {
       value: { x: 2, y: 2, z: 2 },
@@ -115,6 +116,7 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
         controls.current.setLookAt(0.399999999999996, 1.3999999999999988, 0.399999999999998, 0, 1.3, 0.4, true);
       } else {
         controls.current.setLookAt(0.399999999999996, 1.3999999999999988, 0.399999999999998, 0, 1.3, 0.4, true);
+        controls;
       }
     } else {
       document.documentElement.classList.remove("is-back");
@@ -208,7 +210,7 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
           dollySpeed={0.5}
           truckSpeed={0.5}
           smoothTime={0.5}
-          enabled={true}
+          enabled={!isDumbbleClicked && !isScreenClicked}
         />
       </group>
       <GridPlanes

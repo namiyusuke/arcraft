@@ -13,7 +13,7 @@ export default function LifeList({ life }: lifelogListProps) {
     return <p>ニュースがありません</p>;
   }
   return (
-    <div className="u-wrapper">
+    <div className="u-wrapper u-wrapper--article">
       <p className={styles.titleTxt}>Visualize the process of growth by testing ideas and experimenting</p>
       <ul className={styles.listWrapper}>
         {life.map((content) => (

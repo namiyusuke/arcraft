@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-block: 80px;
+  padding-block: calc(60 * var(--pxToRem));
+  padding-bottom: calc(140 * var(--pxToRem));
   column-gap: calc(24 * var(--pxToRem));
   position: relative;
   z-index: 10;

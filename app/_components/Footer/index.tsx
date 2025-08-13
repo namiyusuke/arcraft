@@ -263,7 +263,7 @@ export default function Footer() {
                 ""
               )}
             </div>
-            <p className={styles.copy}>© SIMPLE. All Rights Reserved 2024</p>
+            <p className={styles.copy}>©️2025 Arcraft</p>
           </div>
         </div>
       </div>

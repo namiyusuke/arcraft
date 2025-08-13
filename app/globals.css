@@ -569,7 +569,7 @@ ul {
 }
 @media (width >= 768px) {
   .menu-item .is-current {
-    padding-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid #a62d43;
   }
 }
@@ -609,6 +609,9 @@ ul {
   margin-inline: auto;
   box-sizing: content-box;
   z-index: 1;
+}
+.u-wrapper--article {
+  padding-inline: 10vi;
 }
 .u-wrapper--about {
   position: relative;
