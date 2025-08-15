@@ -12,6 +12,8 @@ export const useScrollObserver = (target: string) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           document.documentElement.classList.add(target);
+        } else {
+          document.documentElement.classList.remove(target);
         }
       },
       {

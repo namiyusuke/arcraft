@@ -11,7 +11,10 @@ import * as THREE from "three";
 export function DumbbellNew(props) {
   const { nodes, materials } = useGLTF("/models/dumbbell.glb");
   const groupRef = useRef();
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const [velocity, setVelocity] = useState({ x: 0, y: 0 });
+  const lastMousePos = useRef({ x: 0, y: 0 });
+  const rotationVelocity = useRef({ x: 0, y: 0, z: 0 });
 
   // 各メッシュの位置から重心を計算
   const centerX = (0.621 + 0.621 + 0.696) / 3;
@@ -20,18 +23,44 @@ export function DumbbellNew(props) {
 
   useFrame((state, delta) => {
     if (groupRef.current) {
-      const tiltX = mousePosition.y * 0.04;
-      const tiltZ = -mousePosition.x * 0.04;
-      groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, tiltX, 0.1);
-      groupRef.current.rotation.z = THREE.MathUtils.lerp(groupRef.current.rotation.z, tiltZ, 0.1);
+      if (isHovered) {
+        // カーソルがホバー中は速度に基づいて回転
+        rotationVelocity.current.x += velocity.y * delta * 10;
+        rotationVelocity.current.y += velocity.x * delta * 10;
+        rotationVelocity.current.z += (velocity.x + velocity.y) * delta * 5;
+      }
+      
+      // 回転を適用
+      groupRef.current.rotation.x += rotationVelocity.current.x * delta;
+      groupRef.current.rotation.y += rotationVelocity.current.y * delta;
+      groupRef.current.rotation.z += rotationVelocity.current.z * delta;
+      
+      // 摩擦で速度を減衰
+      rotationVelocity.current.x *= 0.95;
+      rotationVelocity.current.y *= 0.95;
+      rotationVelocity.current.z *= 0.95;
     }
   });
 
   const handlePointerMove = (event) => {
-    // Three.jsのイベントから直接座標を取得
-    const x = (event.point.x / 2) * 2;
-    const y = (event.point.y / 2) * 2;
-    setMousePosition({ x, y });
+    const x = (event.clientX / window.innerWidth) * 2 - 1;
+    const y = -(event.clientY / window.innerHeight) * 2 + 1;
+    
+    // マウス速度を計算
+    const deltaX = x - lastMousePos.current.x;
+    const deltaY = y - lastMousePos.current.y;
+    setVelocity({ x: deltaX, y: deltaY });
+    
+    lastMousePos.current = { x, y };
+  };
+
+  const handlePointerEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handlePointerLeave = () => {
+    setIsHovered(false);
+    setVelocity({ x: 0, y: 0 });
   };
 
   return (
@@ -40,7 +69,8 @@ export function DumbbellNew(props) {
       {...props}
       dispose={null}
       onPointerMove={handlePointerMove}
-      onPointerLeave={() => setMousePosition({ x: 0, y: 0 })}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
     >
       <mesh
         geometry={nodes.dumbbell_weights001.geometry}

@@ -77,7 +77,7 @@
   aspect-ratio: 32/16;
 
   /* background-color: #040441; */
-  background-color: rgba(4, 4, 65, 0.8);
+  background-color: #38446a;
   color: #fff;
   font-family: var(--font-family-zen);
   padding-inline: calc(20 * var(--pxToRem));

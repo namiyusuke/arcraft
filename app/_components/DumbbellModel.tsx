@@ -34,8 +34,8 @@ function Dumbbell() {
     const rect = event.intersections[0]?.object.parent?.parent?.getBoundingClientRect?.() || {
       left: 0,
       top: 0,
-      width: 400,
-      height: 300,
+      width: 500,
+      height: 400,
     };
     const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
     const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;

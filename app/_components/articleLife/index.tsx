@@ -3,6 +3,7 @@ import type { Life } from "@/app/_libs/microcms";
 import Link from "next/link";
 import Date from "../Date";
 import styles from "./index.module.css";
+import ScrollToTopButton from "../ScrollToTopButton";
 import {
   codeBlockFileNameTransformer,
   microCMSRichEditorHandler,
@@ -57,14 +58,14 @@ export default async function ArticleLife({ data }: Props) {
       ],
     },
   });
-  console.log(toc);
   return (
     <main>
+      <ScrollToTopButton />
       <div className="article-margin">
         <div className={styles.back}>
           <Link href="/life">一覧に戻る</Link>
         </div>
-        <div className="u-wrapper">
+        <div className="u-wrapper" data-variant="detail">
           {data.thumbnail && (
             <ViewTransition name={`thumbnail-${data.id}`}>
               <Image

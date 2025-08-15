@@ -11,6 +11,7 @@ import {
   tocExtractor,
 } from "microcms-rich-editor-handler";
 import TocLink from "./TocLink";
+import ScrollToTopButton from "../ScrollToTopButton";
 import { unstable_ViewTransition as ViewTransition } from "react";
 
 type Props = {
@@ -61,8 +62,9 @@ export default async function Article({ data }: Props) {
   });
   return (
     <main>
+      <ScrollToTopButton />
       <div className="article-margin">
-        <div className="u-wrapper">
+        <div className="u-wrapper" data-variant="detail">
           {data.thumbnail && (
             <ViewTransition name={`thumbnail-${data.id}`}>
               <Image
