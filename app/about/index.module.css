@@ -1,5 +1,6 @@
 .text {
   text-align: center;
+  font-family: var(--font-family-noto);
 }
 
 .jaText {
@@ -42,6 +43,10 @@
 }
 .introWrapper {
   padding-bottom: calc(160 / 16 * 1rem);
+}
+.introCanvas {
+  border-radius: 20px;
+  overflow: hidden;
 }
 @media (width >= 768px) {
   .introCanvas {

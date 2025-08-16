@@ -76,7 +76,9 @@
   padding-top: calc(40 * var(--pxToRem));
   display: flex;
   justify-content: center;
+  font-weight: 500;
   margin-bottom: calc(24 * var(--pxToRem));
+  font-family: var(--font-family-noto);
 }
 @media (width >= 768px) {
   .copy {

@@ -370,6 +370,7 @@
     /* border: 1px solid #fff; */
     font-weight: 500;
     background-color: #fff;
+    font-family: var(--font-family-noto);
     color: #040441;
   }
 }

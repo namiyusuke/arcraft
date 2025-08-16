@@ -25,7 +25,7 @@ export default function Hero({ title, className }: Props) {
 
   return (
     <section className={`${styles.container} ${className}`}>
-      <div>
+      <div className="title__wrap">
         <h1 className={styles.title}>{spanText(title)}</h1>
       </div>
     </section>

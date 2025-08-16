@@ -569,6 +569,9 @@ ul {
   pointer-events: auto;
   visibility: visible;
 } */
+.menu-item a {
+  font-family: var(--font-family-noto);
+}
 .menu-item .is-current a {
   color: #a62d43 !important;
   font-weight: 700;
@@ -581,7 +584,6 @@ ul {
 }
 .text__life h1,
 .is-life .footerTitle {
-  font-style: italic;
   font-weight: 300;
   color: #38446a;
   font-family: var(--font-family-jost);
@@ -590,6 +592,7 @@ ul {
 .custom-cursor {
   cursor: none;
 }
+
 .is-back .custom-cursor {
   cursor: initial;
 }
@@ -714,7 +717,12 @@ ul {
   background-color: transparent;
 }
 .article-margin {
-  padding-bottom: 3rem;
+  padding-bottom: 100px;
+}
+@media (width >= 768px) {
+  .article-margin {
+    padding-bottom: 200px;
+  }
 }
 .footerLife,
 .footerAbout {
@@ -809,4 +817,10 @@ ul {
 }
 .is-observer .menu-item li a {
   color: #2d2f4e;
+}
+.g-bg-dark .title__wrap h1 {
+  font-family: "Satoshi-Bold";
+}
+.contact__text {
+  font-family: var(--font-family-noto);
 }
