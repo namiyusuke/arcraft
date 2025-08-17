@@ -26,13 +26,19 @@
 
 .image_wrapper {
   display: block;
-  aspect-ratio: 341 / 212;
+  aspect-ratio: 280 / 174;
   object-fit: cover;
   margin-inline: auto;
   flex-shrink: 0;
   overflow: hidden;
   border-radius: calc(20 * var(--pxToRem));
-  width: clamp(17.5rem, 16.18rem + 5.63vw, 21.25rem);
+  width: calc(280 / 375 * 100vw);
+  /* width: clamp(17.5rem, 16.18rem + 5.63vw, 21.25rem); */
+  /* max-width: 280px; */
+}
+.image_wrapper img {
+  aspect-ratio: 280 / 174;
+  object-fit: cover;
 }
 .image {
   width: 100%;
@@ -42,6 +48,7 @@
 .image_wrapper {
   margin-left: 0.5rem;
   width: calc(280 / 300 * 100%);
+  /* width: clamp(17.5rem, 16.18rem + 5.63vw, 21.25rem); */
   margin-left: auto;
   margin-right: 0;
   overflow: hidden;

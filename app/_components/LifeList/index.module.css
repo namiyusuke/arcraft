@@ -32,7 +32,6 @@
   flex-shrink: 0;
   overflow: hidden;
   border-radius: calc(20 * var(--pxToRem));
-  width: clamp(17.5rem, 16.18rem + 5.63vw, 21.25rem);
 }
 .image {
   width: 100%;

@@ -731,7 +731,9 @@ ul {
   padding-top: 2rem;
 }
 .g-bg-purple .footerLife svg {
-  width: 104%;
+  width: 106%;
+  position: relative;
+  right: 3%;
 }
 @media (width >= 768px) {
   .footerLife,
@@ -836,7 +838,7 @@ ul {
 @media (width >= 768px) {
   .article-btn-back {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: calc(60 / 16 * 1rem);
   }
 }
 .article-btn-back a {
