@@ -101,12 +101,21 @@ export default async function Article({ data }: Props) {
               </ol>
             </div>
           )}
-          <div
-            className={styles.content}
-            dangerouslySetInnerHTML={{
-              __html: html,
-            }}
-          />
+          <div className="">
+            <div
+              className={styles.content}
+              dangerouslySetInnerHTML={{
+                __html: html,
+              }}
+            />
+          </div>
+          <div className="article-btn-back-wrap">
+            <p className="article-btn-back">
+              <Link href="/techlog">
+                <span className="article-btn-back-icon">一覧に戻る</span>
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </main>

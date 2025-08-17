@@ -101,6 +101,13 @@ export default async function ArticleLife({ data }: Props) {
               __html: html,
             }}
           />
+          <div className="article-btn-back-wrap">
+            <p className="article-btn-back">
+              <Link href="/techlog">
+                <span className="article-btn-back-icon">一覧に戻る</span>
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </main>

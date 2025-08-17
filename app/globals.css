@@ -718,6 +718,8 @@ ul {
 }
 .article-margin {
   padding-bottom: 100px;
+  font-family: var(--font-family-noto);
+  font-weight: 500;
 }
 @media (width >= 768px) {
   .article-margin {
@@ -727,6 +729,9 @@ ul {
 .footerLife,
 .footerAbout {
   padding-top: 2rem;
+}
+.g-bg-purple .footerLife svg {
+  width: 104%;
 }
 @media (width >= 768px) {
   .footerLife,
@@ -823,4 +828,83 @@ ul {
 }
 .contact__text {
   font-family: var(--font-family-noto);
+}
+.article-btn-back {
+  text-align: center;
+  margin-top: 2rem;
+}
+@media (width >= 768px) {
+  .article-btn-back {
+    text-align: center;
+    margin-top: 3rem;
+  }
+}
+.article-btn-back a {
+  border-radius: 1rem;
+  border: 1px solid #2d2f4e;
+  padding-left: 1rem;
+  padding-block: 1rem;
+  padding-right: calc(22 / 16 * 1rem);
+  display: inline-block;
+  line-height: 1.5;
+}
+.article-btn-back-icon {
+  display: inline-block;
+  position: relative;
+  padding-right: 28px;
+}
+.article-btn-back-icon::after {
+  background-image: url(../public/arrow-back.svg);
+  background-size: cover;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin-block: auto;
+  content: "";
+}
+.g-bg-dark .article-btn-back a {
+  border-color: #fff;
+}
+.g-bg-dark .article-btn-back .article-btn-back-icon::after {
+  background-image: url(../public/arrow-back-hover.svg);
+}
+.home__menu--sp {
+  position: fixed;
+  left: 29px;
+  bottom: 30px;
+  padding-block: 18px;
+}
+.home__menu--sp {
+  @media (width >= 768px) {
+    display: none;
+  }
+}
+.home__menu-link {
+  color: #a62d43;
+  padding: 1rem 20px;
+  border-radius: 10px;
+  background-color: #262626;
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-family: "Satoshi-Bold";
+  line-height: 100%;
+  font-size: 20px;
+}
+.home__menu-item + .home__menu-item {
+  margin-top: 12px;
+}
+.home__menu--sp::after {
+  content: "";
+  width: 8px;
+  height: 100%;
+  background-color: #262626;
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: -1;
 }
