@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+   max-width: 362px;
 }
 .list + .list {
   margin-top: 3.5rem;
@@ -22,6 +23,7 @@
   line-height: 1;
   display: block;
   height: 100%;
+
 }
 
 .image_wrapper {
@@ -47,7 +49,8 @@
 
 .image_wrapper {
   margin-left: 0.5rem;
-  width: calc(280 / 300 * 100%);
+  width: calc(340 / 362 * 100%);
+  max-width: 340px;
   /* width: clamp(17.5rem, 16.18rem + 5.63vw, 21.25rem); */
   margin-left: auto;
   margin-right: 0;
@@ -55,7 +58,7 @@
 }
 @media (width >= 768px) {
   .image_wrapper {
-    margin-left: 1.5rem;
+    /* margin-left: 1.5rem; */
   }
 }
 @media (width >= 1280px) {
@@ -170,7 +173,9 @@
 .content__left {
   padding: calc(10 * var(--pxToRem));
   position: relative;
-  width: clamp(17.5rem, 15.739rem + 7.51vw, 22.5rem);
+  width: calc(340 / 360 * 100%) !important;
+  max-width: 340px;
+  /* width: clamp(17.5rem, 15.739rem + 7.51vw, 22.5rem); */
   aspect-ratio: 1/1;
   background: linear-gradient(
     180deg,
