@@ -209,7 +209,7 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
           dollySpeed={0.5}
           truckSpeed={0.5}
           smoothTime={0.5}
-          enabled={!isDumbbleClicked && !isScreenClicked}
+          enabled={true}
         />
       </group>
       <GridPlanes

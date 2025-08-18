@@ -2,14 +2,10 @@ import * as THREE from "three";
 
 export const uniforms = {
   uTexture: { value: null },
-  uTextureAlt: { value: null },
   uTime: { value: 0 },
   uMouse: { value: new THREE.Vector2(0.5, 0.5) },
   uResolution: { value: new THREE.Vector2(1, 1) },
-  uStrength: { value: 0.0 },
-  uNoiseScale: { value: 1.0 },
-  uNoiseSpeed: { value: 0.25 },
-  uFeather: { value: 0.25 },
+  uGlitchIntensity: { value: 0.0 },
 };
 
 export const vertexShader = /* glsl */ `
@@ -20,86 +16,69 @@ export const vertexShader = /* glsl */ `
   }
 `;
 
-const simplex = /* glsl */ `
-vec3 mod289(vec3 x){return x - floor(x * (1.0/289.0)) * 289.0;}
-vec2 mod289(vec2 x){return x - floor(x * (1.0/289.0)) * 289.0;}
-vec3 permute(vec3 x){return mod289(((x*34.0)+1.0)*x);}
-float snoise(vec2 v){
-  const vec4 C = vec4(0.211324865, 0.366025404, -0.577350269, 0.024390244);
-  vec2 i = floor(v + dot(v, C.yy));
-  vec2 x0 = v - i + dot(i, C.xx);
-  vec2 i1 = (x0.x > x0.y) ? vec2(1.0,0.0) : vec2(0.0,1.0);
-  vec4 x12 = x0.xyxy + C.xxzz;
-  x12.xy -= i1;
-  i = mod289(i);
-  vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));
-  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
-  m = m*m; m = m*m;
-  vec3 x = 2.0 * fract(p * C.www) - 1.0;
-  vec3 h = abs(x) - 0.5;
-  vec3 ox = floor(x + 0.5);
-  vec3 a0 = x - ox;
-  m *= 1.792842914 - 0.853734721 * (a0*a0 + h*h);
-  vec3 g;
-  g.x  = a0.x  * x0.x  + h.x  * x0.y;
-  g.y  = a0.y  * x12.x + h.y  * x12.y;
-  g.z  = a0.z  * x12.z + h.z  * x12.w;
-  return 130.0 * dot(m, g);
-}
-`;
-
 export const fragmentShader = /* glsl */ `
   precision highp float;
   varying vec2 vUv;
 
   uniform sampler2D uTexture;
-  uniform sampler2D uTextureAlt;
-  uniform vec2  uResolution;
-  uniform vec2  uMouse;
+  uniform vec2 uMouse;
   uniform float uTime;
-  uniform float uStrength;
-  uniform float uNoiseScale;
-  uniform float uNoiseSpeed;
-  uniform float uFeather;
+  uniform float uGlitchIntensity;
+  // ランダム関数
+  float random(vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
+  }
 
-  ${simplex}
+  // ビンテージVHS風グリッチエフェクト
+  vec3 glitchEffect(vec2 uv, sampler2D tex, float intensity) {
+    vec2 originalUV = uv;
 
-  float radialFalloff(vec2 uv, vec2 center, float feather){
-    float d = distance(uv, center);
-    float r = 0.15;
-    float edge = smoothstep(r, r - feather, d);
-    return 1.0 - edge;
+    // VHS特有の水平同期ずれ（ランダムな行でシフト）
+    float lineY = floor(uv.y * 300.0);
+    float trackingError = random(vec2(lineY, floor(uTime * 2.0)));
+    if(trackingError > 0.98) {
+      uv.x += (random(vec2(lineY + 1.0, uTime)) - 0.5) * intensity * 0.1;
+    }
+
+    // VHS色にじみ（クロマ分離）
+    vec2 chromaOffset = vec2(intensity * .03, 0.0);
+    float r = texture2D(tex, uv + chromaOffset).r;
+    float g = texture2D(tex, uv).g;
+    float b = texture2D(tex, uv - chromaOffset).b;
+    vec3 color = vec3(r, g, b);
+
+    // アナログノイズライン
+    float noiseLine = sin(originalUV.y * 800.0 + uTime * 50.0) * 0.5 + 0.5;
+    float lineNoise = random(vec2(floor(originalUV.y * 200.0), uTime * 10.0));
+    if(lineNoise > 0.97) {
+      color += noiseLine * intensity * 0.2;
+    }
+
+    // VHS特有の彩度低下と暖色系の色味
+    color = mix(color, color * vec3(1.1, 0.95, 0.8), intensity * 0.3);
+
+    // 微細なアナログノイズ
+    float analogNoise = random(originalUV + uTime * 0.01) * intensity * 0.03;
+    color += analogNoise;
+
+    return color;
   }
 
   void main () {
     vec2 uv = vUv;
 
-    // 時間ベースのノイズアニメーション
-    float n  = snoise(uv * uNoiseScale + uTime * uNoiseSpeed);
-    float n2 = snoise(uv * (uNoiseScale*2.0) - uTime * (uNoiseSpeed*0.5));
-    float turbulence = (n*0.6 + n2*0.4);
-    turbulence = 0.5 + 0.5 * turbulence;
+    // マウス位置に基づくグリッチ強度
+    float mouseDist = distance(uv, uMouse);
+    float mouseInfluence = 1.0 - smoothstep(0.0, 0.3, mouseDist);
+    float finalGlitchIntensity = uGlitchIntensity * (0.5 + mouseInfluence * 0.5);
 
-    // マウス位置中心のフォールオフ
-    float brush = radialFalloff(uv, uMouse, uFeather);
-
-    // マスクの計算
-    float mask = turbulence * brush * uStrength;
-
-    // テクスチャの取得
-    vec4 baseCol = texture2D(uTexture, uv);
-    vec4 altCol  = texture2D(uTextureAlt, uv);
-
-    // エフェクトが見えるように調整
-    float m = smoothstep(0.1, 0.8, mask);
-
-    // 色の反転エフェクトを強くする
-    vec3 invertedColor = 1.0 - baseCol.rgb;
-    vec3 color = mix(baseCol.rgb, invertedColor, m);
-
-    // 時間ベースの色調変化も追加（デバッグ用）
-    float timeEffect = sin(uTime * 2.0) * 0.1 * uStrength;
-    color += vec3(timeEffect,timeEffect, timeEffect);
+    // グリッチエフェクトの適用
+    vec3 color;
+    if(finalGlitchIntensity > 0.0) {
+      color = glitchEffect(uv, uTexture, finalGlitchIntensity);
+    } else {
+      color = texture2D(uTexture, uv).rgb;
+    }
 
     gl_FragColor = vec4(color, 1.0);
   }
