@@ -42,7 +42,7 @@
   }
 }
 .introWrapper {
-  padding-bottom: calc(160 / 16 * 1rem);
+  padding-bottom: calc(80 / 16 * 1rem);
 }
 .introCanvas {
   border-radius: 20px;

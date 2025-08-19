@@ -910,3 +910,47 @@ ul {
   margin: auto;
   z-index: -1;
 }
+.hero__lifelog-dumbbell {
+  width: clamp(9.375rem, 6.515rem + 12.47vw, 12.5rem);
+  right: 0;
+  top: 136px;
+  position: absolute;
+}
+
+@media (width >= 768px) {
+  .hero__lifelog-dumbbell {
+    width: clamp(18.75rem, 8.679rem + 20.98vw, 27.563rem);
+    right: 0;
+    top: 186px;
+    position: absolute;
+  }
+}
+.hero__lifelog-cushion {
+  width: clamp(5.625rem, 5.053rem + 2.49vw, 6.25rem);
+  left: 90px;
+  top: 120px;
+  position: absolute;
+}
+@media (width >= 768px) {
+  .hero__lifelog-cushion {
+    width: clamp(11.25rem, 6.536rem + 9.82vw, 15.375rem);
+    left: 169px;
+    top: 240px;
+    position: absolute;
+  }
+}
+
+.hero__lifelog-coffee {
+  width: clamp(3.75rem, 2.606rem + 4.99vw, 5rem);
+  left: 45px;
+  top: 166px;
+  position: absolute;
+}
+@media (width >= 768px) {
+  .hero__lifelog-coffee {
+    width: clamp(6.25rem, 2.964rem + 6.85vw, 9.125rem);
+    left: 53px;
+    top: 366px;
+    position: absolute;
+  }
+}
