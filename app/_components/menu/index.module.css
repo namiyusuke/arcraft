@@ -253,7 +253,7 @@
   right: calc(106 * var(--pxToRem));
   background-color: #fff;
   color: #040441;
-  z-index: 11;
+  z-index: 101;
   padding: calc(5 * var(--pxToRem)) calc(15 * var(--pxToRem));
   border-radius: 12px;
   line-height: 1;
@@ -420,7 +420,7 @@ input[type="checkbox"].categoryCheckbox:checked::after {
   color: #fff;
   font-family: var(--font-mono);
   font-weight: 700;
-  z-index: 11;
+  z-index: 101;
 }
 
 @media (width >= 768px) {

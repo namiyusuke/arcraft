@@ -43,6 +43,33 @@ export default function ParallaxImages({
       const image = images[index];
       if (!image) return;
 
+      // 初期状態を設定（非表示 + 下からスタート）
+      gsap.set(imageRef, {
+        opacity: 0,
+        y: 100,
+        scale: 0.8,
+      });
+
+      // バウンス登場アニメーション
+      gsap.to(imageRef, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+        delay: index * 0.2, // 画像ごとに時差をつける
+      });
+
+      // ゆらゆらループアニメーション（登場後に開始）
+      gsap.to(imageRef, {
+        y: "+=15",
+        duration: 2 + index * 0.3, // 画像ごとに異なる周期
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: 1.4 + index * 0.2, // 登場アニメーション後に開始
+      });
+
       // ScrollTriggerを直接作成する方式（より明確）
       const scrollTriggerInstance = ScrollTrigger.create({
         trigger: "body",

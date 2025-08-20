@@ -327,6 +327,7 @@ img {
   position: relative;
   color: #fff;
   background-color: #fff;
+  overflow: hidden;
 }
 .g-bg-dark::after {
   content: "";
@@ -952,5 +953,79 @@ ul {
     left: 53px;
     top: 366px;
     position: absolute;
+  }
+}
+.parallax-container {
+  position: relative;
+  z-index: 100;
+}
+.hero__techlog-book,
+.hero__techlog-book01,
+.hero__techlog-keybord,
+.hero__techlog-mouth {
+  position: absolute;
+}
+.hero__techlog-book {
+  right: -80px;
+  top: 160px;
+}
+.hero__techlog-book img {
+  width: clamp(10rem, 7.615rem + 10.18vw, 12.5rem);
+}
+@media (width >= 768px) {
+  .hero__techlog-book {
+    right: 44px;
+    top: 350px;
+  }
+  .hero__techlog-book img {
+    width: clamp(13.75rem, 12.321rem + 2.98vw, 15rem);
+  }
+}
+.hero__techlog-book01 {
+  right: 17px;
+  top: 102px;
+}
+.hero__techlog-book01 img {
+  width: clamp(8.75rem, 6.961rem + 7.63vw, 10.625rem);
+}
+@media (width >= 768px) {
+  .hero__techlog-book01 {
+    right: 167px;
+    top: 232px;
+  }
+  .hero__techlog-book01 img {
+    width: clamp(13.75rem, 11.607rem + 4.46vw, 15.625rem);
+  }
+}
+.hero__techlog-keybord {
+  left: -30px;
+  top: 107px;
+}
+.hero__techlog-keybord img {
+  width: clamp(12.5rem, 10.115rem + 10.18vw, 15rem);
+}
+@media (width >= 768px) {
+  .hero__techlog-keybord {
+    left: -30px;
+    top: 207px;
+  }
+  .hero__techlog-keybord img {
+    width: clamp(18.75rem, 15.893rem + 5.95vw, 21.25rem);
+  }
+}
+.hero__techlog-mouth {
+  left: 86px;
+  top: 90px;
+}
+.hero__techlog-mouth img {
+  width: clamp(4.375rem, 2.586rem + 7.63vw, 6.25rem);
+}
+@media (width >= 768px) {
+  .hero__techlog-mouth {
+    left: 126px;
+    top: 204px;
+  }
+  .hero__techlog-mouth img {
+    width: clamp(5rem, 3.571rem + 2.98vw, 6.25rem);
   }
 }
