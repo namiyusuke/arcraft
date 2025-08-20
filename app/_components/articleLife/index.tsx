@@ -62,9 +62,9 @@ export default async function ArticleLife({ data }: Props) {
     <main>
       <ScrollToTopButton />
       <div className="article-margin">
-        <div className={styles.back}>
+        {/* <div className={styles.back}>
           <Link href="/life">一覧に戻る</Link>
-        </div>
+        </div> */}
         <div className="u-wrapper" data-variant="detail">
           {data.thumbnail && (
             <ViewTransition name={`thumbnail-${data.id}`}>

@@ -622,6 +622,7 @@ ul {
 }
 .u-wrapper--article {
   padding-inline: 10vi;
+  position: static;
 }
 .u-wrapper--about {
   position: relative;
@@ -725,6 +726,7 @@ ul {
 @media (width >= 768px) {
   .article-margin {
     padding-bottom: 200px;
+    padding-top: 60px;
   }
 }
 .footerLife,
@@ -936,7 +938,7 @@ ul {
   .hero__lifelog-cushion {
     width: clamp(11.25rem, 6.536rem + 9.82vw, 15.375rem);
     left: 169px;
-    top: 240px;
+    top: 340px;
     position: absolute;
   }
 }
@@ -951,12 +953,15 @@ ul {
   .hero__lifelog-coffee {
     width: clamp(6.25rem, 2.964rem + 6.85vw, 9.125rem);
     left: 53px;
-    top: 366px;
+    top: 396px;
     position: absolute;
   }
 }
 .parallax-container {
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   z-index: 100;
 }
 .hero__techlog-book,

@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-   max-width: 362px;
+  max-width: 362px;
 }
 .list + .list {
   margin-top: 3.5rem;
@@ -23,7 +23,6 @@
   line-height: 1;
   display: block;
   height: 100%;
-
 }
 
 .image_wrapper {
