@@ -1054,6 +1054,7 @@ ul {
   align-items: center;
   width: 100%;
   display: flex;
+  padding-block: 1rem;
 }
 
 .preview-item__col {
@@ -1093,7 +1094,7 @@ ul {
 .preview-item__heading {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 3.5em;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1;
 }
@@ -1135,12 +1136,12 @@ ul {
 
 .preview-follower {
   z-index: 100;
-  aspect-ratio: 1 / 1.25;
+  aspect-ratio: 144 / 80;
   pointer-events: none;
   border-radius: 0.75em;
   justify-content: center;
   align-items: center;
-  width: 20em;
+  width: 30em;
   display: flex;
   position: fixed;
   inset: 0% auto auto 0%;
@@ -1236,7 +1237,7 @@ ul {
   }
 
   .preview-item__heading {
-    font-size: 2em;
+    font-size: 1rem;
   }
 
   .preview-item__visual {

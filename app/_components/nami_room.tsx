@@ -14,139 +14,139 @@ import { useModel3DStore } from "../store/model3dStore";
 
 // type GLTFResult = GLTF & {
 //   nodes: {
-//     wall_shelf: THREE.Mesh
-//     wall_shelf001: THREE.Mesh
-//     signbord: THREE.Mesh
-//     Cube: THREE.Mesh
-//     Cube001: THREE.Mesh
-//     Cube002: THREE.Mesh
-//     Cube003: THREE.Mesh
-//     Cube004: THREE.Mesh
-//     Cube005: THREE.Mesh
-//     Cube006: THREE.Mesh
-//     Sphere: THREE.Mesh
-//     Cube007: THREE.Mesh
-//     Sphere001: THREE.Mesh
-//     Cube008: THREE.Mesh
-//     Sphere002: THREE.Mesh
-//     BézierCurve: THREE.Mesh
-//     Circle: THREE.Mesh
-//     Cube009: THREE.Mesh
-//     Cylinder: THREE.Mesh
-//     Cube012: THREE.Mesh
-//     Cube013: THREE.Mesh
-//     Cube018: THREE.Mesh
-//     Cube019: THREE.Mesh
-//     Cube020: THREE.Mesh
-//     Cube021: THREE.Mesh
-//     Cube022: THREE.Mesh
-//     Cube023: THREE.Mesh
-//     Cube029: THREE.Mesh
-//     Cube030: THREE.Mesh
-//     Cube031: THREE.Mesh
-//     Cube032: THREE.Mesh
-//     Cube033: THREE.Mesh
-//     Cube034: THREE.Mesh
-//     Cube035: THREE.Mesh
-//     Cube036: THREE.Mesh
-//     Cube037: THREE.Mesh
-//     Cube040: THREE.Mesh
-//     Cube041: THREE.Mesh
-//     Cube042: THREE.Mesh
-//     Cube043: THREE.Mesh
-//     Cube044: THREE.Mesh
-//     Cube046: THREE.Mesh
-//     Cube047: THREE.Mesh
-//     Cube038: THREE.Mesh
-//     Cube039: THREE.Mesh
-//     Cube028: THREE.Mesh
-//     Cube045: THREE.Mesh
-//     Cylinder001: THREE.Mesh
-//     Cylinder003: THREE.Mesh
-//     Cylinder002: THREE.Mesh
-//     Cylinder005: THREE.Mesh
-//     Cylinder006: THREE.Mesh
-//     Circle002: THREE.Mesh
-//     Torus005: THREE.Mesh
-//     Cube015: THREE.Mesh
-//     Cylinder009: THREE.Mesh
-//     Cylinder010: THREE.Mesh
-//     Cylinder011: THREE.Mesh
-//     Cylinder012: THREE.Mesh
-//     Plane006: THREE.Mesh
-//     Cylinder004: THREE.Mesh
-//     Plane008: THREE.Mesh
-//     Cube010: THREE.Mesh
-//     Cylinder007: THREE.Mesh
-//     Cube011: THREE.Mesh
-//     Cube016: THREE.Mesh
-//     Cube017: THREE.Mesh
-//     Cube024: THREE.Mesh
-//     Cube026: THREE.Mesh
-//     Cube027: THREE.Mesh
-//     Cylinder008: THREE.Mesh
-//     Circle001: THREE.Mesh
-//     dumbbell_bar: THREE.Mesh
-//     dumbbell_parts: THREE.Mesh
-//     dumbbell_weights: THREE.Mesh
-//     Cube025: THREE.Mesh
-//     Cube048: THREE.Mesh
-//     Cube049: THREE.Mesh
-//     Cube050: THREE.Mesh
-//     Cube051: THREE.Mesh
-//     Cube052: THREE.Mesh
-//     Cube053: THREE.Mesh
-//     Cube054: THREE.Mesh
-//     Cube055: THREE.Mesh
-//     Cylinder019: THREE.Mesh
-//     Cylinder020: THREE.Mesh
-//     Cylinder021: THREE.Mesh
-//     Cylinder022: THREE.Mesh
-//     Cylinder023: THREE.Mesh
-//     Cylinder024: THREE.Mesh
-//     pc_base: THREE.Mesh
-//     pc_frame: THREE.Mesh
-//     pc_screen: THREE.Mesh
-//     Plane_about: THREE.Mesh
-//     Text_about: THREE.Mesh
-//     Plane_lifelog: THREE.Mesh
-//     Text_lifelog: THREE.Mesh
-//     Plane_techlog: THREE.Mesh
-//     Text_techlog: THREE.Mesh
-//     rug: THREE.Mesh
-//     poster_nami: THREE.Mesh
-//     poster_sakaba: THREE.Mesh
-//     Cube014: THREE.Mesh
-//     keyboard: THREE.Mesh
-//   }
+//     wall_shelf: THREE.Mesh;
+//     wall_shelf001: THREE.Mesh;
+//     signbord: THREE.Mesh;
+//     Cube: THREE.Mesh;
+//     Cube001: THREE.Mesh;
+//     Cube002: THREE.Mesh;
+//     Cube003: THREE.Mesh;
+//     Cube004: THREE.Mesh;
+//     Cube005: THREE.Mesh;
+//     Cube006: THREE.Mesh;
+//     Sphere: THREE.Mesh;
+//     Cube007: THREE.Mesh;
+//     Sphere001: THREE.Mesh;
+//     Cube008: THREE.Mesh;
+//     Sphere002: THREE.Mesh;
+//     BézierCurve: THREE.Mesh;
+//     Circle: THREE.Mesh;
+//     Cube009: THREE.Mesh;
+//     Cylinder: THREE.Mesh;
+//     Cube012: THREE.Mesh;
+//     Cube013: THREE.Mesh;
+//     Cube018: THREE.Mesh;
+//     Cube019: THREE.Mesh;
+//     Cube020: THREE.Mesh;
+//     Cube021: THREE.Mesh;
+//     Cube022: THREE.Mesh;
+//     Cube023: THREE.Mesh;
+//     Cube029: THREE.Mesh;
+//     Cube030: THREE.Mesh;
+//     Cube031: THREE.Mesh;
+//     Cube032: THREE.Mesh;
+//     Cube033: THREE.Mesh;
+//     Cube034: THREE.Mesh;
+//     Cube035: THREE.Mesh;
+//     Cube036: THREE.Mesh;
+//     Cube037: THREE.Mesh;
+//     Cube040: THREE.Mesh;
+//     Cube041: THREE.Mesh;
+//     Cube042: THREE.Mesh;
+//     Cube043: THREE.Mesh;
+//     Cube044: THREE.Mesh;
+//     Cube046: THREE.Mesh;
+//     Cube047: THREE.Mesh;
+//     Cube038: THREE.Mesh;
+//     Cube039: THREE.Mesh;
+//     Cube028: THREE.Mesh;
+//     Cube045: THREE.Mesh;
+//     Cylinder001: THREE.Mesh;
+//     Cylinder003: THREE.Mesh;
+//     Cylinder002: THREE.Mesh;
+//     Cylinder005: THREE.Mesh;
+//     Cylinder006: THREE.Mesh;
+//     Circle002: THREE.Mesh;
+//     Torus005: THREE.Mesh;
+//     Cube015: THREE.Mesh;
+//     Cylinder009: THREE.Mesh;
+//     Cylinder010: THREE.Mesh;
+//     Cylinder011: THREE.Mesh;
+//     Cylinder012: THREE.Mesh;
+//     Plane006: THREE.Mesh;
+//     Cylinder004: THREE.Mesh;
+//     Plane008: THREE.Mesh;
+//     Cube010: THREE.Mesh;
+//     Cylinder007: THREE.Mesh;
+//     Cube011: THREE.Mesh;
+//     Cube016: THREE.Mesh;
+//     Cube017: THREE.Mesh;
+//     Cube024: THREE.Mesh;
+//     Cube026: THREE.Mesh;
+//     Cube027: THREE.Mesh;
+//     Cylinder008: THREE.Mesh;
+//     Circle001: THREE.Mesh;
+//     dumbbell_bar: THREE.Mesh;
+//     dumbbell_parts: THREE.Mesh;
+//     dumbbell_weights: THREE.Mesh;
+//     Cube025: THREE.Mesh;
+//     Cube048: THREE.Mesh;
+//     Cube049: THREE.Mesh;
+//     Cube050: THREE.Mesh;
+//     Cube051: THREE.Mesh;
+//     Cube052: THREE.Mesh;
+//     Cube053: THREE.Mesh;
+//     Cube054: THREE.Mesh;
+//     Cube055: THREE.Mesh;
+//     Cylinder019: THREE.Mesh;
+//     Cylinder020: THREE.Mesh;
+//     Cylinder021: THREE.Mesh;
+//     Cylinder022: THREE.Mesh;
+//     Cylinder023: THREE.Mesh;
+//     Cylinder024: THREE.Mesh;
+//     pc_base: THREE.Mesh;
+//     pc_frame: THREE.Mesh;
+//     pc_screen: THREE.Mesh;
+//     Plane_lifelog: THREE.Mesh;
+//     Text_lifelog: THREE.Mesh;
+//     Plane_lifelog001: THREE.Mesh;
+//     Text_lifelog001: THREE.Mesh;
+//     Plane_techlog: THREE.Mesh;
+//     Text_techlog: THREE.Mesh;
+//     rug: THREE.Mesh;
+//     poster_nami: THREE.Mesh;
+//     poster_sakaba: THREE.Mesh;
+//     Cube014: THREE.Mesh;
+//     keyboard: THREE.Mesh;
+//   };
 //   materials: {
-//     ['Material.011']: THREE.MeshStandardMaterial
-//     ['Material.010']: THREE.MeshStandardMaterial
-//     ['Material.001']: THREE.MeshStandardMaterial
-//     ['Material.008']: THREE.MeshStandardMaterial
-//     white: THREE.MeshStandardMaterial
-//     gold: THREE.MeshStandardMaterial
-//     green: THREE.MeshStandardMaterial
-//     blown: THREE.MeshStandardMaterial
-//     black_gray: THREE.MeshStandardMaterial
-//     bblue: THREE.MeshStandardMaterial
-//     ['Material.007']: THREE.MeshStandardMaterial
-//     tiru_green: THREE.MeshStandardMaterial
-//     ['Material.014']: THREE.MeshStandardMaterial
-//     choco: THREE.MeshStandardMaterial
-//     ['Material.012']: THREE.MeshStandardMaterial
-//     ['Material.015']: THREE.MeshStandardMaterial
-//     Material: THREE.MeshStandardMaterial
-//     switch_black: THREE.MeshStandardMaterial
-//     metallic_silver: THREE.MeshStandardMaterial
-//     ['Material.024']: THREE.MeshStandardMaterial
-//     ['Material.009']: THREE.MeshStandardMaterial
-//     ['Material.023']: THREE.MeshStandardMaterial
-//     ['Material.003']: THREE.MeshStandardMaterial
-//     ['Material.016']: THREE.MeshStandardMaterial
-//   }
-//   animations: GLTFAction[]
-// }
+//     ["Material.011"]: THREE.MeshStandardMaterial;
+//     ["Material.010"]: THREE.MeshStandardMaterial;
+//     ["Material.001"]: THREE.MeshStandardMaterial;
+//     ["Material.008"]: THREE.MeshStandardMaterial;
+//     white: THREE.MeshStandardMaterial;
+//     gold: THREE.MeshStandardMaterial;
+//     green: THREE.MeshStandardMaterial;
+//     blown: THREE.MeshStandardMaterial;
+//     black_gray: THREE.MeshStandardMaterial;
+//     bblue: THREE.MeshStandardMaterial;
+//     ["Material.007"]: THREE.MeshStandardMaterial;
+//     tiru_green: THREE.MeshStandardMaterial;
+//     ["Material.014"]: THREE.MeshStandardMaterial;
+//     choco: THREE.MeshStandardMaterial;
+//     ["Material.012"]: THREE.MeshStandardMaterial;
+//     ["Material.015"]: THREE.MeshStandardMaterial;
+//     Material: THREE.MeshStandardMaterial;
+//     switch_black: THREE.MeshStandardMaterial;
+//     metallic_silver: THREE.MeshStandardMaterial;
+//     ["Material.024"]: THREE.MeshStandardMaterial;
+//     ["Material.009"]: THREE.MeshStandardMaterial;
+//     ["Material.023"]: THREE.MeshStandardMaterial;
+//     ["Material.003"]: THREE.MeshStandardMaterial;
+//     ["Material.016"]: THREE.MeshStandardMaterial;
+//   };
+//   animations: GLTFAction[];
+// };
 
 export function NamiRoom() {
   const { isScreenClicked, setIsScreenClicked, isDumbbleClicked, setIsDumbbleClicked } = useModel3DStore();
@@ -156,17 +156,17 @@ export function NamiRoom() {
   const [isHovered, setIsHovered] = useState(false);
   const gltf = useGLTF("/models/nami_room_new.glb");
   const { nodes, materials } = gltf as any;
-  
+
   // GLTFが完全に読み込まれるまで待機
   if (!gltf || !nodes || !materials || Object.keys(nodes).length === 0) {
     console.log("GLTF still loading...");
     return <group></group>;
   }
-  
+
   console.log("Available nodes:", Object.keys(nodes));
-  
+
   // TODO(human): Add debug logs to identify missing nodes
-  
+
   const groupRef = useRef<THREE.Group>(null);
   const pcScreenRef = useRef<THREE.Mesh>(null);
   const { progress } = useProgress();
@@ -881,37 +881,14 @@ export function NamiRoom() {
         castShadow
       />
       <mesh
-        geometry={nodes.Plane_about.geometry}
-        material={materials["Material.010"]}
-        position={[-0.996, 1.016, 1.345]}
-        rotation={[Math.PI, 0, Math.PI / 2]}
-        scale={[-0.115, -1, -0.286]}
-        onClick={() => {
-          router.push("/about");
-        }}
-        onPointerOver={(e) => {
-          e.stopPropagation();
-          gsap.to(e.object.scale, { x: -0.13, y: -1.1, z: -0.315, duration: 0.2 });
-        }}
-        onPointerOut={(e) => {
-          e.stopPropagation();
-          gsap.to(e.object.scale, { x: -0.115, y: -1, z: -0.286, duration: 0.2 });
-        }}
-        castShadow
-      />
-      <mesh
-        geometry={nodes.Text_about.geometry}
-        material={materials["Material.012"]}
-        position={[-0.988, 0.977, 1.509]}
-        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-        scale={0.108}
-      />
-      <mesh
         geometry={nodes.Plane_lifelog.geometry}
         material={materials["Material.010"]}
         position={[-0.992, 1.291, 1.345]}
         rotation={[Math.PI, 0, Math.PI / 2]}
         scale={[-0.115, -1, -0.286]}
+        onClick={() => {
+          router.push("/life");
+        }}
         onPointerOver={(e) => {
           e.stopPropagation();
           gsap.to(e.object.scale, { x: -0.13, y: -1.1, z: -0.315, duration: 0.2 });
@@ -919,16 +896,39 @@ export function NamiRoom() {
         onPointerOut={(e) => {
           e.stopPropagation();
           gsap.to(e.object.scale, { x: -0.115, y: -1, z: -0.286, duration: 0.2 });
-        }}
-        onClick={() => {
-          router.push("/life");
         }}
         castShadow
       />
       <mesh
         geometry={nodes.Text_lifelog.geometry}
         material={materials["Material.012"]}
-        position={[-0.98, 1.248, 1.511]}
+        position={[-0.979, 1.26, 1.504]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+        scale={0.106}
+      />
+      <mesh
+        geometry={nodes.Plane_lifelog001.geometry}
+        material={materials["Material.010"]}
+        position={[-0.986, 1.016, 1.355]}
+        rotation={[Math.PI, 0, Math.PI / 2]}
+        scale={[-0.115, -1, -0.286]}
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          gsap.to(e.object.scale, { x: -0.13, y: -1.1, z: -0.315, duration: 0.2 });
+        }}
+        onPointerOut={(e) => {
+          e.stopPropagation();
+          gsap.to(e.object.scale, { x: -0.115, y: -1, z: -0.286, duration: 0.2 });
+        }}
+        onClick={() => {
+          router.push("/about");
+        }}
+        castShadow
+      />
+      <mesh
+        geometry={nodes.Text_lifelog001.geometry}
+        material={materials["Material.012"]}
+        position={[-0.973, 0.986, 1.504]}
         rotation={[Math.PI / 2, 0, -Math.PI / 2]}
         scale={0.106}
       />
@@ -954,7 +954,7 @@ export function NamiRoom() {
       <mesh
         geometry={nodes.Text_techlog.geometry}
         material={materials["Material.012"]}
-        position={[-0.97, 1.526, 1.554]}
+        position={[-0.971, 1.538, 1.54]}
         rotation={[Math.PI / 2, 0, -Math.PI / 2]}
         scale={0.103}
       />
@@ -995,4 +995,4 @@ export function NamiRoom() {
   );
 }
 
-useGLTF.preload("/models/nami_room_new.glb");
+useGLTF.preload("/../../../名称未設定フォルダ 9/my-next-project/public/models/nami_room_new.glb");
