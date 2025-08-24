@@ -5,7 +5,7 @@ Command: npx gltfjsx@6.5.3 /Users/namikawayuusuke/Desktop/名称未設定フォ�
 
 import * as THREE from "three";
 import React, { useEffect, useState } from "react";
-import { useGLTF, useProgress, useVideoTexture } from "@react-three/drei";
+import { useGLTF, useProgress, useVideoTexture, Html } from "@react-three/drei";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
@@ -154,6 +154,8 @@ export function NamiRoom() {
   const videoTexture = useVideoTexture("/video/test.mp4");
   const [videoMaterial, setVideoMaterial] = useState<THREE.MeshBasicMaterial | null>(null);
   const [isHovered, setIsHovered] = useState(false);
+  // const [showDumbbellLabel, setShowDumbbellLabel] = useState(false);
+  // const [labelHovered, setLabelHovered] = useState(false);
   const gltf = useGLTF("/models/nami_room_new.glb");
   const { nodes, materials } = gltf as any;
 
@@ -208,6 +210,8 @@ export function NamiRoom() {
   function mouseOn(e: any) {
     e.stopPropagation();
     setIsHovered(true);
+    // setShowDumbbellLabel(true);
+    // setLabelHovered(true);
     document.body.classList.add("custom-cursor");
     const mouseStalker = document.querySelector("[data-mouse-stalker]");
     if (mouseStalker) {
@@ -217,6 +221,8 @@ export function NamiRoom() {
   function mouseOut(e: any) {
     e.stopPropagation();
     setIsHovered(false);
+    // setShowDumbbellLabel(false);
+    // setLabelHovered(false);
     document.body.classList.remove("custom-cursor");
     const mouseStalker = document.querySelector("[data-mouse-stalker]");
     if (mouseStalker) {
@@ -699,6 +705,28 @@ export function NamiRoom() {
         }}
         castShadow
       />
+      <Html occlude position={[0.2, 0.353, 0.494]} distanceFactor={5}>
+        <div
+          onMouseEnter={(e) => {
+            e.stopPropagation();
+            mouseOn(e);
+          }}
+          onMouseLeave={(e) => {
+            e.stopPropagation();
+            mouseOut(e);
+          }}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsDumbbleClicked(!isDumbbleClicked);
+          }}
+          style={{
+            pointerEvents: "auto",
+            cursor: "pointer",
+          }}
+        >
+          <span className="label-title">Click</span>
+        </div>
+      </Html>
       <mesh
         geometry={nodes.dumbbell_parts.geometry}
         material={materials.bblue}
@@ -880,6 +908,28 @@ export function NamiRoom() {
         }}
         castShadow
       />
+      <Html occlude position={[-0.726, 1.38, 0.828]} distanceFactor={5}>
+        <div
+          onMouseEnter={(e) => {
+            e.stopPropagation();
+            mouseOn(e);
+          }}
+          onMouseLeave={(e) => {
+            e.stopPropagation();
+            mouseOut(e);
+          }}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsScreenClicked(!isScreenClicked);
+          }}
+          style={{
+            pointerEvents: "auto",
+            cursor: "pointer",
+          }}
+        >
+          <span className="label-title">Click</span>
+        </div>
+      </Html>
       <mesh
         geometry={nodes.Plane_lifelog.geometry}
         material={materials["Material.010"]}
