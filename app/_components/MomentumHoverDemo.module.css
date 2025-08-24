@@ -1,0 +1,111 @@
+.demo {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.demo h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.sensitive {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.imageCard {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.smooth {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.imagePlaceholder {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  backdrop-filter: blur(10px);
+}
+
+.instructions {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #666;
+}
+
+.instructions p {
+  margin: 0.5rem 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .demo {
+    padding: 1rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+    min-height: 150px;
+  }
+}
+
+/* タッチデバイス向けスタイル */
+@media (hover: none) or (pointer: coarse) {
+  .card {
+    transform: none !important;
+  }
+  
+  .instructions::after {
+    content: " (タッチデバイスでは効果は無効です)";
+    color: #999;
+    font-size: 0.9em;
+  }
+}

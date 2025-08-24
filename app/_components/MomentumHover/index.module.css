@@ -1,0 +1,32 @@
+.momentumHover {
+  display: inline-block;
+  position: relative;
+}
+
+.momentumHoverTarget {
+  display: inline-block;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* ファインポインターかつホバー可能なデバイスでのみ有効化 */
+@media (hover: hover) and (pointer: fine) {
+  .momentumHover {
+    cursor: pointer;
+  }
+  
+  .momentumHoverTarget {
+    transition: transform 0.1s ease-out;
+  }
+}
+
+/* タッチデバイスでは効果を無効化 */
+@media (hover: none) or (pointer: coarse) {
+  .momentumHover {
+    pointer-events: auto;
+  }
+  
+  .momentumHoverTarget {
+    transform: none !important;
+  }
+}

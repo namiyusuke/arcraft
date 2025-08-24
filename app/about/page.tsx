@@ -28,175 +28,172 @@ export default function About() {
             </div>
           </div>
           <div data-follower-wrap="" className="preview-container">
-            {/* <div className="preview-item__row tabelt--hide">
-              <div className="preview-item__col is--large">
-                <span className="preview-container__label">Name</span>
+            <h2 className={styles.projectsTitle}>Projects</h2>
+            <div className="preview-list-wrapper">
+              <div className="preview-item__row tabelt--hide">
+                <div className="preview-item__col is--large">
+                  <span className="preview-container__label">Website</span>
+                </div>
+                <div className="preview-item__col is--medium">
+                  <span className="preview-container__label">Tec</span>
+                </div>
               </div>
-              <div clKuuche DesignassName="preview-item__col is--small">
-                <span className="preview-container__label">Location</span>
-              </div>
-              <div className="preview-item__col is--small">
-                <span className="preview-container__label">Year</span>
-              </div>
-              <div className="preview-item__col is--medium">
-                <span className="preview-container__label">Services</span>
-              </div>
-            </div> */}
-            <div data-follower-collection="" className="preview-collection">
-              <div className="preview-list">
-                <div data-follower-item="" className="preview-item">
-                  <a href="#" className="preview-item__inner w-inline-block">
-                    <div className="preview-item__row">
-                      <div className="preview-item__col is--large">
-                        <h2 className="preview-item__heading">Arcraft</h2>
+              <div data-follower-collection="" className="preview-collection">
+                <div className="preview-list">
+                  <div data-follower-item="" className="preview-item">
+                    <a href="#" className="preview-item__inner w-inline-block">
+                      <div className="preview-item__row">
+                        <div className="preview-item__col is--large">
+                          <h2 className="preview-item__heading">Arcraft</h2>
+                        </div>
+                        <div className="preview-item__col is--medium">
+                          <p className="preview-item__text">Next+Three js</p>
+                        </div>
                       </div>
-                      <div className="preview-item__col is--medium">
-                        <p className="preview-item__text">Next+Three js</p>
+                      <div data-follower-visual="" className="preview-item__visual">
+                        <video
+                          src="/video/nami-portofolio.mp4"
+                          className="preview-item__visual-img"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
                       </div>
-                    </div>
-                    <div data-follower-visual="" className="preview-item__visual">
-                      <video
-                        src="/video/nami-portofolio.mp4"
-                        className="preview-item__visual-img"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                      />
-                    </div>
-                  </a>
-                </div>
-                <div data-follower-item="" className="preview-item">
-                  <a href="#" className="preview-item__inner w-inline-block">
-                    <div className="preview-item__row">
-                      <div className="preview-item__col is--large">
-                        <h2 className="preview-item__heading">This is Shibajuku Sakaba.</h2>
+                    </a>
+                  </div>
+                  <div data-follower-item="" className="preview-item">
+                    <a href="#" className="preview-item__inner w-inline-block">
+                      <div className="preview-item__row">
+                        <div className="preview-item__col is--large">
+                          <h2 className="preview-item__heading">This is Shibajuku Sakaba.</h2>
+                        </div>
+                        <div className="preview-item__col is--medium">
+                          <p className="preview-item__text">Astro+vanilla js</p>
+                        </div>
                       </div>
-                      <div className="preview-item__col is--medium">
-                        <p className="preview-item__text">Astro+vanilla js</p>
+                      <div data-follower-visual="" className="preview-item__visual">
+                        <video
+                          src="/video/shibajuku-bar.mp4"
+                          className="preview-item__visual-img"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
                       </div>
-                    </div>
-                    <div data-follower-visual="" className="preview-item__visual">
-                      <video
-                        src="/video/newyear2024.mp4"
-                        className="preview-item__visual-img"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                      />
-                    </div>
-                  </a>
-                </div>
-                <div data-follower-item="" className="preview-item">
-                  <a href="#" className="preview-item__inner w-inline-block">
-                    <div className="preview-item__row">
-                      <div className="preview-item__col is--large">
-                        <h2 className="preview-item__heading">Kuuche Design</h2>
+                    </a>
+                  </div>
+                  <div data-follower-item="" className="preview-item">
+                    <a href="#" className="preview-item__inner w-inline-block">
+                      <div className="preview-item__row">
+                        <div className="preview-item__col is--large">
+                          <h2 className="preview-item__heading">Kuuche Design</h2>
+                        </div>
+                        <div className="preview-item__col is--medium">
+                          <p className="preview-item__text">Astro+vanilla js+Newt</p>
+                        </div>
                       </div>
-                      <div className="preview-item__col is--medium">
-                        <p className="preview-item__text">Astro+vanilla js+Newt</p>
+                      <div data-follower-visual="" className="preview-item__visual">
+                        <video
+                          src="/video/kuuche.mp4"
+                          className="preview-item__visual-img"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
                       </div>
-                    </div>
-                    <div data-follower-visual="" className="preview-item__visual">
-                      <video
-                        src="/video/kuuche.mp4"
-                        className="preview-item__visual-img"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                      />
-                    </div>
-                  </a>
-                </div>
-                <div data-follower-item="" className="preview-item">
-                  <a href="#" className="preview-item__inner w-inline-block">
-                    <div className="preview-item__row">
-                      <div className="preview-item__col is--large">
-                        <h2 className="preview-item__heading">Yusuke Namikawa portfolio site</h2>
+                    </a>
+                  </div>
+                  <div data-follower-item="" className="preview-item">
+                    <a href="#" className="preview-item__inner w-inline-block">
+                      <div className="preview-item__row">
+                        <div className="preview-item__col is--large">
+                          <h2 className="preview-item__heading">Yusuke Namikawa portfolio site</h2>
+                        </div>
+                        <div className="preview-item__col is--medium">
+                          <p className="preview-item__text">Nuxt+MicroCMS</p>
+                        </div>
                       </div>
-                      <div className="preview-item__col is--medium">
-                        <p className="preview-item__text">Nuxt+MicroCMS</p>
+                      <div data-follower-visual="" className="preview-item__visual">
+                        <video
+                          src="/video/nami-portofolio.mp4"
+                          className="preview-item__visual-img"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
                       </div>
-                    </div>
-                    <div data-follower-visual="" className="preview-item__visual">
-                      <video
-                        src="/video/nami-portofolio.mp4"
-                        className="preview-item__visual-img"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                      />
-                    </div>
-                  </a>
-                </div>
-                <div data-follower-item="" className="preview-item">
-                  <a href="#" className="preview-item__inner w-inline-block">
-                    <div className="preview-item__row">
-                      <div className="preview-item__col is--large">
-                        <h2 className="preview-item__heading">New Year's greeting site 2024</h2>
+                    </a>
+                  </div>
+                  <div data-follower-item="" className="preview-item">
+                    <a href="#" className="preview-item__inner w-inline-block">
+                      <div className="preview-item__row">
+                        <div className="preview-item__col is--large">
+                          <h2 className="preview-item__heading">New Year's greeting site 2024</h2>
+                        </div>
+                        <div className="preview-item__col is--medium">
+                          <p className="preview-item__text">vanilla js</p>
+                        </div>
                       </div>
-                      <div className="preview-item__col is--medium">
-                        <p className="preview-item__text">vanilla js</p>
+                      <div data-follower-visual="" className="preview-item__visual">
+                        <video
+                          src="/video/newyear2024.mp4"
+                          className="preview-item__visual-img"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
                       </div>
-                    </div>
-                    <div data-follower-visual="" className="preview-item__visual">
-                      <video
-                        src="/video/newyear2024.mp4"
-                        className="preview-item__visual-img"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                      />
-                    </div>
-                  </a>
-                </div>
-                <div data-follower-item="" className="preview-item">
-                  <a href="#" className="preview-item__inner w-inline-block">
-                    <div className="preview-item__row">
-                      <div className="preview-item__col is--large">
-                        <h2 className="preview-item__heading">Welcome to Wombat Tours</h2>
+                    </a>
+                  </div>
+                  <div data-follower-item="" className="preview-item">
+                    <a href="#" className="preview-item__inner w-inline-block">
+                      <div className="preview-item__row">
+                        <div className="preview-item__col is--large">
+                          <h2 className="preview-item__heading">Welcome to Wombat Tours</h2>
+                        </div>
+                        <div className="preview-item__col is--medium">
+                          <p className="preview-item__text">Astro+vanilla js</p>
+                        </div>
                       </div>
-                      <div className="preview-item__col is--medium">
-                        <p className="preview-item__text">Astro+vanilla js</p>
+                      <div data-follower-visual="" className="preview-item__visual">
+                        <video
+                          src="/video/wombat.mp4"
+                          className="preview-item__visual-img"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
                       </div>
-                    </div>
-                    <div data-follower-visual="" className="preview-item__visual">
-                      <video
-                        src="/video/wombat.mp4"
-                        className="preview-item__visual-img"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                      />
-                    </div>
-                  </a>
-                </div>
-                <div data-follower-item="" className="preview-item">
-                  <a href="#" className="preview-item__inner w-inline-block">
-                    <div className="preview-item__row">
-                      <div className="preview-item__col is--large">
-                        <h2 className="preview-item__heading">WNew Year's greeting site 2023</h2>
+                    </a>
+                  </div>
+                  <div data-follower-item="" className="preview-item">
+                    <a href="#" className="preview-item__inner w-inline-block">
+                      <div className="preview-item__row">
+                        <div className="preview-item__col is--large">
+                          <h2 className="preview-item__heading">WNew Year's greeting site 2023</h2>
+                        </div>
+                        <div className="preview-item__col is--medium">
+                          <p className="preview-item__text">Astro+vanilla js</p>
+                        </div>
                       </div>
-                      <div className="preview-item__col is--medium">
-                        <p className="preview-item__text">Astro+vanilla js</p>
+                      <div data-follower-visual="" className="preview-item__visual">
+                        <video
+                          src="/video/newyear2023.mp4"
+                          className="preview-item__visual-img"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
                       </div>
-                    </div>
-                    <div data-follower-visual="" className="preview-item__visual">
-                      <video
-                        src="/video/newyear2023.mp4"
-                        className="preview-item__visual-img"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                      />
-                    </div>
-                  </a>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

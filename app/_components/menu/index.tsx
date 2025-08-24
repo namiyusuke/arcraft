@@ -13,10 +13,10 @@ interface MenuProps {
   onCategoryChange?: (categoryIds: string[]) => void;
 }
 const menuItems = [
-  { label: "top", path: "/" },
-  { label: "techlog", path: "/techlog" },
-  { label: "lifelog", path: "/life" },
-  { label: "about", path: "/about" },
+  { label: "top", path: "/", current: "top" },
+  { label: "techlog", path: "/techlog", current: "techlog" },
+  { label: "lifelog", path: "/life", current: "life" },
+  { label: "about", path: "/about", current: "about" },
 ];
 export default function Menu({ categories = [], selectedCategories = [], onCategoryChange }: MenuProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -85,7 +85,7 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
           <div className={styles.navinner}>
             <ul className={cx(styles.items, "menu-item")}>
               {menuItems.map((item) => (
-                <li key={item.path} className={firstPath == item.label ? "is-current" : ""}>
+                <li key={item.path} className={firstPath == item.current ? "is-current" : ""}>
                   <Link href={item.path}>{item.label}</Link>
                 </li>
               ))}

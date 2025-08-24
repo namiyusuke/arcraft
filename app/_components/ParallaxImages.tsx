@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-
+import MomentumHover from "./MomentumHover";
 gsap.registerPlugin(ScrollTrigger);
 
 export interface ParallaxImageItem {
@@ -94,24 +94,28 @@ export default function ParallaxImages({
   }, [images, triggerStart, triggerEnd]);
 
   return (
-    <div ref={containerRef} className={containerClassName}>
-      {images.map((image, index) => (
-        <div
-          key={`${image.src}-${index}`}
-          ref={(el) => {
-            imageRefs.current[index] = el;
-          }}
-          className={`parallax-image ${image.className || ""}`}
-        >
-          <Image
-            src={image.src}
-            alt={image.alt}
-            width={image.width}
-            height={image.height}
-            className="parallax-image__img"
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <div ref={containerRef} className={containerClassName}>
+        {images.map((image, index) => (
+          <div
+            key={`${image.src}-${index}`}
+            ref={(el) => {
+              imageRefs.current[index] = el;
+            }}
+            className={`parallax-image ${image.className || ""}`}
+          >
+            <MomentumHover>
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                className="parallax-image__img"
+              />
+            </MomentumHover>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }

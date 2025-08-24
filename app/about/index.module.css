@@ -56,3 +56,9 @@
     padding-bottom: calc(160 / 16 * 1rem);
   }
 }
+.projectsTitle {
+  font-size: calc(36 / 16 * 1rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: calc(54 / 16 * 1rem);
+}
