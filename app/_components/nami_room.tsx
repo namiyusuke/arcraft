@@ -970,6 +970,9 @@ export function NamiRoom() {
         position={[-0.99, 1.683, -0.483]}
         rotation={[Math.PI / 2, 0, -Math.PI / 2]}
         scale={[0.454, 0.231, 0.255]}
+        onClick={() => {
+          window.open("https://portfolio-nami2024.netlify.app/", "_blank", "noopener,noreferrer");
+        }}
       />
       <mesh
         geometry={nodes.poster_sakaba.geometry}
@@ -977,6 +980,9 @@ export function NamiRoom() {
         position={[-0.997, 1.115, -0.483]}
         rotation={[Math.PI / 2, 0, -Math.PI / 2]}
         scale={[0.454, 0.231, 0.255]}
+        onClick={() => {
+          window.open("https://sakaba.shibajuku.net/", "_blank", "noopener,noreferrer");
+        }}
       />
       <mesh
         geometry={nodes.Cube014.geometry}

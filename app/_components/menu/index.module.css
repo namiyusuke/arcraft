@@ -124,7 +124,7 @@
   color: #fff;
   font-size: calc(20 * var(--pxToRem));
   font-weight: var(--font-weight-bold);
-  z-index: 100;
+  z-index: 200;
   align-items: center;
 }
 @media (width >= 768px) {

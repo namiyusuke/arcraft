@@ -55,16 +55,10 @@
   margin-right: 0;
   overflow: hidden;
 }
-@media (width >= 768px) {
-  .image_wrapper {
-    /* margin-left: 1.5rem; */
-  }
-}
+
 @media (width >= 1280px) {
   .image_wrapper {
     width: 100%;
-    /* width: calc(340 / 1200 * 100%); */
-    /* max-width: 340px; */
     margin-left: 1.5rem;
   }
   .image_wrapper img {
@@ -174,7 +168,6 @@
   position: relative;
   width: calc(340 / 360 * 100%) !important;
   max-width: 340px;
-  /* width: clamp(17.5rem, 15.739rem + 7.51vw, 22.5rem); */
   aspect-ratio: 1/1;
   background: linear-gradient(
     180deg,
