@@ -930,8 +930,8 @@ ul {
 }
 .hero__lifelog-cushion {
   width: clamp(5.625rem, 5.053rem + 2.49vw, 6.25rem);
-  left: 90px;
-  top: 120px;
+  left: 60px;
+  top: 350px;
   position: absolute;
 }
 @media (width >= 768px) {
@@ -945,8 +945,8 @@ ul {
 
 .hero__lifelog-coffee {
   width: clamp(3.75rem, 2.606rem + 4.99vw, 5rem);
-  left: 45px;
-  top: 166px;
+  left: 5px;
+  top: 366px;
   position: absolute;
 }
 @media (width >= 768px) {
@@ -1122,7 +1122,7 @@ ul {
 }
 
 .preview-item__visual {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 144 / 80;
   width: 100%;
   display: none;
   position: absolute;
@@ -1371,7 +1371,7 @@ ul {
   opacity: 0;
   visibility: hidden;
 }
-@media (width >= 1024px) {
+@media (width >= 1025px) {
   .label-title {
     display: none;
   }
