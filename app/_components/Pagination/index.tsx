@@ -18,10 +18,12 @@ export default function Pagination({ totalCount, current = 1, basePath = "/news"
           <li key={p} className={styles.list}>
             {current !== p ? (
               <Link className={styles.item} href={`${basePath}/p/${p}`}>
-                {p}
+                <span className={styles.number}>{p}</span>
               </Link>
             ) : (
-              <span className={`${styles.item} ${styles.current}`}>{p}</span>
+              <span className={`${styles.item} ${styles.current}`}>
+                <span className={styles.number}>{p}</span>
+              </span>
             )}
           </li>
         ))}

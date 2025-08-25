@@ -184,9 +184,9 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
           position={[lightPosition.x, lightPosition.y, lightPosition.z]}
           intensity={lightIntensity}
           color="#fffbc64"
-          shadow-mapSize={[112, 112]}
-          shadow-bias={-0.0001}
-          shadow-radius={10}
+          shadow-mapSize={[1024, 1024]}
+          shadow-bias={-0.0005}
+          shadow-radius={8}
           castShadow
         />
         <spotLight
@@ -196,11 +196,12 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
           intensity={spotLightIntensity}
           distance={spotLightDistance}
           color="#fffbc64"
-          shadow-mapSize={[290, 290]}
-          shadow-bias={-0.0001}
-          shadow-radius={12}
+          shadow-mapSize={[1024, 1024]}
+          shadow-bias={-0.0005}
+          shadow-radius={6}
           castShadow
         />
+        {/* TODO(human): Optimize shadow quality and performance settings */}
         <NamiRoom />
         <CameraControls
           ref={controls}

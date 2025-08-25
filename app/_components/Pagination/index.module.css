@@ -30,3 +30,7 @@
   font-family: var(--font-family-noto);
   font-weight: 500;
 }
+.number {
+  position: relative;
+  left: 1px;
+}
