@@ -13,6 +13,7 @@ export default function NewsLayout({ children }: Props) {
   return (
     <>
       <div className="g-bg-purple">
+        <div className="g-bg-orange"></div>
         <Hero title="lifelog" className="text__life" />
         <Sheet>{children}</Sheet>
         <div ref={ref} className="js-observer">
