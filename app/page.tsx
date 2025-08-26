@@ -1,10 +1,12 @@
 // import ScreenCanvas from "./_components/ScreenCanvas";
 // import { Experience } from "./_components/Experience";
+import Menu from "@/app/_components/menu";
 import Model3D from "./_components/Model3D";
 import Link from "next/link";
 export default async function Home() {
   return (
     <>
+      <Menu />
       <Model3D />
       <div className="home__menu--sp">
         <ul>

@@ -105,6 +105,7 @@
 .listWrapper {
   max-inline-size: 375px;
   margin-top: calc(80 * var(--pxToRem));
+  font-family: var(--font-family-noto);
   margin-inline: auto;
   position: relative;
   z-index: 1;

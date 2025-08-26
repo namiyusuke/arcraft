@@ -99,7 +99,7 @@
   max-inline-size: 375px;
   margin-top: calc(80 * var(--pxToRem));
   margin-inline: auto;
-  /* position: relative; */
+  font-family: var(--font-family-noto);
   z-index: 1;
 }
 .title {

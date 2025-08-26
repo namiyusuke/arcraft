@@ -13,7 +13,7 @@ interface MenuProps {
   onCategoryChange?: (categoryIds: string[]) => void;
 }
 const menuItems = [
-  { label: "top", path: "/", current: "top" },
+  { label: "top", path: "/", current: "" },
   { label: "techlog", path: "/techlog", current: "techlog" },
   { label: "lifelog", path: "/life", current: "life" },
   { label: "about", path: "/about", current: "about" },
