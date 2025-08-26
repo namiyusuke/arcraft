@@ -3,4 +3,5 @@
   align-items: center;
   font-weight: var(--font-weight-medium);
   font-size: calc(14 * var(--pxToRem));
+  color: #38446a;
 }
