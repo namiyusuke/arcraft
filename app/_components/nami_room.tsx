@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import { useModel3DStore } from "../store/model3dStore";
+import { useThreeMarquee } from "./MouseStalker";
 
 // type GLTFResult = GLTF & {
 //   nodes: {
@@ -775,9 +776,17 @@ export function NamiRoom() {
         }}
         onPointerOver={(e) => {
           mouseOn(e);
+          const marqueeManager = useThreeMarquee();
+          if (marqueeManager) {
+            marqueeManager.showMarquee("view more");
+          }
         }}
         onPointerOut={(e) => {
           mouseOut(e);
+          const marqueeManager = useThreeMarquee();
+          if (marqueeManager) {
+            marqueeManager.hideMarquee();
+          }
         }}
         castShadow
       />
@@ -981,9 +990,17 @@ export function NamiRoom() {
         }}
         onPointerOver={(e) => {
           mouseOn(e);
+          const marqueeManager = useThreeMarquee();
+          if (marqueeManager) {
+            marqueeManager.showMarquee("view more");
+          }
         }}
         onPointerOut={(e) => {
           mouseOut(e);
+          const marqueeManager = useThreeMarquee();
+          if (marqueeManager) {
+            marqueeManager.hideMarquee();
+          }
         }}
         castShadow
       />
@@ -1078,6 +1095,20 @@ export function NamiRoom() {
         onClick={() => {
           window.open("https://portfolio-nami2024.netlify.app/", "_blank", "noopener,noreferrer");
         }}
+        onPointerOver={(e) => {
+          mouseOn(e);
+          const marqueeManager = useThreeMarquee();
+          if (marqueeManager) {
+            marqueeManager.showMarquee("view more");
+          }
+        }}
+        onPointerOut={(e) => {
+          mouseOut(e);
+          const marqueeManager = useThreeMarquee();
+          if (marqueeManager) {
+            marqueeManager.hideMarquee();
+          }
+        }}
       />
       <mesh
         geometry={nodes.poster_sakaba.geometry}
@@ -1087,6 +1118,20 @@ export function NamiRoom() {
         scale={[0.454, 0.231, 0.255]}
         onClick={() => {
           window.open("https://sakaba.shibajuku.net/", "_blank", "noopener,noreferrer");
+        }}
+        onPointerOver={(e) => {
+          mouseOn(e);
+          const marqueeManager = useThreeMarquee();
+          if (marqueeManager) {
+            marqueeManager.showMarquee("view more");
+          }
+        }}
+        onPointerOut={(e) => {
+          mouseOut(e);
+          const marqueeManager = useThreeMarquee();
+          if (marqueeManager) {
+            marqueeManager.hideMarquee();
+          }
         }}
       />
       <mesh

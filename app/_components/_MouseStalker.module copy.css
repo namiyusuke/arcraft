@@ -1,4 +1,4 @@
-/* .mouseStalker__cursor,
+.mouseStalker__cursor,
 .mouseStalker__follower {
   border-radius: 50%;
   position: fixed;
@@ -7,6 +7,7 @@
   opacity: 0;
   cursor: none;
   pointer-events: none;
+  /* transition: opacity 100ms ease; */
 }
 .is-back .mouseStalker__cursor,
 .is-back .mouseStalker__follower {
@@ -15,16 +16,23 @@
 .mouseStalker__cursor {
   width: 100px;
   height: 100px;
+  /* background-color: rgba(255, 255, 255, 1); */
   transition-property: opacity, transform;
   transition-duration: 100ms, 0;
   z-index: 2;
   transform: scale(0);
   opacity: 0;
+
+  /* easeOutCubic */
+  /* transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); */
 }
 
 .mouseStalker__follower {
   width: 100px;
   height: 100px;
+  /* left: 50px;
+  top: 50px; */
+  /* transform: translate(-50%, -50%); */
   background-color: transparent;
   opacity: 0;
   z-index: 2;
@@ -34,8 +42,8 @@
   background-position: 50% 50%;
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.5);
-} */
-/*
+}
+
 .visible .mouseStalker__cursor,
 .visible .mouseStalker__follower {
   opacity: 1;
@@ -59,7 +67,7 @@
   background-color: transparent;
   background-repeat: no-repeat;
   opacity: 1;
-} */
+}
 
 /* .isHover .mouseStalker__follower {
   z-index: 5;
@@ -74,75 +82,4 @@
 } */
 .is-back .mouseStalker {
   display: none;
-}
-
-/* マーキーエフェクト用スタイル */
-.cursorMarquee {
-  z-index: 100;
-  pointer-events: none;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  position: fixed;
-  transform: translate(-50%, -50%);
-}
-
-.cursorMarqueeCard {
-  color: #000;
-  background-color: #fff;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  position: absolute;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.75, 0, 0.25, 1);
-  transform: translateY(0%) rotate(0.001deg);
-  clip-path: inset(calc(50% - 0.25em) round 50em);
-  will-change: clip-path;
-  opacity: 0;
-}
-
-[data-cursor-marquee-status="active"] .cursorMarqueeCard {
-  clip-path: inset(0 round 50em);
-  transform: translateY(-25%) rotate(0.001deg);
-  opacity: 1;
-}
-
-/* Show cursor dot when script loaded */
-/* [data-cursor-marquee-status="not-active"] .cursorMarqueeCard,
-[data-cursor-marquee-status="active"] .cursorMarqueeCard {
-  opacity: 1;
-} */
-
-/* CSS Keyframe Animation */
-@keyframes translateXCursor {
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-.cursorMarqueeTextSpan {
-  white-space: nowrap;
-  transform-origin: 0;
-  padding: 0.5em;
-  font-size: 1.5em;
-  line-height: 1;
-  display: block;
-  position: relative;
-}
-
-.cursorMarqueeTextSpan {
-  animation: translateXCursor 10s linear infinite paused;
-  transition: opacity 0.15s ease-in-out 0.25s;
-  opacity: 0;
-}
-
-[data-cursor-marquee-status="active"] .cursorMarqueeTextSpan {
-  transition: opacity 0.15s ease-in-out 0s;
-  opacity: 1;
-}
-
-.cursorMarqueeTextSpan.isDuplicate {
-  position: absolute;
-  left: 100%;
 }

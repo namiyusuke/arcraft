@@ -601,9 +601,9 @@ ul {
   font-family: var(--font-family-jost);
 }
 /* globals.cssに追加 */
-.custom-cursor {
+/* .custom-cursor {
   cursor: none;
-}
+} */
 
 .is-back .custom-cursor {
   cursor: initial;

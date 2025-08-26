@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
-import { useControls, button } from "leva";
+import { useControls, button, Leva } from "leva";
 import { NamiRoom } from "./nami_room";
 import GridPlanes from "./GridPlanes";
 import { PointLightHelper, SpotLightHelper } from "three";
@@ -177,6 +177,7 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
 
   return (
     <>
+      <Leva hidden />
       <group ref={groupRef}>
         <ambientLight intensity={1} />
         <pointLight
