@@ -1099,7 +1099,7 @@ export function NamiRoom() {
           mouseOn(e);
           const marqueeManager = useThreeMarquee();
           if (marqueeManager) {
-            marqueeManager.showMarquee("view more");
+            marqueeManager.showMarquee("👀　👀　👀　👀");
           }
         }}
         onPointerOut={(e) => {
@@ -1123,7 +1123,7 @@ export function NamiRoom() {
           mouseOn(e);
           const marqueeManager = useThreeMarquee();
           if (marqueeManager) {
-            marqueeManager.showMarquee("view more");
+            marqueeManager.showMarquee("👀　👀　👀　👀");
           }
         }}
         onPointerOut={(e) => {
