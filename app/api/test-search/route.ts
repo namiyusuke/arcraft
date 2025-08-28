@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { searchSimilarDocuments } from '@/app/_libs/vectorStore';
-import { supabaseAdmin } from '@/app/_libs/supabase';
+import { getSupabaseAdmin } from '@/app/_libs/supabase';
 
 export async function GET(request: NextRequest) {
   try {
@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
     const query = searchParams.get('q') || 'nami';
 
     // 1. Supabaseに保存されている全ドキュメント数を確認
-    const { count } = await supabaseAdmin
+    const { count } = await getSupabaseAdmin()
       .from('documents')
       .select('*', { count: 'exact', head: true });
 
@@ -18,10 +18,18 @@ export async function GET(request: NextRequest) {
     const searchResults = await searchSimilarDocuments(query, 5);
 
     // 3. 生のデータも確認
-    const { data: rawDocs, error } = await supabaseAdmin
+    const { data: rawDocs, error } = await getSupabaseAdmin()
       .from('documents')
       .select('id, content, metadata, created_at')
-      .limit(3);
+      .limit(3) as {
+        data: Array<{
+          id: string;
+          content: string;
+          metadata: any;
+          created_at: string;
+        }> | null;
+        error: any;
+      };
 
     if (error) {
       console.error('Raw data fetch error:', error);

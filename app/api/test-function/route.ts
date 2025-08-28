@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/app/_libs/supabase';
+import { getSupabaseAdmin } from '@/app/_libs/supabase';
 
 export async function GET() {
   try {
     console.log('🔍 Supabase関数存在確認開始...');
 
     // 1. match_documents関数の存在確認
-    const { data: functions, error: fnError } = await supabaseAdmin
+    const { data: functions, error: fnError } = await getSupabaseAdmin()
       .from('pg_proc')
       .select('proname, pronargs')
       .like('proname', 'match_documents%');
@@ -18,12 +18,15 @@ export async function GET() {
     // 2. テスト用のダミーベクトルで関数実行テスト
     const dummyEmbedding = new Array(1536).fill(0.1);
     
-    const { data: testResult, error: testError } = await supabaseAdmin
+    const { data: testResult, error: testError } = await (getSupabaseAdmin() as any)
       .rpc('match_documents', {
         filter: {},
         match_count: 1,
         query_embedding: dummyEmbedding,
-      });
+      }) as {
+        data: any[] | null;
+        error: any;
+      };
 
     if (testError) {
       console.error('❌ 関数実行エラー:', testError);
@@ -36,7 +39,7 @@ export async function GET() {
     }
 
     // 3. pg_extensionでvector拡張の確認
-    const { data: extensions, error: extError } = await supabaseAdmin
+    const { data: extensions, error: extError } = await getSupabaseAdmin()
       .from('pg_extension')
       .select('extname')
       .eq('extname', 'vector');

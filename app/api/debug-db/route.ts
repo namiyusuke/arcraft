@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/app/_libs/supabase';
+import { getSupabaseAdmin } from '@/app/_libs/supabase';
 
 export async function GET() {
   try {
     console.log('🔍 Supabaseデータベース調査開始...');
 
     // 1. テーブル存在確認
-    const { data: tableExists, error: tableError } = await supabaseAdmin
+    const { data: tableExists, error: tableError } = await getSupabaseAdmin()
       .from('documents')
       .select('count', { count: 'exact', head: true });
 
@@ -22,17 +22,26 @@ export async function GET() {
     console.log('✅ documentsテーブル存在確認: OK');
 
     // 2. 全データ数確認
-    const { count } = await supabaseAdmin
+    const { count } = await getSupabaseAdmin()
       .from('documents')
       .select('*', { count: 'exact', head: true });
 
     console.log(`📊 総レコード数: ${count}`);
 
     // 3. 実際のデータ取得（最初の5件）
-    const { data: docs, error: dataError } = await supabaseAdmin
+    const { data: docs, error: dataError } = await getSupabaseAdmin()
       .from('documents')
       .select('id, content, metadata, embedding, created_at')
-      .limit(5);
+      .limit(5) as {
+        data: Array<{
+          id: string;
+          content: string;
+          metadata: any;
+          embedding: number[] | null;
+          created_at: string;
+        }> | null;
+        error: any;
+      };
 
     if (dataError) {
       console.error('❌ データ取得エラー:', dataError);

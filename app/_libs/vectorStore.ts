@@ -2,20 +2,26 @@ import { SupabaseVectorStore } from '@langchain/community/vectorstores/supabase'
 import { OpenAIEmbeddings } from '@langchain/openai';
 import { RecursiveCharacterTextSplitter } from '@langchain/textsplitters';
 import { Document } from '@langchain/core/documents';
-import { supabaseAdmin } from './supabase';
+import { getSupabaseAdmin } from './supabase';
 
 // OpenAI埋め込みモデルの設定
-const embeddings = new OpenAIEmbeddings({
+const getEmbeddings = () => new OpenAIEmbeddings({
   openAIApiKey: process.env.OPENAI_API_KEY,
   modelName: 'text-embedding-3-small', // コスト効率の良いモデル
 });
 
-// Supabaseベクトルストアの設定
-export const vectorStore = new SupabaseVectorStore(embeddings, {
-  client: supabaseAdmin,
-  tableName: 'documents',
-  queryName: 'match_documents', // SQL関数作成後に有効化
-});
+// Supabaseベクトルストアを遅延初期化
+let vectorStoreInstance: SupabaseVectorStore | null = null;
+export const getVectorStore = () => {
+  if (!vectorStoreInstance) {
+    vectorStoreInstance = new SupabaseVectorStore(getEmbeddings(), {
+      client: getSupabaseAdmin(),
+      tableName: 'documents',
+      queryName: 'match_documents', // SQL関数作成後に有効化
+    });
+  }
+  return vectorStoreInstance;
+};
 
 // テキスト分割器の設定
 const textSplitter = new RecursiveCharacterTextSplitter({
@@ -58,7 +64,7 @@ export async function addDocuments(
     }
 
     // ベクトル化してSupabaseに保存
-    await vectorStore.addDocuments(documents);
+    await getVectorStore().addDocuments(documents);
     
     console.log(`Successfully added ${documents.length} document chunks to vector store`);
     return { success: true, documentCount: documents.length };
@@ -77,7 +83,7 @@ export async function searchSimilarDocuments(
   k: number = 4 // 取得する類似文書の数
 ) {
   try {
-    const results = await vectorStore.similaritySearch(query, k);
+    const results = await getVectorStore().similaritySearch(query, k);
     return results;
   } catch (error) {
     console.error('Error searching similar documents:', error);
@@ -90,7 +96,7 @@ export async function searchSimilarDocuments(
  */
 export async function clearVectorStore() {
   try {
-    const { error } = await supabaseAdmin
+    const { error } = await getSupabaseAdmin()
       .from('documents')
       .delete()
       .neq('id', '00000000-0000-0000-0000-000000000000'); // 全てを削除
