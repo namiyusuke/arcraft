@@ -73,6 +73,9 @@ devDependencies:
   microcms-js-sdk:
     specifier: ^3.2.0
     version: 3.2.0
+  openai:
+    specifier: ^5.16.0
+    version: 5.16.0
   typescript:
     specifier: ^5
     version: 5.8.3
@@ -3315,6 +3318,19 @@ packages:
       regex: 5.1.1
       regex-recursion: 5.1.1
     dev: false
+
+  /openai@5.16.0:
+    resolution: {integrity: sha512-hoEH8ZNvg1HXjU9mp88L/ZH8O082Z8r6FHCXGiWAzVRrEv443aI57qhch4snu07yQydj+AUAWLenAiBXhu89Tw==}
+    hasBin: true
+    peerDependencies:
+      ws: ^8.18.0
+      zod: ^3.23.8
+    peerDependenciesMeta:
+      ws:
+        optional: true
+      zod:
+        optional: true
+    dev: true
 
   /optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}

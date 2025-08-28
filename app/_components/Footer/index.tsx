@@ -82,7 +82,7 @@ export default function Footer() {
                     </li>
                     <li className={styles.item}>
                       <span className={styles.itemInner}>
-                        <Link href="/contact">contact</Link>
+                        <Link href="mailto:yu.namikawa18@gmail.com">contact</Link>
                         <span className={styles.contactText}>
                           <svg
                             width="22"

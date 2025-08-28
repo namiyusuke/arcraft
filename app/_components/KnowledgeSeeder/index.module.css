@@ -1,0 +1,147 @@
+.seeder {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 2px dashed var(--color-border);
+  border-radius: var(--border-radius);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: var(--color-text-main);
+}
+
+.header p {
+  margin: 0;
+  color: var(--color-text-sub);
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.seedButton {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.seedButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #20c997, #17a2b8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.seedButton:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.clearButton {
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.clearButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #c82333, #a02622);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.clearButton:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.info {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: left;
+  border: 1px solid var(--color-border-light);
+}
+
+.info h4 {
+  margin: 0 0 1rem 0;
+  color: #007bff;
+  font-size: 1.1rem;
+}
+
+.info ul {
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+  color: var(--color-text-sub);
+}
+
+.info li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.note {
+  margin: 0;
+  padding: 1rem;
+  background: #e3f2fd;
+  border-radius: 6px;
+  color: #0d47a1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 640px) {
+  .seeder {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .seedButton,
+  .clearButton {
+    width: 100%;
+    padding: 1rem;
+  }
+}

@@ -16,6 +16,13 @@
   max-inline-size: 1440px;
   padding-inline: 5vi;
   margin-inline: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 2rem 0;
 }
 
 @media (max-width: 640px) {

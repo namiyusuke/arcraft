@@ -809,7 +809,10 @@ export function NamiRoom() {
             cursor: "pointer",
           }}
         >
-          <span className="label-title">Click</span>
+          <div className="cursorMarqueeCard">
+            <span className="label-title">view more</span>
+            <span className="label-title isDuplicate">view more</span>
+          </div>
         </div>
       </Html>
       <mesh
@@ -1023,7 +1026,10 @@ export function NamiRoom() {
             cursor: "pointer",
           }}
         >
-          <span className="label-title">Click</span>
+          <div className="cursorMarqueeCard">
+            <span className="label-title">view more</span>
+            <span className="label-title isDuplicate">view more</span>
+          </div>
         </div>
       </Html>
       <mesh
@@ -1110,6 +1116,19 @@ export function NamiRoom() {
           }
         }}
       />
+      <Html occlude position={[-0.99, 1.483, 0.0]} distanceFactor={5}>
+        <div
+          style={{
+            pointerEvents: "auto",
+            cursor: "pointer",
+          }}
+        >
+          <div className="cursorMarqueeCard">
+            <span className="label-title">👀　👀　👀　👀</span>
+            <span className="label-title isDuplicate">👀　👀　👀　👀</span>
+          </div>
+        </div>
+      </Html>
       <mesh
         geometry={nodes.poster_sakaba.geometry}
         material={materials["Material.016"]}
@@ -1123,7 +1142,7 @@ export function NamiRoom() {
           mouseOn(e);
           const marqueeManager = useThreeMarquee();
           if (marqueeManager) {
-            marqueeManager.showMarquee("👀　👀　👀　👀");
+            marqueeManager.showMarquee("👀　👀　👀　👀　👀");
           }
         }}
         onPointerOut={(e) => {

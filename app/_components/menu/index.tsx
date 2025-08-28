@@ -4,6 +4,7 @@ import styles from "./index.module.css";
 import Link from "next/link";
 import { useState, useRef } from "react";
 import Image from "next/image";
+import { useModel3DStore } from "../../store/model3dStore";
 import cx from "classnames";
 import { unstable_ViewTransition as ViewTransition } from "react";
 import gsap from "gsap";
@@ -20,6 +21,7 @@ const menuItems = [
 ];
 export default function Menu({ categories = [], selectedCategories = [], onCategoryChange }: MenuProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const { isScreenClicked, setIsScreenClicked, isDumbbleClicked, setIsDumbbleClicked } = useModel3DStore();
   const menuWrapRef = useRef<HTMLDivElement>(null);
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
   const pathname = usePathname();
@@ -76,6 +78,13 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
 
   return (
     <ViewTransition>
+      <div className="">
+        <div className={styles.logo}>
+          <Link href="/">
+            <Image src="/logo.png" alt="nami logo" width={120} height={24} />
+          </Link>
+        </div>
+      </div>
       <button className={styles.navbutton} onClick={handleClick}>
         menu
       </button>
@@ -85,7 +94,19 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
           <div className={styles.navinner}>
             <ul className={cx(styles.items, "menu-item")}>
               {menuItems.map((item) => (
-                <li key={item.path} className={firstPath == item.current ? "is-current" : ""}>
+                <li
+                  onClick={() => {
+                    if (item.current === "") {
+                      setIsScreenClicked(false);
+                      setIsDumbbleClicked(false);
+                    }
+                    // if (item.current === "" && isDumbbleClicked) {
+
+                    // }
+                  }}
+                  key={item.path}
+                  className={firstPath == item.current ? "is-current" : ""}
+                >
                   <Link href={item.path}>{item.label}</Link>
                 </li>
               ))}

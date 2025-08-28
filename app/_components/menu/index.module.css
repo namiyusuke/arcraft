@@ -161,9 +161,9 @@
     border-radius: 4px;
     transition: background-color 0.2s;
   }
-  .filter a:hover {
+  /* .filter a:hover {
     background-color: rgba(0, 0, 0, 0.1);
-  }
+  } */
 }
 
 .filterDropdown {
@@ -275,9 +275,9 @@
   cursor: pointer;
 }
 
-.filter a:hover {
+/* .filter a:hover {
   background-color: rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* .filterDropdown {
   position: absolute;
@@ -367,7 +367,6 @@
     padding: calc(5 * var(--pxToRem)) calc(16 * var(--pxToRem));
     font-weight: var(--font-weight-regular);
     border-radius: calc(15 * var(--pxToRem));
-    /* border: 1px solid #fff; */
     font-weight: 500;
     background-color: #fff;
     font-family: var(--font-family-noto);
@@ -429,5 +428,19 @@ input[type="checkbox"].categoryCheckbox:checked::after {
     outline: none;
     border: none;
     background-color: transparent;
+  }
+}
+.logo {
+  position: fixed;
+  top: calc(50 * var(--pxToRem));
+  left: calc(44 * var(--pxToRem));
+  z-index: 200;
+  width: calc(54 * var(--pxToRem));
+}
+@media (width >= 768px) {
+  .logo {
+    width: calc(80 * var(--pxToRem));
+    top: calc(46 * var(--pxToRem));
+    left: calc(48 * var(--pxToRem));
   }
 }
