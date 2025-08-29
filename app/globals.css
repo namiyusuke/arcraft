@@ -986,14 +986,14 @@ ul {
 }
 .hero__techlog-book {
   right: -80px;
-  top: 320px;
+  top: 150px;
 }
 .hero__techlog-book img {
   width: clamp(10rem, 7.615rem + 10.18vw, 12.5rem);
 }
 .hero__about-portfolio {
   left: 0px;
-  top: 100px;
+  top: 330px;
 }
 .hero__about-portfolio img {
   width: clamp(11.25rem, 7.773rem + 14.84vw, 21.125rem);
@@ -1015,7 +1015,7 @@ ul {
 }
 .hero__techlog-book01 {
   right: 17px;
-  top: 262px;
+  top: 102px;
 }
 .hero__techlog-book01 img {
   width: clamp(8.75rem, 6.961rem + 7.63vw, 10.625rem);
@@ -1031,7 +1031,7 @@ ul {
 }
 .hero__techlog-keybord {
   left: -30px;
-  top: 107px;
+  top: 347px;
 }
 .hero__techlog-keybord img {
   width: clamp(12.5rem, 10.115rem + 10.18vw, 15rem);
@@ -1047,7 +1047,7 @@ ul {
 }
 .hero__techlog-mouth {
   left: 86px;
-  top: 90px;
+  top: 340px;
 }
 .hero__techlog-mouth img {
   width: clamp(4.375rem, 2.586rem + 7.63vw, 6.25rem);
@@ -1484,4 +1484,22 @@ ul {
 #twitter-widget-0 {
   height: 400px !important;
   width: max-content !important;
+}
+.logo {
+  position: fixed;
+  top: calc(50 * var(--pxToRem));
+  left: calc(44 * var(--pxToRem));
+  z-index: 200;
+  width: calc(54 * var(--pxToRem));
+  transition: opacity 0.3s ease;
+}
+.is-footer .logo {
+  opacity: 0;
+}
+@media (width >= 768px) {
+  .logo {
+    width: calc(80 * var(--pxToRem));
+    top: calc(46 * var(--pxToRem));
+    left: calc(48 * var(--pxToRem));
+  }
 }

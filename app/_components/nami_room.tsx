@@ -815,40 +815,60 @@ export function NamiRoom() {
           </div>
         </div>
       </Html>
-      <mesh
-        geometry={nodes.dumbbell_parts.geometry}
-        material={materials.bblue}
-        position={[0.534, 0.387, 0.699]}
-        rotation={[Math.PI / 2, 0, 0.358]}
-        scale={[0.033, 0.052, 0.033]}
-      />
-      <mesh
-        geometry={nodes.dumbbell_weights.geometry}
-        material={materials.switch_black}
-        position={[0.539, 0.395, 0.695]}
-        rotation={[Math.PI / 2, 0, 0.358]}
-        scale={[0.144, 0.045, 0.144]}
-        castShadow
+      <group
+        // onClick={() => {
+        //   setIsDumbbleClicked(!isDumbbleClicked);
+        // }}
+        // onPointerOver={(e) => {
+        //   mouseOn(e);
+        // }}
+        // onPointerOut={(e) => {
+        //   mouseOut(e);
+        // }}
         onClick={() => {
           setIsDumbbleClicked(!isDumbbleClicked);
         }}
         onPointerOver={(e) => {
           mouseOn(e);
+          const marqueeManager = useThreeMarquee();
+          if (marqueeManager) {
+            marqueeManager.showMarquee("view more");
+          }
         }}
         onPointerOut={(e) => {
           mouseOut(e);
+          const marqueeManager = useThreeMarquee();
+          if (marqueeManager) {
+            marqueeManager.hideMarquee();
+          }
         }}
-      />
-      {nodes.dumbbell_bar001 && (
+      >
         <mesh
-          geometry={nodes.dumbbell_bar001.geometry}
-          material={materials["Material.024"]}
-          position={[-1.074, 0.992, 1.346]}
-          rotation={[-2.95, -1.542, -2.948]}
-          scale={[0.02, 0.865, 0.02]}
+          geometry={nodes.dumbbell_parts.geometry}
+          material={materials.bblue}
+          position={[0.534, 0.387, 0.699]}
+          rotation={[Math.PI / 2, 0, 0.358]}
+          scale={[0.033, 0.052, 0.033]}
+        />
+        <mesh
+          geometry={nodes.dumbbell_weights.geometry}
+          material={materials.switch_black}
+          position={[0.539, 0.395, 0.695]}
+          rotation={[Math.PI / 2, 0, 0.358]}
+          scale={[0.144, 0.045, 0.144]}
           castShadow
         />
-      )}
+        {nodes.dumbbell_bar001 && (
+          <mesh
+            geometry={nodes.dumbbell_bar001.geometry}
+            material={materials["Material.024"]}
+            position={[-1.074, 0.992, 1.346]}
+            rotation={[-2.95, -1.542, -2.948]}
+            scale={[0.02, 0.865, 0.02]}
+            castShadow
+          />
+        )}
+      </group>
       <mesh
         geometry={nodes.Cube025.geometry}
         material={materials["Material.024"]}

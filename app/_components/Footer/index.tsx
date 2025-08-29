@@ -66,78 +66,87 @@ export default function Footer() {
           <div className={styles.content}>
             <div className={styles.container}>
               <div className={styles.inner}>
-                <nav className={styles.nav}>
-                  <ul className={styles.items}>
-                    <li className={styles.item}>
-                      <Link href="/">top</Link>
-                    </li>
-                    <li className={styles.item}>
-                      <Link href="/techlog">techlog</Link>
-                    </li>
-                    <li className={styles.item}>
-                      <Link href="/life">lifelog</Link>
-                    </li>
-                    <li className={styles.item}>
-                      <Link href="/about">about</Link>
-                    </li>
-                    <li className={styles.item}>
-                      <span className={styles.itemInner}>
-                        <Link href="mailto:yu.namikawa18@gmail.com">contact</Link>
-                        <span className={styles.contactText}>
-                          <svg
-                            width="22"
-                            height="16"
-                            viewBox="0 0 22 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6 5L11 8.5L16 5"
-                              stroke="#2D2F4E"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M1 13V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H19C19.5304 1 20.0391 1.21071 20.4142 1.58579C20.7893 1.96086 21 2.46957 21 3V13C21 13.5304 20.7893 14.0391 20.4142 14.4142C20.0391 14.7893 19.5304 15 19 15H3C2.46957 15 1.96086 14.7893 1.58579 14.4142C1.21071 14.0391 1 13.5304 1 13Z"
-                              stroke="#2D2F4E"
-                              strokeWidth="1.5"
-                            />
-                          </svg>
-                          <span className="contact__text">
-                            記事に関するご質問や
-                            <br className="u-wbr sp" />
-                            ご不明点はこちらから
+                <div className={styles.leftInner}>
+                  <div className="">
+                    <div className={styles.logo}>
+                      <Link href="/">
+                        <Image src="/logo-footer.png" alt="nami logo" width={120} height={24} />
+                      </Link>
+                    </div>
+                  </div>
+                  <nav className={styles.nav}>
+                    <ul className={styles.items}>
+                      <li className={styles.item}>
+                        <Link href="/">top</Link>
+                      </li>
+                      <li className={styles.item}>
+                        <Link href="/techlog">techlog</Link>
+                      </li>
+                      <li className={styles.item}>
+                        <Link href="/life">lifelog</Link>
+                      </li>
+                      <li className={styles.item}>
+                        <Link href="/about">about</Link>
+                      </li>
+                      <li className={styles.item}>
+                        <span className={styles.itemInner}>
+                          <Link href="mailto:yu.namikawa18@gmail.com">contact</Link>
+                          <span className={styles.contactText}>
+                            <svg
+                              width="22"
+                              height="16"
+                              viewBox="0 0 22 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6 5L11 8.5L16 5"
+                                stroke="#2D2F4E"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M1 13V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H19C19.5304 1 20.0391 1.21071 20.4142 1.58579C20.7893 1.96086 21 2.46957 21 3V13C21 13.5304 20.7893 14.0391 20.4142 14.4142C20.0391 14.7893 19.5304 15 19 15H3C2.46957 15 1.96086 14.7893 1.58579 14.4142C1.21071 14.0391 1 13.5304 1 13Z"
+                                stroke="#2D2F4E"
+                                strokeWidth="1.5"
+                              />
+                            </svg>
+                            <span className="contact__text">
+                              記事に関するご質問や
+                              <br className="u-wbr sp" />
+                              ご不明点はこちらから
+                            </span>
                           </span>
                         </span>
-                      </span>
-                    </li>
-                    <li className={styles.item}>
-                      <Link className={styles.footerPrivacy} href="/privacy">
-                        Privacy policy
-                      </Link>
-                    </li>
-                  </ul>
-                </nav>
+                      </li>
+                      <li className={styles.item}>
+                        <Link className={styles.footerPrivacy} href="/privacy">
+                          Privacy policy
+                        </Link>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <ul className={styles.snsList}>
+                  <li className="">
+                    <a href="#">
+                      <Image width={20} height={20} alt="X" className={styles.snsLogo} src="/x-logo-white.svg" />
+                    </a>
+                  </li>
+                  <li className="">
+                    <a href="#">
+                      <Image
+                        width={24}
+                        height={24}
+                        alt="codepen"
+                        className={styles.snsLogo}
+                        src="/codepen-logo-white.svg"
+                      />
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <ul className={styles.snsList}>
-                <li className="">
-                  <a href="#">
-                    <Image width={20} height={20} alt="X" className={styles.snsLogo} src="/x-logo-white.svg" />
-                  </a>
-                </li>
-                <li className="">
-                  <a href="#">
-                    <Image
-                      width={24}
-                      height={24}
-                      alt="codepen"
-                      className={styles.snsLogo}
-                      src="/codepen-logo-white.svg"
-                    />
-                  </a>
-                </li>
-              </ul>
             </div>
             <div className={styles.footerText}>
               {firstPath == "techlog" ? (

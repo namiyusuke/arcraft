@@ -79,9 +79,13 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
   return (
     <ViewTransition>
       <div className="">
-        <div className={styles.logo}>
+        <div className="logo">
           <Link href="/">
-            <Image src="/logo.png" alt="nami logo" width={120} height={24} />
+            {firstPath === "life" ? (
+              <Image src="/logo-footer.png" alt="nami logo" width={120} height={24} />
+            ) : (
+              <Image src="/logo.png" alt="nami logo" width={120} height={24} />
+            )}
           </Link>
         </div>
       </div>

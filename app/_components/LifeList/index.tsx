@@ -15,7 +15,9 @@ export default function LifeList({ life }: lifelogListProps) {
   return (
     <div className="u-wrapper u-wrapper--article">
       <div className={styles.titleLifeTxt}>
-        <p className={styles.titleTxt}>Visualize the process of growth by testing ideas and experimenting</p>
+        <p className={styles.titleTxt}>
+          Everyday life is full of perspectives and experiences that can be applied to production.
+        </p>
       </div>
       <ul className={styles.listWrapper}>
         {life.map((content) => (

@@ -280,6 +280,8 @@
   max-width: 332px;
   margin-inline: auto;
   font-family: "Satoshi-Regular";
+  position: relative;
+  z-index: 20;
 }
 .date {
   border-top: 1px solid #040441;

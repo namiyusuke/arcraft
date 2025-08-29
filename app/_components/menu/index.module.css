@@ -11,7 +11,7 @@
   top: 60px;
   padding: 2rem;
   background-color: #fff;
-  z-index: 200;
+  z-index: 20000000;
   border-radius: 18px;
   width: 260px;
 }
@@ -428,19 +428,5 @@ input[type="checkbox"].categoryCheckbox:checked::after {
     outline: none;
     border: none;
     background-color: transparent;
-  }
-}
-.logo {
-  position: fixed;
-  top: calc(50 * var(--pxToRem));
-  left: calc(44 * var(--pxToRem));
-  z-index: 200;
-  width: calc(54 * var(--pxToRem));
-}
-@media (width >= 768px) {
-  .logo {
-    width: calc(80 * var(--pxToRem));
-    top: calc(46 * var(--pxToRem));
-    left: calc(48 * var(--pxToRem));
   }
 }

@@ -18,7 +18,7 @@
 .introInner {
   display: flex;
   flex-direction: column-reverse;
-  margin-top: 4rem;
+  margin-top: 7.5rem;
   row-gap: 2rem;
 }
 @media (width >= 768px) {
