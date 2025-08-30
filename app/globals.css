@@ -695,6 +695,12 @@ ul {
     clip-path: none;
   }
 }
+.filter-item-wrap {
+  @media (width >= 768px) {
+    visibility: hidden;
+    clip-path: polygon(0px 0%, 100% 0%, 100% 0%, 0px 0%);
+  }
+}
 .text__about h1 {
   font-family: var(--font-family-noto);
   font-weight: 400;

@@ -19,7 +19,7 @@ const menuItems = [
   { label: "techlog", path: "/techlog", current: "techlog" },
   { label: "lifelog", path: "/life", current: "life" },
   { label: "about", path: "/about", current: "about" },
-  { label: "privacy", path: "/privacy", name: "privacy" },
+  // { label: "privacy", path: "/privacy", name: "privacy" },
 ];
 export default function Menu({ categories = [], selectedCategories = [], onCategoryChange }: MenuProps) {
   const { drawerref: navDrawerRef, isOpen, handleClick, handleClose } = useDrawer();
@@ -141,7 +141,7 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
               </a>
             </p>
             <div className={isFilterOpen ? styles.filterDropdownOpen + " " + styles.filterMenu : styles.filterMenu}>
-              <div ref={filterDrawerRef} className={cx(styles.filterDropdown, "menu-item-wrap")}>
+              <div ref={filterDrawerRef} className={cx(styles.filterDropdown, "menu-item-wrap filter-item-wrap")}>
                 <div className={styles.filterHeader}>
                   <h3>カテゴリーで絞り込み</h3>
                   <button className={styles.resetButton} onClick={handleResetFilter} type="button">
