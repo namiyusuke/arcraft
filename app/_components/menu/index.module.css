@@ -353,14 +353,14 @@
   color: #333;
   user-select: none;
 }
-.filterMenu .filterDropdown {
+/* .filterMenu .filterDropdown {
   width: 100%;
   transition: all 0.3s ease-in-out;
   clip-path: inset(0% 0% 100%);
 }
 .filterDropdownOpen .filterDropdown {
   clip-path: inset(0%);
-}
+} */
 
 @media (width >= 768px) {
   .filter .filterButton {

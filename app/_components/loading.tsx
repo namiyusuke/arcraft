@@ -302,6 +302,7 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
           right: "10%",
           // transform: "translate(-50%, -50%)",
           display: "flex",
+          fontFamily: "Jost",
           gap: "0px",
           overflow: "hidden",
           zIndex: 2000,
@@ -351,8 +352,8 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
             alignItems: "center",
             fontSize: "30px",
             color: "#212121",
-            fontFamily: "monospace",
             fontWeight: "bold",
+            background: "transparent",
           }}
         >
           <span
@@ -361,8 +362,8 @@ export function LoadingScreen({ isLoading, onComplete }: LoadingScreenProps) {
               position: "relative",
               top: "5px",
               color: "#212121",
-              fontFamily: "monospace",
               fontWeight: "bold",
+              background: "transparent",
             }}
           >
             %
