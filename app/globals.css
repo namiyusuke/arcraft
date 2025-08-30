@@ -1031,7 +1031,7 @@ ul {
 }
 .hero__techlog-keybord {
   left: -30px;
-  top: 347px;
+  top: 387px;
 }
 .hero__techlog-keybord img {
   width: clamp(12.5rem, 10.115rem + 10.18vw, 15rem);
@@ -1047,7 +1047,7 @@ ul {
 }
 .hero__techlog-mouth {
   left: 86px;
-  top: 340px;
+  top: 370px;
 }
 .hero__techlog-mouth img {
   width: clamp(4.375rem, 2.586rem + 7.63vw, 6.25rem);
