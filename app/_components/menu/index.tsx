@@ -19,6 +19,7 @@ const menuItems = [
   { label: "techlog", path: "/techlog", current: "techlog" },
   { label: "lifelog", path: "/life", current: "life" },
   { label: "about", path: "/about", current: "about" },
+  { label: "privacy", path: "/privacy", name: "privacy" },
 ];
 export default function Menu({ categories = [], selectedCategories = [], onCategoryChange }: MenuProps) {
   const { drawerref: navDrawerRef, isOpen, handleClick, handleClose } = useDrawer();
@@ -96,7 +97,7 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
       <div className="">
         <div className="logo">
           <Link href="/">
-            {firstPath === "life" ? (
+            {firstPath === "life" || firstPath === "privacy" ? (
               <Image src="/logo-footer.png" alt="nami logo" width={120} height={24} />
             ) : (
               <Image src="/logo.png" alt="nami logo" width={120} height={24} />

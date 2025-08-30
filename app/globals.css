@@ -699,6 +699,14 @@ ul {
   font-family: var(--font-family-noto);
   font-weight: 400;
 }
+.g-bg-about .text__about {
+  padding-top: calc(160 / 16 * 1rem);
+}
+@media (width >= 768px) {
+  .g-bg-about .text__about {
+    padding-top: calc(200 / 16 * 1rem);
+  }
+}
 /* .rotating-circle {
   animation: rotateCircle 6s linear infinite;
 }
@@ -993,7 +1001,7 @@ ul {
 }
 .hero__about-portfolio {
   left: 0px;
-  top: 330px;
+  top: 300px;
 }
 .hero__about-portfolio img {
   width: clamp(11.25rem, 7.773rem + 14.84vw, 21.125rem);

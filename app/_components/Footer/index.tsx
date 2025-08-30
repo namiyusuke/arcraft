@@ -130,12 +130,12 @@ export default function Footer() {
                 </div>
                 <ul className={styles.snsList}>
                   <li className="">
-                    <a href="#">
+                    <a target="_blank" href="https://x.com/yusuke_nm">
                       <Image width={20} height={20} alt="X" className={styles.snsLogo} src="/x-logo-white.svg" />
                     </a>
                   </li>
                   <li className="">
-                    <a href="#">
+                    <a target="_blank" href="https://codepen.io/nami__nami">
                       <Image
                         width={24}
                         height={24}

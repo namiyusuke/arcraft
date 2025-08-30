@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import gsap from "gsap";
-export const useDrawer = (target: string) => {
+export const useDrawer = () => {
   const drawerref = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
