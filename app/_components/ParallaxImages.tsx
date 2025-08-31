@@ -76,9 +76,9 @@ export default function ParallaxImages({
         start: triggerStart,
         end: triggerEnd,
         scrub: true,
-        onUpdate: (self) => {
-          console.log(`Image ${index} progress:`, self.progress);
-        },
+        // onUpdate: (self) => {
+        //   console.log(`Image ${index} progress:`, self.progress);
+        // },
         animation: gsap.to(imageRef, {
           yPercent: image.speed * 100,
           ease: "none",

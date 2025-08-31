@@ -165,7 +165,7 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
       if (controls.current) {
         const position = controls.current.getPosition(new THREE.Vector3());
         const target = controls.current.getTarget(new THREE.Vector3());
-        console.log([position.x, position.y, position.z, target.x, target.y, target.z]);
+        // console.log([position.x, position.y, position.z, target.x, target.y, target.z]);
       }
     }),
     setLookAt: button(() => {

@@ -161,11 +161,11 @@ export function NamiRoom() {
 
   // GLTFが完全に読み込まれるまで待機
   if (!gltf || !nodes || !materials || Object.keys(nodes).length === 0) {
-    console.log("GLTF still loading...");
+    // console.log("GLTF still loading...");
     return <group></group>;
   }
 
-  console.log("Available nodes:", Object.keys(nodes));
+  // console.log("Available nodes:", Object.keys(nodes));
 
   // TODO(human): Add debug logs to identify missing nodes
 

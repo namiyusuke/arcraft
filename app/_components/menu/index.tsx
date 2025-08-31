@@ -77,19 +77,19 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
   };
 
   const handleCategoryChange = (categoryId: string) => {
-    console.log("カテゴリ変更:", categoryId);
-    console.log("現在の選択:", selectedCategories);
+    // console.log("カテゴリ変更:", categoryId);
+    // console.log("現在の選択:", selectedCategories);
 
     const updatedCategories = selectedCategories.includes(categoryId)
       ? selectedCategories.filter((id) => id !== categoryId)
       : [...selectedCategories, categoryId];
 
-    console.log("更新後の選択:", updatedCategories);
+    // console.log("更新後の選択:", updatedCategories);
     onCategoryChange?.(updatedCategories);
   };
 
   const handleResetFilter = () => {
-    console.log("リセットボタンクリック");
+    // console.log("リセットボタンクリック");
     onCategoryChange?.([]);
   };
 
@@ -152,7 +152,7 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
                 <div className={styles.categoryList}>
                   {categories.map((category) => {
                     const isChecked = selectedCategories.includes(category.id);
-                    console.log(`カテゴリ ${category.name}: ${isChecked ? "チェック済み" : "未チェック"}`);
+                    // console.log(`カテゴリ ${category.name}: ${isChecked ? "チェック済み" : "未チェック"}`);
                     return (
                       <label key={category.id} className={styles.categoryItem}>
                         <input
