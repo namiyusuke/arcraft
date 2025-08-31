@@ -619,6 +619,7 @@ ul {
   background-color: #000;
   color: #fff;
   display: none;
+  display: none;
 }
 @media (width >= 768px) {
   .g-mouseStalker {
@@ -1041,8 +1042,8 @@ ul {
 }
 @media (width >= 768px) {
   .hero__techlog-book01 {
-    right: 167px;
-    top: 232px;
+    right: min(calc(167 / 1440 * 100vw), 167px);
+    top: min(calc(232 / 1440 * 100vw), 232px);
   }
   .hero__techlog-book01 img {
     width: clamp(13.75rem, 11.607rem + 4.46vw, 15.625rem);

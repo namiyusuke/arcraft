@@ -753,7 +753,7 @@ export function NamiRoom() {
         position={[-0.847, 0.828, 0.747]}
         rotation={[0, 0.425, 0]}
         scale={0.059}
-        castShadow
+        // castShadow
         receiveShadow
       />
       <mesh
@@ -762,7 +762,7 @@ export function NamiRoom() {
         position={[-0.847, 0.886, 0.747]}
         rotation={[0, 0.425, 0]}
         scale={0.046}
-        castShadow
+        // castShadow
         receiveShadow
       />
       <mesh
@@ -788,7 +788,7 @@ export function NamiRoom() {
             marqueeManager.hideMarquee();
           }
         }}
-        castShadow
+        // castShadow
       />
       <Html occlude position={[0.2, 0.353, 0.494]} distanceFactor={5}>
         <div
@@ -856,7 +856,7 @@ export function NamiRoom() {
           position={[0.539, 0.395, 0.695]}
           rotation={[Math.PI / 2, 0, 0.358]}
           scale={[0.144, 0.045, 0.144]}
-          castShadow
+          // castShadow
         />
         {nodes.dumbbell_bar001 && (
           <mesh
@@ -865,7 +865,7 @@ export function NamiRoom() {
             position={[-1.074, 0.992, 1.346]}
             rotation={[-2.95, -1.542, -2.948]}
             scale={[0.02, 0.865, 0.02]}
-            castShadow
+            // castShadow
           />
         )}
       </group>
