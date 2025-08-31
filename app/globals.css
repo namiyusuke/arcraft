@@ -375,6 +375,7 @@ img {
 .g-bg-purple {
   position: relative;
   color: #2d2f4e;
+  overflow: hidden;
 }
 
 .g-bg-purple::after {
@@ -617,9 +618,13 @@ ul {
   transition: all 0.5s;
   background-color: #000;
   color: #fff;
-  /* transform: scale(0); */
+  display: none;
 }
-
+@media (width >= 768px) {
+  .g-mouseStalker {
+    display: block;
+  }
+}
 .is-back .g-mouseStalker {
   display: none;
 }

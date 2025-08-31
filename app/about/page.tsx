@@ -70,7 +70,7 @@ export default function About() {
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
                           <video
-                            src="/video/nami-portofolio.mp4"
+                            src="/video/arcraft.mp4"
                             className="preview-item__visual-img"
                             autoPlay
                             muted

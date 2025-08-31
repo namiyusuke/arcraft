@@ -1,9 +1,19 @@
+import { Metadata } from "next";
 // import Header from "@/app/_components/Header";
 import MouseStalker from "@/app/_components/MouseStalker";
 import "./globals.css";
 // import TransitionComponent from "@/app/TransitionComponent";
 import { unstable_ViewTransition as ViewTransition } from "react";
 import { LenisProvider } from "./lenis-provider";
+
+export const metadata: Metadata = {
+  title: "namikawa yuusuke's portfolio",
+  description: "namikawa yuusuke's portfolio site",
+  openGraph: {
+    images: ["/ogp.png"],
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -12,7 +22,6 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        <meta property="og:image" content="/ogp.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

@@ -14,6 +14,7 @@ interface MenuProps {
   selectedCategories?: string[];
   onCategoryChange?: (categoryIds: string[]) => void;
 }
+
 const menuItems = [
   { label: "top", path: "/", current: "" },
   { label: "techlog", path: "/techlog", current: "techlog" },

@@ -78,6 +78,7 @@
   overflow: hidden;
   z-index: 1;
   position: relative;
+  width: 100vw;
 }
 .copy {
   padding-top: calc(40 * var(--pxToRem));
