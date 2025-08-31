@@ -7,8 +7,9 @@ import { unstable_ViewTransition as ViewTransition } from "react";
 import { LenisProvider } from "./lenis-provider";
 
 export const metadata: Metadata = {
-  title: "namikawa yuusuke's portfolio",
-  description: "namikawa yuusuke's portfolio site",
+  title: "arcraft | techlog & lifelog",
+  description:
+    "「arcraft」はエンジニア並河祐輔の個人ブログサイトです。技術記事をまとめた「techlog」と、日常の気づきを綴る「lifelog」。二つのログを自由に行き来できます。",
   openGraph: {
     images: ["/ogp.png"],
   },
