@@ -3,7 +3,7 @@
 import Menu from "@/app/_components/menu";
 import Model3D from "./_components/Model3D";
 import Link from "next/link";
-export default async function Home({ title, discription }: { title?: string; discription?: string }) {
+export default async function Home() {
   return (
     <>
       <Menu />
