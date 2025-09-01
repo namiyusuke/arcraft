@@ -3,6 +3,7 @@ import styles from "./index.module.css";
 import ShaderImage from "@/app/_components/shader-image";
 import PreviewFollower from "@/app/_components/PreviewFollower";
 import ParallaxImages, { ParallaxImageItem } from "@/app/_components/ParallaxImages";
+import OptimizedVideo from "@/app/_components/OptimizedVideo";
 export default function About() {
   const parallaxImages: ParallaxImageItem[] = [
     {
@@ -69,13 +70,9 @@ export default function About() {
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <video
+                          <OptimizedVideo
                             src="/video/arcraft.mp4"
                             className="preview-item__visual-img"
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
                           />
                         </div>
                       </a>
@@ -91,13 +88,9 @@ export default function About() {
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <video
+                          <OptimizedVideo
                             src="/video/shibajuku-bar.mp4"
                             className="preview-item__visual-img"
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
                           />
                         </div>
                       </a>
@@ -113,13 +106,9 @@ export default function About() {
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <video
+                          <OptimizedVideo
                             src="/video/kuuche.mp4"
                             className="preview-item__visual-img"
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
                           />
                         </div>
                       </a>
@@ -135,13 +124,9 @@ export default function About() {
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <video
+                          <OptimizedVideo
                             src="/video/nami-portofolio.mp4"
                             className="preview-item__visual-img"
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
                           />
                         </div>
                       </a>
@@ -157,13 +142,9 @@ export default function About() {
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <video
+                          <OptimizedVideo
                             src="/video/newyear2024.mp4"
                             className="preview-item__visual-img"
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
                           />
                         </div>
                       </a>
@@ -179,13 +160,9 @@ export default function About() {
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <video
+                          <OptimizedVideo
                             src="/video/wombat.mp4"
                             className="preview-item__visual-img"
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
                           />
                         </div>
                       </a>
@@ -201,13 +178,9 @@ export default function About() {
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <video
+                          <OptimizedVideo
                             src="/video/newyear2023.mp4"
                             className="preview-item__visual-img"
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
                           />
                         </div>
                       </a>
