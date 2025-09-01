@@ -24,12 +24,7 @@ const menuItems = [
 ];
 export default function Menu({ categories = [], selectedCategories = [], onCategoryChange }: MenuProps) {
   const { drawerref: navDrawerRef, isOpen, handleClick, handleClose } = useDrawer();
-  const {
-    drawerref: filterDrawerRef,
-    isOpen: isFilterDrawerOpen,
-    handleClick: handleFilterDrawerClick,
-    handleClose: handleFilterDrawerClose,
-  } = useDrawer();
+  const { drawerref: filterDrawerRef, isOpen: isFilterDrawerOpen, handleClick: handleFilterDrawerClick, handleClose: handleFilterDrawerClose } = useDrawer();
   const { isScreenClicked, setIsScreenClicked, isDumbbleClicked, setIsDumbbleClicked } = useModel3DStore();
   // const menuWrapRef = useRef<HTMLDivElement>(null);
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
@@ -80,16 +75,12 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
     // console.log("カテゴリ変更:", categoryId);
     // console.log("現在の選択:", selectedCategories);
 
-    const updatedCategories = selectedCategories.includes(categoryId)
-      ? selectedCategories.filter((id) => id !== categoryId)
-      : [...selectedCategories, categoryId];
+    const updatedCategories = selectedCategories.includes(categoryId) ? selectedCategories.filter((id) => id !== categoryId) : [...selectedCategories, categoryId];
 
-    // console.log("更新後の選択:", updatedCategories);
     onCategoryChange?.(updatedCategories);
   };
 
   const handleResetFilter = () => {
-    // console.log("リセットボタンクリック");
     onCategoryChange?.([]);
   };
 
@@ -97,13 +88,13 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
     <ViewTransition>
       <div className="">
         <div className="logo">
-          <Link href="/">
+          <a href="/">
             {firstPath === "life" || firstPath === "privacy" ? (
               <Image src="/logo-footer.png" alt="nami logo" width={120} height={24} />
             ) : (
               <Image src="/logo.png" alt="nami logo" width={120} height={24} />
             )}
-          </Link>
+          </a>
         </div>
       </div>
       <button className={styles.navbutton} onClick={handleClick}>
@@ -155,13 +146,7 @@ export default function Menu({ categories = [], selectedCategories = [], onCateg
                     // console.log(`カテゴリ ${category.name}: ${isChecked ? "チェック済み" : "未チェック"}`);
                     return (
                       <label key={category.id} className={styles.categoryItem}>
-                        <input
-                          type="checkbox"
-                          name="category"
-                          checked={isChecked}
-                          onChange={() => handleCategoryChange(category.id)}
-                          className={styles.categoryCheckbox}
-                        />
+                        <input type="checkbox" name="category" checked={isChecked} onChange={() => handleCategoryChange(category.id)} className={styles.categoryCheckbox} />
                         <span className={styles.categoryName}>{category.name}</span>
                       </label>
                     );

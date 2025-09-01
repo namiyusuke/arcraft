@@ -1,6 +1,6 @@
 :root {
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
-    "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New",
+    monospace;
   --color-text-main: #333;
   --color-text-sub: #999;
   --color-text-unpainted: #fff;
@@ -31,8 +31,7 @@ body {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3",
-    Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
   /* color: var(--color-text-main); */
   line-height: 1.8;
   /* background-color: #040441; */
@@ -100,8 +99,8 @@ ul {
   --breakpoint-md: 769px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
   --font-family-kaisei: "Kaisei Opti", serif;
   --font-family-vdl: "vdl-penletter", sans-serif;
   --font-family-zen: "zen-kurenaido", sans-serif;
@@ -268,56 +267,49 @@ img {
 */
 @font-face {
   font-family: "Satoshi-Light";
-  src: url("/fonts/Satoshi-Light.woff2") format("woff2"), url("/fonts/Satoshi-Light.woff") format("woff"),
-    url("/fonts/Satoshi-Light.ttf") format("truetype");
+  src: url("/fonts/Satoshi-Light.woff2") format("woff2"), url("/fonts/Satoshi-Light.woff") format("woff"), url("/fonts/Satoshi-Light.ttf") format("truetype");
   font-weight: 300;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "Satoshi-LightItalic";
-  src: url("/fonts/Satoshi-LightItalic.woff2") format("woff2"), url("/fonts/Satoshi-LightItalic.woff") format("woff"),
-    url("/fonts/Satoshi-LightItalic.ttf") format("truetype");
+  src: url("/fonts/Satoshi-LightItalic.woff2") format("woff2"), url("/fonts/Satoshi-LightItalic.woff") format("woff"), url("/fonts/Satoshi-LightItalic.ttf") format("truetype");
   font-weight: 300;
   font-display: swap;
   font-style: italic;
 }
 @font-face {
   font-family: "Satoshi-Regular";
-  src: url("/fonts/Satoshi-Regular.woff2") format("woff2"), url("/fonts/Satoshi-Regular.woff") format("woff"),
-    url("/fonts/Satoshi-Regular.ttf") format("truetype");
+  src: url("/fonts/Satoshi-Regular.woff2") format("woff2"), url("/fonts/Satoshi-Regular.woff") format("woff"), url("/fonts/Satoshi-Regular.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "Satoshi-Italic";
-  src: url("/fonts/Satoshi-Italic.woff2") format("woff2"), url("/fonts/Satoshi-Italic.woff") format("woff"),
-    url("/fonts/Satoshi-Italic.ttf") format("truetype");
+  src: url("/fonts/Satoshi-Italic.woff2") format("woff2"), url("/fonts/Satoshi-Italic.woff") format("woff"), url("/fonts/Satoshi-Italic.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
   font-style: italic;
 }
 @font-face {
   font-family: "Satoshi-Medium";
-  src: url("/fonts/Satoshi-Medium.woff2") format("woff2"), url("/fonts/Satoshi-Medium.woff") format("woff"),
-    url("/fonts/Satoshi-Medium.ttf") format("truetype");
+  src: url("/fonts/Satoshi-Medium.woff2") format("woff2"), url("/fonts/Satoshi-Medium.woff") format("woff"), url("/fonts/Satoshi-Medium.ttf") format("truetype");
   font-weight: 500;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "Satoshi-MediumItalic";
-  src: url("/fonts/Satoshi-MediumItalic.woff2") format("woff2"), url("/fonts/Satoshi-MediumItalic.woff") format("woff"),
-    url("/fonts/Satoshi-MediumItalic.ttf") format("truetype");
+  src: url("/fonts/Satoshi-MediumItalic.woff2") format("woff2"), url("/fonts/Satoshi-MediumItalic.woff") format("woff"), url("/fonts/Satoshi-MediumItalic.ttf") format("truetype");
   font-weight: 500;
   font-display: swap;
   font-style: italic;
 }
 @font-face {
   font-family: "Satoshi-Bold";
-  src: url("/fonts/Satoshi-Bold.woff2") format("woff2"), url("/fonts/Satoshi-Bold.woff") format("woff"),
-    url("/fonts/Satoshi-Bold.ttf") format("truetype");
+  src: url("/fonts/Satoshi-Bold.woff2") format("woff2"), url("/fonts/Satoshi-Bold.woff") format("woff"), url("/fonts/Satoshi-Bold.ttf") format("truetype");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -358,19 +350,16 @@ img {
   pointer-events: none;
   background-size: 70px 70px;
   background-position: top 0 left calc(50% + 28px);
-  background-image: linear-gradient(hsla(0, 0%, 95%, 0.02) 1px, transparent 1px),
-    linear-gradient(to right, hsla(0, 0%, 95%, 0.02) 1px, transparent 1px);
+  background-image: linear-gradient(hsla(0, 0%, 95%, 0.02) 1px, transparent 1px), linear-gradient(to right, hsla(0, 0%, 95%, 0.02) 1px, transparent 1px);
   z-index: 1;
 }
 
 .g-bg-purple:before {
   opacity: 1;
-  background-image: linear-gradient(hsla(100, 100%, 100%, 15%) 1px, transparent 1px),
-    linear-gradient(to right, hsla(100, 100%, 100%, 15%) 1px, transparent 1px);
+  background-image: linear-gradient(hsla(100, 100%, 100%, 15%) 1px, transparent 1px), linear-gradient(to right, hsla(100, 100%, 100%, 15%) 1px, transparent 1px);
 }
 .g-bg-about::before {
-  background-image: linear-gradient(hsla(100, 100%, 100%, 3%) 1px, transparent 1px),
-    linear-gradient(to right, hsla(100, 100%, 100%, 3%) 1px, transparent 1px);
+  background-image: linear-gradient(hsla(100, 100%, 100%, 3%) 1px, transparent 1px), linear-gradient(to right, hsla(100, 100%, 100%, 3%) 1px, transparent 1px);
 }
 .g-bg-purple {
   position: relative;
