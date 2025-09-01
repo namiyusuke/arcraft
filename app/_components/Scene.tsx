@@ -140,15 +140,7 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
       if (isMobile) {
         controls.current.setLookAt(2.2, 1.8, 1.5, 0.2, -0.3, 0, true);
       } else {
-        controls.current.setLookAt(
-          1.9999999999999998,
-          1.7000000000000002,
-          1.1999999999999997,
-          0.10000000000000003,
-          -0.5000000000000001,
-          0,
-          true
-        );
+        controls.current.setLookAt(1.9999999999999998, 1.7000000000000002, 1.1999999999999997, 0.10000000000000003, -0.5000000000000001, 0, true);
       }
     } else {
       document.documentElement.classList.remove("is-back");
@@ -204,25 +196,9 @@ export default function Scene({ onLoad, pointerRef }: { onLoad: () => void; poin
         />
         {/* TODO(human): Optimize shadow quality and performance settings */}
         <NamiRoom />
-        <CameraControls
-          ref={controls}
-          minDistance={1.0}
-          maxDistance={10}
-          dollySpeed={0.5}
-          truckSpeed={0.5}
-          smoothTime={0.5}
-          enabled={true}
-        />
+        <CameraControls ref={controls} minDistance={1.0} maxDistance={10} dollySpeed={0.5} truckSpeed={0.5} smoothTime={0.5} enabled={true} />
       </group>
-      <GridPlanes
-        position={[0, 0, 0]}
-        ref={gridPlanesRef}
-        rows={20}
-        columns={20}
-        planeWidth={3}
-        planeDepth={3}
-        spacing={0}
-      />
+      <GridPlanes position={[0, 0, 0]} ref={gridPlanesRef} rows={20} columns={20} planeWidth={3} planeDepth={3} spacing={0} />
       {/* <Stats /> */}
     </>
   );

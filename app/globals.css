@@ -936,7 +936,7 @@ ul {
 .hero__lifelog-dumbbell {
   width: clamp(9.375rem, 6.515rem + 12.47vw, 12.5rem);
   right: 0;
-  top: 136px;
+  top: 110px;
   position: absolute;
 }
 
