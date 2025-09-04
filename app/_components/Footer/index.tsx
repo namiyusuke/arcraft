@@ -114,7 +114,7 @@ export default function Footer() {
                             </svg>
                             <span className="contact__text">
                               記事に関するご質問や
-                              <br className="u-wbr sp" />
+                              <br />
                               ご不明点はこちらから
                             </span>
                           </span>

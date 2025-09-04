@@ -193,7 +193,7 @@
 @media (width >= 768px) {
   .leftInner {
     display: flex;
-    column-gap: max(calc(200 / 1440 * 100vw), 200px);
+    column-gap: max(calc(100 / 1440 * 100vw), 100px);
   }
 }
 .logo {

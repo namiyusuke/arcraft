@@ -864,6 +864,7 @@ ul {
 }
 .contact__text {
   font-family: var(--font-family-noto);
+  font-size: clamp(0.625rem, 0.339rem + 0.6vw, 0.875rem);
 }
 .article-btn-back {
   text-align: center;
