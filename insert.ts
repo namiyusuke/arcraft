@@ -7,7 +7,7 @@ import { nanoid } from "nanoid";
 
 async function insertTextWithEmbedding(title: string, text: string) {
   try {
-    // テキストを埋め込みベクトルに変換
+    // テキストを埋め込みベクトルに変
     const { embedding } = await embed({
       model: openai.embedding("text-embedding-3-small"),
       value: text,
