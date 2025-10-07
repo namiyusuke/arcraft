@@ -23,6 +23,7 @@
     "microcms-rich-editor-handler": "^1.0.1",
     "nanoid": "^5.1.6",
     "next": "15.3.1",
+    "nuqs": "^2.7.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "shiki": "^1.29.2",

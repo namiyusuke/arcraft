@@ -15,7 +15,7 @@ const float32Array = customType<{
     return Array.from(new Float32Array(value.buffer));
   },
   toDriver(value: number[]) {
-    return sql`vector32(${JSON.stringify(value)})`;
+    return sql.raw(`vector32('[${value.join(",")}]')`);
   },
 });
 export const ai = sqliteTable("ai", {
