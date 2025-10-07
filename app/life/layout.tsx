@@ -4,6 +4,7 @@ import Sheet from "@/app/_components/Sheet";
 import Footer from "../_components/Footer";
 import { useScrollObserver } from "@/app/fooks/useScrollObserver";
 import Ai from "../_components/ai";
+import { Suspense } from "react";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 type Props = {
   children: React.ReactNode;
@@ -20,9 +21,11 @@ export default function NewsLayout({ children }: Props) {
         <Sheet>{children}</Sheet>
         <div ref={ref} className="js-observer">
           <Footer />
-          <NuqsAdapter>
-            <Ai />
-          </NuqsAdapter>
+          <Suspense fallback={<div>Loading...</div>}>
+            <NuqsAdapter>
+              <Ai />
+            </NuqsAdapter>
+          </Suspense>
         </div>
       </div>
     </>
