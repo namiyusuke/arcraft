@@ -35,18 +35,21 @@ export default function Ai() {
     setMessages((prev) => [...prev, { role: "user", content: text }]);
 
     try {
+      console.log("[Client] Sending message:", text);
       const result = await sendChatMessage(text);
+      console.log("[Client] Result received:", result);
 
       if (result.success && result.data) {
         setMessages((prev) => [...prev, { role: "assistant", content: result.data.answer }]);
       } else {
+        console.error("[Client] Error from server:", result.error);
         setMessages((prev) => [
           ...prev,
-          { role: "assistant", content: "エラーが発生しました。もう一度お試しください。" },
+          { role: "assistant", content: `エラーが発生しました: ${result.error || "もう一度お試しください。"}` },
         ]);
       }
     } catch (error) {
-      console.error("Failed to send message:", error);
+      console.error("[Client] Failed to send message:", error);
       setMessages((prev) => [
         ...prev,
         { role: "assistant", content: "エラーが発生しました。もう一度お試しください。" },
