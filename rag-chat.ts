@@ -1,4 +1,3 @@
-import "dotenv/config";
 import { openai } from "@ai-sdk/openai";
 import { embed, generateText } from "ai";
 import { db } from "./db";

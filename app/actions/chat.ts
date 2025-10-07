@@ -24,9 +24,18 @@ export async function sendChatMessage(message: string) {
     return { success: true, data: result };
   } catch (error) {
     console.error("Chat error:", error);
+    console.error("Error details:", {
+      message: error instanceof Error ? error.message : "Unknown error",
+      stack: error instanceof Error ? error.stack : undefined,
+      env: {
+        hasDatabaseUrl: !!process.env.TURSO_DATABASE_URL,
+        hasAuthToken: !!process.env.TURSO_AUTH_TOKEN,
+        hasOpenAiKey: !!process.env.OPENAI_API_KEY,
+      },
+    });
     return {
       success: false,
-      error: "Failed to process message",
+      error: error instanceof Error ? error.message : "Failed to process message",
     };
   }
 }
