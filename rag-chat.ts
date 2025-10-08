@@ -19,28 +19,54 @@ async function searchSimilarDocuments(
   minSimilarity: number = 0.7,
   limit: number = 3
 ): Promise<SearchResult[]> {
-  // 質問をベクトル化
-  const { embedding } = await embed({
-    model: openai.embedding("text-embedding-3-small"),
-    value: question,
-  });
-  const similarity = sql<number>`1 - vector_distance_cos(${ai.vector}, ${sql.raw(
-    `vector32('[${embedding.join(",")}]')`
-  )})`;
-  // 類似度検索
-  const results = await db
-    .select({
-      id: ai.id,
-      title: ai.title,
-      text: ai.text,
-      similarity: similarity,
-    })
-    .from(ai)
-    .where(sql`${similarity} > ${minSimilarity}`)
-    .orderBy(desc(similarity))
-    .limit(limit);
+  try {
+    // 質問をベクトル化
+    console.log("[RAG] Embedding question...");
+    const { embedding } = await embed({
+      model: openai.embedding("text-embedding-3-small"),
+      value: question,
+    });
+    console.log("[RAG] Embedding created, length:", embedding.length);
 
-  return results;
+    // データベースにベクトル拡張が有効か確認
+    try {
+      const testQuery = await db.run(sql`SELECT vector32('[1,2,3]') as test`);
+      console.log("[RAG] Vector extension is available:", testQuery);
+    } catch (testError) {
+      console.error("[RAG] Vector extension test failed:", testError);
+      throw new Error(
+        "Vector extension is not available in the database. Please ensure libsql-vector is enabled."
+      );
+    }
+
+    // ベクトルを配列形式の文字列に変換
+    const vectorString = `[${embedding.join(",")}]`;
+
+    // 類似度検索用のSQL
+    const similarity = sql<number>`1 - vector_distance_cos(${ai.vector}, ${sql.raw(
+      `vector32('${vectorString}')`
+    )})`;
+
+    console.log("[RAG] Executing similarity search...");
+    // 類似度検索
+    const results = await db
+      .select({
+        id: ai.id,
+        title: ai.title,
+        text: ai.text,
+        similarity: similarity,
+      })
+      .from(ai)
+      .where(sql`${similarity} > ${minSimilarity}`)
+      .orderBy(desc(similarity))
+      .limit(limit);
+
+    console.log("[RAG] Search results found:", results.length);
+    return results;
+  } catch (error) {
+    console.error("[RAG] Error in searchSimilarDocuments:", error);
+    throw error;
+  }
 }
 
 /**
