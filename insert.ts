@@ -14,9 +14,7 @@ async function insertTextWithEmbedding(title: string, text: string) {
     });
 
     // embeddingを数値配列に変換
-    const vectorArray: number[] = Array.isArray(embedding)
-      ? embedding
-      : Array.from(embedding as ArrayLike<number>);
+    const vectorArray: number[] = Array.isArray(embedding) ? embedding : Array.from(embedding as ArrayLike<number>);
 
     // データベースに挿入
     const result = await db.insert(ai).values({
@@ -28,10 +26,8 @@ async function insertTextWithEmbedding(title: string, text: string) {
       updatedAt: new Date(),
     });
 
-    console.log("データが正常に挿入されました:", { title, textLength: text.length });
     return result;
   } catch (error) {
-    console.error("エラーが発生しました:", error);
     throw error;
   }
 }
@@ -40,7 +36,7 @@ async function insertTextWithEmbedding(title: string, text: string) {
 async function main() {
   await insertTextWithEmbedding(
     "このサイトについて",
-    "namiのブログサイトです。技術的な内容から日常の出来事まで幅広く発信しています。"
+    "このブログはnamiのブログサイトです。技術的な内容から日常の出来事まで幅広く発信しています。"
   );
   await insertTextWithEmbedding(
     "nami(このサイトの運営者)について",
@@ -48,7 +44,7 @@ async function main() {
   );
   await insertTextWithEmbedding(
     "nami(このサイトの運営者)の休みの日の過ごし方",
-    "namiの休みの日は早朝の筋トレから始まります。お昼から夜にかけてコードを書いて自主制作に励み、夜はサウナでリフレッシュします。"
+    "namiの休みの日のルーティンは早朝の筋トレから始まります。お昼から夜にかけてコードを書いて自主制作に励み、夜はサウナでリフレッシュします。"
   );
   await insertTextWithEmbedding(
     "attcraftについて",
@@ -61,6 +57,10 @@ async function main() {
   await insertTextWithEmbedding(
     "namiの実績について",
     "namiのポートフォリオはhttps://portfolio-nami2024.netlify.app/ です。"
+  );
+  await insertTextWithEmbedding(
+    "namiの秘密について",
+    "namiの秘密は、実は左利き寄り両利きです。右手でお箸もって左でペンを持ちます。"
   );
 }
 

@@ -10,5 +10,4 @@ export const db = drizzle({
   schema: {
     ...aiSchema,
   },
-  logger: true, // SQLクエリをログ出力
 });

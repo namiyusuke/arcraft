@@ -16,7 +16,7 @@ interface SearchResult {
  */
 async function searchSimilarDocuments(
   question: string,
-  minSimilarity: number = 0.7,
+  minSimilarity: number = 0.4,
   limit: number = 3
 ): Promise<SearchResult[]> {
   // 質問をベクトル化
@@ -113,7 +113,7 @@ export async function ragChat(
   searchResults?: SearchResult[];
 }> {
   try {
-    const { minSimilarity = 0.5, maxResults = 3, includeSearchDetails = false } = options;
+    const { minSimilarity = 0.3, maxResults = 3, includeSearchDetails = false } = options;
 
     console.log(`質問: ${question}`);
     console.log("関連情報を検索中...");

@@ -6,7 +6,13 @@ import { useQueryState } from "nuqs";
 import Image from "next/image";
 
 // 初回表示する質問候補
-const SUGGESTED_QUESTIONS = ["趣味は何ですか?", "使用している技術は?"];
+const SUGGESTED_QUESTIONS = [
+  "namiの趣味は何ですか?",
+  "namiの強みはなんですか？",
+  "namiの休みの日のルーティンを教えて！",
+  "attcraftって何？",
+  "namiの秘密は？",
+];
 
 export default function Ai() {
   const [isOpen, setIsOpen] = useQueryState("panel-active", {
