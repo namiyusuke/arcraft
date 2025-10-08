@@ -133,7 +133,7 @@ export default function Ai() {
                 <input
                   className={styles.input}
                   value={input}
-                  placeholder=""
+                  placeholder="聞いてみて！"
                   onChange={(e) => setInput(e.currentTarget.value)}
                   disabled={isLoading}
                 />
