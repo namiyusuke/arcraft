@@ -31,6 +31,9 @@ export default function Ai() {
       document.documentElement.classList.add("is-open");
     } else {
       document.documentElement.classList.remove("is-open");
+      // モーダルが閉じたらメッセージと入力をリセット
+      setMessages([]);
+      setInput("");
     }
   }, [isOpen]);
 

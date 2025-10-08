@@ -60,7 +60,7 @@ async function main() {
   );
   await insertTextWithEmbedding(
     "namiの秘密について",
-    "namiの秘密は、実は左利き寄り両利きです。右手でお箸もって左でペンを持ちます。"
+    "namiの秘密は、実は左利き寄り両利きです。左手でお箸もって右手でペンを持ちます。"
   );
 }
 
