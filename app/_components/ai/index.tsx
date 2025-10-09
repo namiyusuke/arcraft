@@ -4,6 +4,7 @@ import { sendChatMessage } from "../../actions/chat";
 import styles from "./index.module.css";
 import { useQueryState } from "nuqs";
 import Image from "next/image";
+import Link from "next/link";
 
 // 初回表示する質問候補
 const SUGGESTED_QUESTIONS = [
@@ -12,6 +13,7 @@ const SUGGESTED_QUESTIONS = [
   "namiの休みの日のルーティンを教えて！",
   "attcraftって何？",
   "namiの秘密は？",
+  "デザインはどうしてるの？",
 ];
 
 export default function Ai() {
@@ -149,6 +151,13 @@ export default function Ai() {
                   aria-label="メッセージを送信"
                 ></button>
               </div>
+              <p className={styles.privacy}>
+                こちら
+                <Link className={styles.privacyLine} href="/privacy#ai">
+                  サイトポリシー
+                </Link>
+                に同意した方のみご利用ください
+              </p>
             </form>
           </div>
         </div>

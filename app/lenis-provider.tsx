@@ -60,25 +60,45 @@ export const LenisProvider = ({ children }: LenisProviderProps) => {
     const lenis = lenisRef.current;
     if (!lenis) return;
 
+    // URLハッシュを取得
+    const hash = window.location.hash;
+
     // View Transition対応: ページ遷移時にスクロール位置をリセット
     const handlePageTransition = () => {
       // Lenisを一時停止
       lenis.stop();
 
-      // スクロール位置を即座にトップに
-      lenis.scrollTo(0, {
-        immediate: true,
-        force: true, // 強制的にスクロール
-        lock: true, // スクロール中は他の操作をロック
-      });
-
-      // DOMの更新を待ってから再開
-      requestAnimationFrame(() => {
+      // ハッシュがある場合はアンカーリンク、ない場合はトップへ
+      if (hash) {
+        // DOMの更新を待ってからアンカー位置へスクロール
         requestAnimationFrame(() => {
-          lenis.resize(); // サイズを再計算
-          lenis.start(); // Lenisを再開
+          requestAnimationFrame(() => {
+            lenis.resize(); // サイズを再計算
+            lenis.start(); // Lenisを再開
+
+            // アンカー要素へスムーススクロール
+            lenis.scrollTo(hash, {
+              offset: -80, // ヘッダー分のオフセット（必要に応じて調整）
+              duration: 1.2,
+            });
+          });
         });
-      });
+      } else {
+        // スクロール位置を即座にトップに
+        lenis.scrollTo(0, {
+          immediate: true,
+          force: true, // 強制的にスクロール
+          lock: true, // スクロール中は他の操作をロック
+        });
+
+        // DOMの更新を待ってから再開
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            lenis.resize(); // サイズを再計算
+            lenis.start(); // Lenisを再開
+          });
+        });
+      }
     };
 
     // View Transitionが実行中かチェック
