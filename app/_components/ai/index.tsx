@@ -107,17 +107,30 @@ export default function Ai() {
                     </ul>
                   </div>
                 ) : (
-                  messages.map((message, i) => (
-                    <div
-                      key={i}
-                      className={`${styles.message} ${
-                        message.role === "user" ? styles.userMessage : styles.assistantMessage
-                      }`}
-                    >
-                      {/* <span className={styles.messageRole}>{message.role === "user" ? "" : ""}</span> */}
-                      <span className={styles.messageContent}>{message.content}</span>
-                    </div>
-                  ))
+                  <>
+                    {messages.map((message, i) => (
+                      <div
+                        key={i}
+                        className={`${styles.message} ${
+                          message.role === "user" ? styles.userMessage : styles.assistantMessage
+                        }`}
+                      >
+                        {/* <span className={styles.messageRole}>{message.role === "user" ? "" : ""}</span> */}
+                        <span className={styles.messageContent}>{message.content}</span>
+                      </div>
+                    ))}
+                    {isLoading && (
+                      <div className={`${styles.message} ${styles.assistantMessage}`}>
+                        <span className={`${styles.messageContent} ${styles.loadingMessage}`}>
+                          <span className={styles.loadingDots}>
+                            <span className={styles.dot}></span>
+                            <span className={styles.dot}></span>
+                            <span className={styles.dot}></span>
+                          </span>
+                        </span>
+                      </div>
+                    )}
+                  </>
                 )}
                 <div ref={messagesEndRef} />
               </div>
