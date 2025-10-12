@@ -52,7 +52,7 @@ export default async function ArticleLife({ data }: Props) {
     extractors: {
       toc: [
         tocExtractor({
-          ignoreLevels: [4, 5], // 無視したい見出しのレベル
+          ignoreLevels: [3, 4, 5], // 無視したい見出しのレベル
         }),
         { phase: "before" },
       ],

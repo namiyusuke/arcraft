@@ -52,7 +52,7 @@
 .content > h2 {
   font-size: 1.6rem;
   font-weight: bold;
-  margin: 6em 0 0.5rem;
+  margin: 3em 0 0.5rem;
 }
 .content h2 + p {
   margin-top: 0.5rem;
@@ -131,7 +131,7 @@
 }
 
 .content > figure > img {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   margin: 2rem 0;
 }
