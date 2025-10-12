@@ -11,7 +11,7 @@ const SUGGESTED_QUESTIONS = [
   "namiの趣味は何ですか?",
   "namiの強みはなんですか？",
   "namiの休みの日のルーティンを教えて！",
-  "attcraftって何？",
+  "attcraftって何なの？",
   "namiの秘密は？",
   "デザインはどうしてるの？",
 ];
