@@ -21,7 +21,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     notFound();
   });
 
-  // TODO(human): OGP画像のデフォルトURLを設定してください
+  // TODO(human): OGP画像のデフォルトURLを設定
   const ogImageUrl = data.thumbnail?.url || "https://yourdomain.com/default-ogp.png";
 
   return {
