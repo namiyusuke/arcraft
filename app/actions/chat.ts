@@ -1,15 +1,18 @@
 "use server";
 
 import { ragChat } from "@/rag-chat";
+import { db } from "@/db";
+import { inputSchema } from "@/db/schemas/input";
+import { nanoid } from "nanoid";
 
 export async function sendChatMessage(message: string) {
-  console.log("[Server Action] Received message:", message);
-  console.log("[Server Action] Environment check:", {
-    hasDatabaseUrl: !!process.env.TURSO_DATABASE_URL,
-    hasAuthToken: !!process.env.TURSO_AUTH_TOKEN,
-    hasOpenAiKey: !!process.env.OPENAI_API_KEY,
-    nodeEnv: process.env.NODE_ENV,
-  });
+  // console.log("[Server Action] Received message:", message);
+  // console.log("[Server Action] Environment check:", {
+  //   hasDatabaseUrl: !!process.env.TURSO_DATABASE_URL,
+  //   hasAuthToken: !!process.env.TURSO_AUTH_TOKEN,
+  //   hasOpenAiKey: !!process.env.OPENAI_API_KEY,
+  //   nodeEnv: process.env.NODE_ENV,
+  // });
 
   // 入力検証
   if (!message || typeof message !== "string") {
@@ -32,7 +35,18 @@ export async function sendChatMessage(message: string) {
     const result = await ragChat(message, {
       includeSearchDetails: true,
     });
-    console.log("[Server Action] ragChat success");
+
+    // データベースに質問を保存
+    try {
+      await db.insert(inputSchema).values({
+        id: nanoid(),
+        text: message,
+      });
+      // console.log("[Server Action] Question saved to database");
+    } catch (dbError) {
+      // データベース保存エラーはログに記録するが、ユーザーへの応答は継続
+      console.error("[Server Action] Failed to save question to database:", dbError);
+    }
 
     return { success: true, data: result };
   } catch (error) {
