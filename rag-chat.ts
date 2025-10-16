@@ -4,7 +4,7 @@ import { db } from "./db";
 import { ai } from "./db/schemas/ai";
 import { desc, sql } from "drizzle-orm";
 
-interface SearchResult {
+export interface SearchResult {
   id: string;
   title: string;
   text: string;
@@ -14,7 +14,7 @@ interface SearchResult {
 /**
  * 質問をベクトル化して類似するドキュメントを検索する
  */
-async function searchSimilarDocuments(
+export async function searchSimilarDocuments(
   question: string,
   minSimilarity: number = 0.4,
   limit: number = 3
@@ -145,37 +145,32 @@ export async function ragChat(
   }
 }
 
-// 使用例とテスト
-async function main() {
-  const questions = [
-    "Next.jsについて教えて",
-    "TypeScriptの利点は何？",
-    "Tursoデータベースの特徴は？",
-    "Reactのフックについて",
-  ];
-
-  for (const question of questions) {
-    console.log("\n" + "=".repeat(50));
-
-    const result = await ragChat(question, {
-      includeSearchDetails: true,
-    });
-
-    console.log(`\n【質問】${question}`);
-    console.log(`\n【回答】\n${result.answer}`);
-
-    if (result.searchResults) {
-      console.log(`\n【参考にした情報】`);
-      result.searchResults.forEach((doc, index) => {
-        console.log(`${index + 1}. ${doc.title} (類似度: ${(doc.similarity * 100).toFixed(1)}%)`);
-      });
-    }
-
-    console.log("\n" + "=".repeat(50));
-  }
-}
-
-// スクリプトとして実行
-if (require.main === module) {
-  main().catch(console.error);
-}
+// 使用例とテスト (Node.js環境でのみ実行)
+// export async function main() {
+//   const questions = [
+//     "Next.jsについて教えて",
+//     "TypeScriptの利点は何？",
+//     "Tursoデータベースの特徴は？",
+//     "Reactのフックについて",
+//   ];
+//
+//   for (const question of questions) {
+//     console.log("\n" + "=".repeat(50));
+//
+//     const result = await ragChat(question, {
+//       includeSearchDetails: true,
+//     });
+//
+//     console.log(`\n【質問】${question}`);
+//     console.log(`\n【回答】\n${result.answer}`);
+//
+//     if (result.searchResults) {
+//       console.log(`\n【参考にした情報】`);
+//       result.searchResults.forEach((doc, index) => {
+//         console.log(`${index + 1}. ${doc.title} (類似度: ${(doc.similarity * 100).toFixed(1)}%)`);
+//       });
+//     }
+//
+//     console.log("\n" + "=".repeat(50));
+//   }
+// }

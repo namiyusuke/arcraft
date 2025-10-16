@@ -1,10 +1,11 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import { sendChatMessage } from "../../actions/chat";
+import { useEffect, useRef, useState } from "react";
 import styles from "./index.module.css";
 import { useQueryState } from "nuqs";
 import Image from "next/image";
 import Link from "next/link";
+import { useChat } from "@ai-sdk/react";
+import { DefaultChatTransport } from "ai";
 
 // 初回表示する質問候補
 const SUGGESTED_QUESTIONS = [
@@ -20,54 +21,52 @@ export default function Ai() {
   const [isOpen, setIsOpen] = useQueryState("panel-active", {
     defaultValue: "false",
   });
+
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState<Array<{ role: string; content: string }>>([]);
-  const [isLoading, setIsLoading] = useState(false);
+
+  const {
+    messages,
+    sendMessage: sendChatMessage,
+    status,
+  } = useChat({
+    transport: new DefaultChatTransport({
+      api: "/api/chat",
+      body: {
+        minSimilarity: 0.3,
+        maxResults: 3,
+      },
+    }),
+  });
+
+  const isLoading = status === "submitted" || status === "streaming";
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
   useEffect(() => {
     if (isOpen === "true") {
       document.documentElement.classList.add("is-open");
     } else {
       document.documentElement.classList.remove("is-open");
-      // モーダルが閉じたらメッセージと入力をリセット
-      setMessages([]);
-      setInput("");
     }
   }, [isOpen]);
 
-  const sendMessage = async (text: string) => {
+  const sendMessage = (text: string, e?: React.MouseEvent) => {
+    e?.stopPropagation();
     if (!text.trim() || isLoading) return;
 
-    setIsLoading(true);
-    setMessages((prev) => [...prev, { role: "user", content: text }]);
+    sendChatMessage({ text });
+  };
 
-    try {
-      console.log("[Client] Sending message:", text);
-      const result = await sendChatMessage(text);
-      console.log("[Client] Result received:", result);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
 
-      if (result.success && result.data) {
-        setMessages((prev) => [...prev, { role: "assistant", content: result.data.answer }]);
-      } else {
-        console.error("[Client] Error from server:", result.error);
-        setMessages((prev) => [
-          ...prev,
-          { role: "assistant", content: `エラーが発生しました: ${result.error || "もう一度お試しください。"}` },
-        ]);
-      }
-    } catch (error) {
-      console.error("[Client] Failed to send message:", error);
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: "エラーが発生しました。もう一度お試しください。" },
-      ]);
-    } finally {
-      setIsLoading(false);
-    }
+    sendChatMessage({ text: input });
+    setInput("");
   };
 
   return (
@@ -97,7 +96,7 @@ export default function Ai() {
                         <li key={i}>
                           <button
                             className={styles.questionButton}
-                            onClick={() => sendMessage(question)}
+                            onClick={(e) => sendMessage(question, e)}
                             disabled={isLoading}
                           >
                             {question}
@@ -116,7 +115,11 @@ export default function Ai() {
                         }`}
                       >
                         {/* <span className={styles.messageRole}>{message.role === "user" ? "" : ""}</span> */}
-                        <span className={styles.messageContent}>{message.content}</span>
+                        <span className={styles.messageContent}>
+                          {message.parts.map((part, j) => (
+                            <span key={j}>{part.type === "text" ? part.text : ""}</span>
+                          ))}
+                        </span>
                       </div>
                     ))}
                     {isLoading && (
@@ -137,11 +140,8 @@ export default function Ai() {
             </div>
             <form
               onSubmit={(e) => {
-                e.preventDefault();
-                if (!isLoading && input.trim()) {
-                  sendMessage(input);
-                  setInput("");
-                }
+                e.stopPropagation();
+                handleSubmit(e);
               }}
             >
               <div className={styles.inputWrapper}>
@@ -149,18 +149,13 @@ export default function Ai() {
                   className={styles.input}
                   value={input}
                   placeholder="聞いてみて！"
-                  onChange={(e) => setInput(e.currentTarget.value)}
+                  onChange={(e) => setInput(e.target.value)}
                   disabled={isLoading}
                 />
                 <button
-                  onClick={() => {
-                    if (!isLoading && input.trim()) {
-                      sendMessage(input);
-                      setInput("");
-                    }
-                  }}
+                  type="submit"
                   className={styles.inputBtn}
-                  type="button"
+                  disabled={isLoading || !input?.trim()}
                   aria-label="メッセージを送信"
                 ></button>
               </div>
