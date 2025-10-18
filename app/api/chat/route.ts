@@ -1,7 +1,9 @@
 import { openai } from "@ai-sdk/openai";
 import { streamText, convertToModelMessages } from "ai";
 import { searchSimilarDocuments } from "@/rag-chat";
-
+import { db } from "@/db";
+import { inputSchema } from "@/db/schemas/input";
+import { nanoid } from "nanoid";
 export const runtime = "edge";
 
 export async function POST(req: Request) {
@@ -41,13 +43,16 @@ export async function POST(req: Request) {
     console.log("[RAG API] Extracted question:", question);
 
     if (!question.trim()) {
-      return new Response(JSON.stringify({
-        error: "質問テキストが空です",
-        debug: { lastMessage }
-      }), {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      });
+      return new Response(
+        JSON.stringify({
+          error: "質問テキストが空です",
+          debug: { lastMessage },
+        }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
     }
 
     // 1. 類似ドキュメントを検索
@@ -99,7 +104,15 @@ ${context}
       system: systemPrompt,
       messages: modelMessages,
     });
-
+    // データベースに質問を保存（非同期、レスポンスをブロックしない）
+    db.insert(inputSchema)
+      .values({
+        id: nanoid(),
+        text: question,
+      })
+      .catch((err) => {
+        console.error("[Chat API] Failed to log question:", err);
+      });
     // ストリーミングレスポンスとして返す
     return result.toUIMessageStreamResponse();
   } catch (error) {
