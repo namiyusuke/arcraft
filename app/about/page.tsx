@@ -60,7 +60,7 @@ export default function About() {
                 <div data-follower-collection="" className="preview-collection">
                   <div className="preview-list">
                     <div data-follower-item="" className="preview-item">
-                      <a href="#" className="preview-item__inner w-inline-block">
+                      <a href="https://www.ar-craft.com/" className="preview-item__inner w-inline-block">
                         <div className="preview-item__row">
                           <div className="preview-item__col is--large">
                             <h2 className="preview-item__heading">Arcraft</h2>
@@ -70,15 +70,12 @@ export default function About() {
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <OptimizedVideo
-                            src="/video/arcraft.mp4"
-                            className="preview-item__visual-img"
-                          />
+                          <OptimizedVideo src="/video/arcraft.mp4" className="preview-item__visual-img" />
                         </div>
                       </a>
                     </div>
                     <div data-follower-item="" className="preview-item">
-                      <a href="#" className="preview-item__inner w-inline-block">
+                      <a href="https://sakaba.shibajuku.net/" className="preview-item__inner w-inline-block">
                         <div className="preview-item__row">
                           <div className="preview-item__col is--large">
                             <h2 className="preview-item__heading">This is Shibajuku Sakaba.</h2>
@@ -88,15 +85,12 @@ export default function About() {
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <OptimizedVideo
-                            src="/video/shibajuku-bar.mp4"
-                            className="preview-item__visual-img"
-                          />
+                          <OptimizedVideo src="/video/shibajuku-bar.mp4" className="preview-item__visual-img" />
                         </div>
                       </a>
                     </div>
                     <div data-follower-item="" className="preview-item">
-                      <a href="#" className="preview-item__inner w-inline-block">
+                      <a href="https://kuuchedesign.com/" className="preview-item__inner w-inline-block">
                         <div className="preview-item__row">
                           <div className="preview-item__col is--large">
                             <h2 className="preview-item__heading">Kuuche Design</h2>
@@ -106,15 +100,12 @@ export default function About() {
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <OptimizedVideo
-                            src="/video/kuuche.mp4"
-                            className="preview-item__visual-img"
-                          />
+                          <OptimizedVideo src="/video/kuuche.mp4" className="preview-item__visual-img" />
                         </div>
                       </a>
                     </div>
                     <div data-follower-item="" className="preview-item">
-                      <a href="#" className="preview-item__inner w-inline-block">
+                      <a href="https://portfolio-nami2024.netlify.app/" className="preview-item__inner w-inline-block">
                         <div className="preview-item__row">
                           <div className="preview-item__col is--large">
                             <h2 className="preview-item__heading">Yusuke Namikawa portfolio site</h2>
@@ -124,15 +115,15 @@ export default function About() {
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <OptimizedVideo
-                            src="/video/nami-portofolio.mp4"
-                            className="preview-item__visual-img"
-                          />
+                          <OptimizedVideo src="/video/nami-portofolio.mp4" className="preview-item__visual-img" />
                         </div>
                       </a>
                     </div>
                     <div data-follower-item="" className="preview-item">
-                      <a href="#" className="preview-item__inner w-inline-block">
+                      <a
+                        href="https://projects.shibajuku.net/nenga/2024/attcraft/"
+                        className="preview-item__inner w-inline-block"
+                      >
                         <div className="preview-item__row">
                           <div className="preview-item__col is--large">
                             <h2 className="preview-item__heading">New Year's greeting site 2024</h2>
@@ -142,15 +133,15 @@ export default function About() {
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <OptimizedVideo
-                            src="/video/newyear2024.mp4"
-                            className="preview-item__visual-img"
-                          />
+                          <OptimizedVideo src="/video/newyear2024.mp4" className="preview-item__visual-img" />
                         </div>
                       </a>
                     </div>
                     <div data-follower-item="" className="preview-item">
-                      <a href="#" className="preview-item__inner w-inline-block">
+                      <a
+                        href="https://projects.shibajuku.net/wombat/attcraft/"
+                        className="preview-item__inner w-inline-block"
+                      >
                         <div className="preview-item__row">
                           <div className="preview-item__col is--large">
                             <h2 className="preview-item__heading">Welcome to Wombat Tours</h2>
@@ -160,28 +151,25 @@ export default function About() {
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <OptimizedVideo
-                            src="/video/wombat.mp4"
-                            className="preview-item__visual-img"
-                          />
+                          <OptimizedVideo src="/video/wombat.mp4" className="preview-item__visual-img" />
                         </div>
                       </a>
                     </div>
                     <div data-follower-item="" className="preview-item">
-                      <a href="#" className="preview-item__inner w-inline-block">
+                      <a
+                        href="https://projects.shibajuku.net/nenga/2023/nami/"
+                        className="preview-item__inner w-inline-block"
+                      >
                         <div className="preview-item__row">
                           <div className="preview-item__col is--large">
-                            <h2 className="preview-item__heading">WNew Year's greeting site 2023</h2>
+                            <h2 className="preview-item__heading">New Year's greeting site 2023</h2>
                           </div>
                           <div className="preview-item__col is--medium">
                             <p className="preview-item__text">Astro+vanilla js</p>
                           </div>
                         </div>
                         <div data-follower-visual="" className="preview-item__visual">
-                          <OptimizedVideo
-                            src="/video/newyear2023.mp4"
-                            className="preview-item__visual-img"
-                          />
+                          <OptimizedVideo src="/video/newyear2023.mp4" className="preview-item__visual-img" />
                         </div>
                       </a>
                     </div>
