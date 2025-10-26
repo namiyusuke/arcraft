@@ -78,8 +78,7 @@
   font-weight: var(--font-weight-medium);
   line-height: 160%;
   aspect-ratio: 32/16;
-
-  /* background-color: #040441; */
+  position: relative;
   background-color: #38446a;
   color: #fff;
   font-family: var(--font-family-zen);

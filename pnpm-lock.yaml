@@ -56,6 +56,9 @@ dependencies:
   shiki:
     specifier: ^1.29.2
     version: 1.29.2
+  swr:
+    specifier: ^2.3.6
+    version: 2.3.6(react@19.2.0)
   three:
     specifier: ^0.176.0
     version: 0.176.0

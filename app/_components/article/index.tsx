@@ -13,6 +13,7 @@ import {
 import TocLink from "./TocLink";
 import ScrollToTopButton from "../ScrollToTopButton";
 import { unstable_ViewTransition as ViewTransition } from "react";
+import LikeButton from "../LikeButton";
 
 type Props = {
   data: News;
@@ -79,13 +80,15 @@ export default async function Article({ data }: Props) {
 
           <div className={styles.top}>
             <div className={styles.meta}>
-              <Link href={`/techlog/category/${data.category.id}`} className={styles.categoryLink}>
+              {/* <Link href={`/techlog/category/${data.category.id}`} className={styles.categoryLink}>
                 <Category category={data.category} />
-              </Link>
+              </Link> */}
               <span className={styles.date}>
                 <Date date={data.publishedAt ?? data.createdAt} />
               </span>
+              <LikeButton articleId={data.id} />
             </div>
+
             <h1 className={styles.title}>{data.title}</h1>
           </div>
           {/* <p className={styles.description}>{data.description}</p> */}

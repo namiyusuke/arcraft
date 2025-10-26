@@ -1524,3 +1524,15 @@ ul {
     left: calc(48 * var(--pxToRem));
   }
 }
+.buttonWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  /* flex-direction: column; */
+}
+.u-wrapper--article .buttonWrapper {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}

@@ -12,6 +12,7 @@ import {
 } from "microcms-rich-editor-handler";
 import TocLink from "./TocLink";
 import { unstable_ViewTransition as ViewTransition } from "react";
+import LikeButton from "../LikeButton";
 type Props = {
   data: Life;
 };
@@ -79,7 +80,13 @@ export default async function ArticleLife({ data }: Props) {
           )}
           <div className={styles.top}>
             <div className={styles.meta}>
-              <Date date={data.publishedAt ?? data.createdAt} />
+              {/* <Link href={`/techlog/category/${data.category.id}`} className={styles.categoryLink}>
+                <Category category={data.category} />
+              </Link> */}
+              <span className={styles.date}>
+                <Date date={data.publishedAt ?? data.createdAt} />
+              </span>
+              <LikeButton articleId={data.id} />
             </div>
             <h1 className={styles.title}>{data.title}</h1>
           </div>

@@ -69,6 +69,7 @@
   }
 }
 .title {
+  position: relative;
   aspect-ratio: 320/160;
   font-size: 0.75rem;
   font-weight: var(--font-weight-medium);

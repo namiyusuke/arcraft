@@ -15,6 +15,13 @@
       "when": 1760542478161,
       "tag": "0001_far_arachne",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1761460010906,
+      "tag": "0002_uneven_frank_castle",
+      "breakpoints": true
     }
   ]
 }

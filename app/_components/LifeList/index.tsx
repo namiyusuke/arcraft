@@ -5,6 +5,7 @@ import Date from "@/app/_components/Date";
 import Footer from "@/app/_components/Footer";
 import Link from "next/link";
 import { unstable_ViewTransition as ViewTransition } from "react";
+import LikeButton from "../LikeButton";
 interface lifelogListProps {
   life: Life[];
 }
@@ -46,6 +47,7 @@ export default function LifeList({ life }: lifelogListProps) {
                 <dl className={styles.content}>
                   <dt className={styles.title}>
                     <span className={styles.title__line}>{content.title}</span>
+                    <LikeButton articleId={content.id} />
                   </dt>
                   <dd className={styles.meta}>{/* <Tag category={content.category} /> */}</dd>
                 </dl>

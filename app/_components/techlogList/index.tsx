@@ -6,6 +6,7 @@ import Date from "@/app/_components/Date";
 import Link from "next/link";
 import { useMemo } from "react";
 import { unstable_ViewTransition as ViewTransition } from "react";
+import LikeButton from "../LikeButton";
 interface TechlogListProps {
   news: News[];
   selectedCategories?: string[];
@@ -70,6 +71,7 @@ export default function TechlogList({ news, selectedCategories = [] }: TechlogLi
                 <dl className={styles.content}>
                   <dt className={styles.title}>
                     <span className={styles.title__line}>{content.title}</span>
+                    <LikeButton articleId={content.id} />
                   </dt>
                   <dd className={styles.meta}>
                     <Tag category={content.category} />
