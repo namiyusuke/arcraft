@@ -12,19 +12,20 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
   const userIdentifier = await getUserIdentifier();
   const articleId = (await params).id;
 
-  const likeCountResult = await db
-    .select({ value: count() })
-    .from(articleLikesSchema)
-    .where(eq(articleLikesSchema.articleId, articleId));
+  // DB問い合わせを並列実行してパフォーマンス改善
+  const [likeCountResult, userLikeResult] = await Promise.all([
+    db
+      .select({ value: count() })
+      .from(articleLikesSchema)
+      .where(eq(articleLikesSchema.articleId, articleId)),
+    db
+      .select()
+      .from(articleLikesSchema)
+      .where(and(eq(articleLikesSchema.articleId, articleId), eq(articleLikesSchema.userIdentifier, userIdentifier)))
+      .limit(1)
+  ]);
 
   const likeCount = likeCountResult[0]?.value || 0;
-
-  const userLikeResult = await db
-    .select()
-    .from(articleLikesSchema)
-    .where(and(eq(articleLikesSchema.articleId, articleId), eq(articleLikesSchema.userIdentifier, userIdentifier)))
-    .limit(1);
-
   const isLiked = userLikeResult.length > 0;
 
   return NextResponse.json({ count: likeCount, isLiked });
