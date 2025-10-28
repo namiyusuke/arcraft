@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
     "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
@@ -139,7 +143,7 @@ img {
   min-block-size: 100%;
   overflow-x: clip;
   font-feature-settings: "pkna";
-  color: theme("colors.dark");
+  color: var(--color--dark);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
